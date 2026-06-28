@@ -5,7 +5,7 @@ import { mediaDivisionContent } from "../../../content/divisions";
 export const metadata: Metadata = {
   title: "Globe Media | Divisions",
   description:
-    "Globe Media is the media division of Globe Technologies, focused on communication, publishing, and knowledge sharing.",
+    "Globe Media is the media division of Globe Technologies, focused on researching, creating and publishing educational and creative media.",
 };
 
 export default function MediaDivisionPage() {

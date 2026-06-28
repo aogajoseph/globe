@@ -9,14 +9,12 @@ export const researchContent: PageContent = {
     {
       title: "Publications",
       paragraphs: [
-        "Placeholder space for papers, articles, and institutional publications.",
+        "Placeholder space for papers, articles, and company publications.",
       ],
     },
     {
       title: "White Papers",
-      paragraphs: [
-        "Placeholder space for strategic and technical white papers.",
-      ],
+      paragraphs: ["Placeholder space for strategic and technical white papers."],
     },
     {
       title: "Innovation",
@@ -25,7 +23,6 @@ export const researchContent: PageContent = {
       ],
     },
     {
-      id: "partnerships",
       title: "Partnerships",
       paragraphs: [
         "Placeholder space for research collaborations and external partnerships.",
@@ -36,6 +33,5 @@ export const researchContent: PageContent = {
     { label: "Products", href: "/products" },
     { label: "News", href: "/news" },
     { label: "Divisions", href: "/divisions" },
-    { label: "Partnerships", href: "/research#partnerships" },
   ],
 };

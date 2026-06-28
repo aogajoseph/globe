@@ -1,6 +1,6 @@
 export const primaryNavigation = [
   { label: "Home", href: "/" },
-  { label: "The Institution", href: "/institution" },
+  { label: "The Company", href: "/institution" },
   { label: "Divisions", href: "/divisions" },
   { label: "Products", href: "/products" },
   { label: "Research", href: "/research" },
@@ -10,7 +10,7 @@ export const primaryNavigation = [
 ] as const;
 
 export const footerNavigation = [
-  { label: "Institution", href: "/institution" },
+  { label: "The Company", href: "/institution" },
   { label: "Divisions", href: "/divisions" },
   { label: "Products", href: "/products" },
   { label: "Research", href: "/research" },

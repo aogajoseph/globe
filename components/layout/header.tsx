@@ -46,7 +46,7 @@ export function Header() {
             Globe Technologies
           </span>
           <span className="text-caption text-[rgb(var(--color-muted))] normal-case tracking-[0.12em]">
-            Institutional Website
+            Company Website
           </span>
         </Link>
 

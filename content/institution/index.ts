@@ -1,24 +1,49 @@
 import type { PageContent } from "../../types/content";
 
 export const institutionLandingContent: PageContent = {
-  eyebrow: "The Institution",
-  title: "Globe Technologies",
+  eyebrow: "The Company",
+  title: "The Company",
   intro:
-    "Globe Technologies is an institution dedicated to creating technology and knowledge that empower people, strengthen communities, and contribute to a better future.",
+    "Globe Technologies is a technology company that researches, develops and delivers innovative solutions that solve meaningful problems and contribute to a better future.",
   sections: [
     {
-      title: "Institutional Focus",
+      title: "Company Focus",
       paragraphs: [
-        "This website is structured to publish the institution clearly and consistently.",
-        "It brings together identity, governance, divisions, products, research, news, careers, and contact information within a shared architectural system.",
+        "This website presents the company clearly and consistently.",
+        "It brings together identity, governance, divisions, products, research, news, careers, and contact information within a shared content system.",
       ],
     },
     {
-      title: "Explore the Institution",
+      title: "Company Structure",
+      cards: [
+        {
+          title: "Office of the Chief Executive Officer",
+          description:
+            "Corporate Strategy, Governance, Executive Leadership, Investor Relations, Corporate Communications and Partnerships.",
+        },
+        {
+          title: "Operations",
+          description:
+            "Finance, Human Resources, Legal & Compliance, Information Technology, Administration, Facilities & Maintenance, Procurement and Security.",
+        },
+        {
+          title: "Shared Services",
+          description:
+            "Wellness Centre, Learning Centre and Events Centre.",
+        },
+        {
+          title: "Divisions",
+          description:
+            "Globe Software and Globe Media, with future divisions to be introduced later.",
+        },
+      ],
+    },
+    {
+      title: "Explore the Company",
       cards: [
         {
           title: "About Globe",
-          description: "A concise introduction to the institution and its place within the wider platform.",
+          description: "A concise introduction to Globe Technologies as a company.",
           href: "/institution/about",
         },
         {
@@ -28,7 +53,7 @@ export const institutionLandingContent: PageContent = {
         },
         {
           title: "Constitution",
-          description: "The institutional framework that will guide the organization over time.",
+          description: "The company framework that will guide the organization over time.",
           href: "/institution/constitution",
         },
         {
@@ -43,7 +68,7 @@ export const institutionLandingContent: PageContent = {
     {
       label: "Governance",
       href: "/institution/governance",
-      description: "Institutional oversight and decision-making structures.",
+      description: "Company oversight and decision-making structures.",
     },
     {
       label: "Company Profile",
@@ -59,21 +84,21 @@ export const institutionLandingContent: PageContent = {
 };
 
 export const aboutContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "About Globe",
-  intro: "A structured introduction to Globe Technologies as an institution.",
+  intro: "A structured introduction to Globe Technologies as a company.",
   sections: [
     {
       title: "Overview",
       paragraphs: [
-        "Globe Technologies exists to develop technology and knowledge with long-term public value.",
-        "This page will eventually provide a concise institutional summary for stakeholders and visitors.",
+        "Globe Technologies researches, develops and delivers innovative solutions that solve meaningful problems and contribute to a better future.",
+        "This page provides a concise company summary for stakeholders and visitors.",
       ],
     },
     {
       title: "Key Areas",
       items: [
-        "Institutional purpose and public identity",
+        "Company purpose and public identity",
         "Long-term stewardship and continuity",
         "Relationship to divisions and products",
         "Commitment to clarity and trust",
@@ -88,15 +113,15 @@ export const aboutContent: PageContent = {
 };
 
 export const ourStoryContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Our Story",
   intro: "A placeholder narrative space for the history of Globe Technologies.",
   sections: [
     {
       title: "Origin",
       paragraphs: [
-        "The origin story will be developed as the institution's published history is finalized.",
-        "For now, this page preserves space for a future account that is factual, concise, and aligned with the institution's long-term tone.",
+        "The origin story will be developed as the company's published history is finalized.",
+        "For now, this page preserves space for a future account that is factual, concise, and aligned with the company's long-term tone.",
       ],
     },
   ],
@@ -108,14 +133,14 @@ export const ourStoryContent: PageContent = {
 };
 
 export const constitutionContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Constitution",
-  intro: "The institutional constitution will define the enduring framework of Globe Technologies.",
+  intro: "The company constitution will define the enduring framework of Globe Technologies.",
   sections: [
     {
       title: "Purpose",
       paragraphs: [
-        "This page will eventually publish the institutional rules, responsibilities, and principles that guide Globe Technologies.",
+        "This page will eventually publish the company rules, responsibilities, and principles that guide Globe Technologies.",
         "Until then, the structure remains in place for future constitutional text.",
       ],
     },
@@ -125,7 +150,7 @@ export const constitutionContent: PageContent = {
         "Foundational principles",
         "Governance structure",
         "Leadership responsibilities",
-        "Institutional continuity",
+        "Company continuity",
       ],
     },
   ],
@@ -137,20 +162,20 @@ export const constitutionContent: PageContent = {
 };
 
 export const visionContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Vision",
   intro: "A clear statement of the future Globe Technologies seeks to contribute to.",
   sections: [
     {
       title: "Vision Statement",
       paragraphs: [
-        "Globe Technologies envisions a future where technology and knowledge help people, strengthen communities, and create durable value.",
+        "Globe Technologies envisions a future where technology helps people, strengthens communities, and creates durable value.",
       ],
     },
     {
       title: "What the Vision Guides",
       items: [
-        "Institutional priorities",
+        "Company priorities",
         "Strategic decision-making",
         "Relationships with communities",
         "Long-term development",
@@ -160,19 +185,19 @@ export const visionContent: PageContent = {
   related: [
     { label: "Mission", href: "/institution/mission" },
     { label: "Constitution", href: "/institution/constitution" },
-    { label: "The Institution", href: "/institution" },
+    { label: "The Company", href: "/institution" },
   ],
 };
 
 export const missionContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Mission",
   intro: "A concise statement of how Globe Technologies will act in service of its purpose.",
   sections: [
     {
       title: "Mission Statement",
       paragraphs: [
-        "Globe Technologies develops technology and knowledge with discipline, integrity, and a long-term commitment to public value.",
+        "Globe Technologies develops and delivers practical technology with discipline, integrity, and a long-term commitment to public value.",
       ],
     },
     {
@@ -181,7 +206,7 @@ export const missionContent: PageContent = {
         "Service to people",
         "Stewardship of knowledge",
         "Reliable execution",
-        "Institutional trust",
+        "Company trust",
       ],
     },
   ],
@@ -193,14 +218,14 @@ export const missionContent: PageContent = {
 };
 
 export const leadershipContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Leadership",
   intro: "A placeholder structure for leadership, stewardship, and executive responsibility.",
   sections: [
     {
       title: "Leadership Framework",
       paragraphs: [
-        "This page will hold the institution's public leadership information once it is finalized.",
+        "This page will hold the company's public leadership information once it is finalized.",
         "The page is intentionally structured to support future profiles and governance references.",
       ],
     },
@@ -213,24 +238,19 @@ export const leadershipContent: PageContent = {
 };
 
 export const governanceContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Governance",
-  intro: "A dedicated space for institutional oversight and decision-making structures.",
+  intro: "A dedicated space for company oversight and decision-making structures.",
   sections: [
     {
       title: "Governance Model",
       paragraphs: [
-        "Globe Technologies will publish governance information here as the institutional framework is developed.",
+        "Globe Technologies will publish governance information here as the company framework is developed.",
       ],
     },
     {
       title: "Primary Areas",
-      items: [
-        "Oversight",
-        "Responsibility",
-        "Accountability",
-        "Continuity",
-      ],
+      items: ["Oversight", "Responsibility", "Accountability", "Continuity"],
     },
   ],
   related: [
@@ -241,14 +261,14 @@ export const governanceContent: PageContent = {
 };
 
 export const companyProfileContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Company Profile",
   intro: "A structured profile page for official external reference.",
   sections: [
     {
       title: "Profile Summary",
       paragraphs: [
-        "This page will ultimately contain the official company profile, summarizing the institution in a stable and accessible format.",
+        "This page will ultimately contain the official company profile, summarizing Globe Technologies in a stable and accessible format.",
       ],
     },
   ],
@@ -260,20 +280,20 @@ export const companyProfileContent: PageContent = {
 };
 
 export const brandContent: PageContent = {
-  eyebrow: "Institution",
+  eyebrow: "About Us",
   title: "Brand",
   intro: "A placeholder for Globe Technologies identity, usage, and brand architecture.",
   sections: [
     {
       title: "Brand Architecture",
       paragraphs: [
-        "This page reserves space for the institutional brand system, usage guidance, and visual identity rules.",
+        "This page reserves space for the company brand system, usage guidance, and visual identity rules.",
       ],
     },
   ],
   related: [
     { label: "Company Profile", href: "/institution/company-profile" },
-    { label: "The Institution", href: "/institution" },
+    { label: "The Company", href: "/institution" },
     { label: "About Globe", href: "/institution/about" },
   ],
 };

@@ -28,7 +28,7 @@ export const contactContent: PageContent = {
     },
   ],
   related: [
-    { label: "The Institution", href: "/institution" },
+    { label: "The Company", href: "/institution" },
     { label: "Divisions", href: "/divisions" },
     { label: "News", href: "/news" },
   ],

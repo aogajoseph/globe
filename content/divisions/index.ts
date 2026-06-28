@@ -4,7 +4,7 @@ export const divisionsLandingContent: PageContent = {
   eyebrow: "Divisions",
   title: "Globe Technologies Divisions",
   intro:
-    "The division structure exists to organize the institution's work clearly while keeping the focus on purpose rather than promotion.",
+    "The company is organized around two current business divisions: Globe Software and Globe Media.",
   sections: [
     {
       title: "Division Structure",
@@ -12,13 +12,13 @@ export const divisionsLandingContent: PageContent = {
         {
           title: "Globe Software",
           description:
-            "Globe Software develops tools, systems, and digital infrastructure aligned with Globe Technologies' institutional goals.",
+            "Responsible for researching, designing, developing and maintaining software products and digital platforms.",
           href: "/divisions/software",
         },
         {
           title: "Globe Media",
           description:
-            "Globe Media represents Globe Technologies' media-oriented division and future knowledge distribution work.",
+            "Responsible for researching, creating and publishing educational and creative media.",
           href: "/divisions/media",
         },
       ],
@@ -27,26 +27,27 @@ export const divisionsLandingContent: PageContent = {
   related: [
     { label: "Products", href: "/products", description: "Product architecture and future offerings." },
     { label: "Research", href: "/research", description: "Knowledge creation and publication architecture." },
-    { label: "Careers", href: "/careers", description: "Career pathways across the institution." },
+    { label: "Careers", href: "/careers", description: "Career pathways across the company." },
   ],
 };
 
 export const softwareDivisionContent: PageContent = {
   eyebrow: "Division",
   title: "Globe Software",
-  intro: "Globe Software builds reliable digital systems in support of Globe Technologies.",
+  intro:
+    "Globe Software is responsible for researching, designing, developing and maintaining software products and digital platforms.",
   sections: [
     {
       title: "Overview",
       paragraphs: [
-        "Globe Software is responsible for the design and delivery of software capabilities that serve the institution's long-term direction.",
+        "Globe Software supports the company by building durable software capabilities and digital infrastructure.",
       ],
     },
     {
       title: "Purpose",
       items: [
         "Develop practical digital systems",
-        "Support internal institutional operations",
+        "Support internal company operations",
         "Create durable technical foundations",
         "Enable future products and services",
       ],
@@ -54,16 +55,20 @@ export const softwareDivisionContent: PageContent = {
     {
       title: "Relationship to Globe Technologies",
       paragraphs: [
-        "The division exists as part of the broader institutional structure and remains accountable to Globe Technologies' mission and governance.",
+        "Globe Software operates as a division of Globe Technologies and remains aligned with the company's strategy, governance and long-term direction.",
       ],
     },
     {
-      title: "Future Work",
+      title: "Current Product",
+      items: ["Akiba"],
+    },
+    {
+      title: "Future Products",
       items: [
-        "Infrastructure",
-        "Applications",
-        "Platform services",
-        "Operational tooling",
+        "Artificial Intelligence Solutions",
+        "Enterprise Platforms",
+        "Mobile Applications",
+        "Cloud Services",
       ],
     },
     {
@@ -76,14 +81,15 @@ export const softwareDivisionContent: PageContent = {
   related: [
     { label: "Globe Media", href: "/divisions/media" },
     { label: "Products", href: "/products" },
-    { label: "Careers", href: "/careers" },
+    { label: "The Company", href: "/institution" },
   ],
 };
 
 export const mediaDivisionContent: PageContent = {
   eyebrow: "Division",
   title: "Globe Media",
-  intro: "Globe Media will support knowledge communication, publishing, and future media work.",
+  intro:
+    "Globe Media is responsible for researching, creating and publishing educational and creative media.",
   sections: [
     {
       title: "Overview",
@@ -94,26 +100,25 @@ export const mediaDivisionContent: PageContent = {
     {
       title: "Purpose",
       items: [
-        "Publish ideas and institutional updates",
+        "Publish ideas and company updates",
         "Support public communication",
         "Organize future editorial work",
-        "Extend Globe Technologies' knowledge mission",
+        "Extend Globe Technologies' mission through media",
       ],
     },
     {
       title: "Relationship to Globe Technologies",
       paragraphs: [
-        "Globe Media operates as a division of Globe Technologies and remains aligned with the institution's standards and priorities.",
+        "Globe Media operates as a division of Globe Technologies and remains aligned with the company's standards and priorities.",
       ],
     },
     {
-      title: "Future Work",
-      items: [
-        "Editorial publishing",
-        "Media products",
-        "Knowledge distribution",
-        "Community communication",
-      ],
+      title: "Current Project",
+      items: ["Addam"],
+    },
+    {
+      title: "Future Media",
+      items: ["Books", "Films", "Documentaries", "Podcasts", "Educational Series"],
     },
     {
       title: "Careers",
@@ -125,6 +130,6 @@ export const mediaDivisionContent: PageContent = {
   related: [
     { label: "Globe Software", href: "/divisions/software" },
     { label: "News", href: "/news" },
-    { label: "Research", href: "/research" },
+    { label: "The Company", href: "/institution" },
   ],
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Container } from "@/components/layout/container";
-import { footerNavigation, primaryNavigation } from "@/lib/site";
+import { Container } from "./container";
+import { footerNavigation, primaryNavigation } from "../../lib/site";
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
               Globe Technologies
             </p>
             <p className="text-body text-[rgb(var(--color-muted))]">
-              A calm, durable institutional foundation for the long-term Globe
+              A calm, durable company foundation for the long-term Globe
               Technologies web platform.
             </p>
           </div>
@@ -62,8 +62,8 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-[rgb(var(--color-border))] pt-6 text-small text-[rgb(var(--color-muted))] md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Globe Technologies. All rights reserved.</p>
-          <p>Built on a reusable institutional foundation.</p>
+          <p>Copyright {new Date().getFullYear()} Globe Technologies. All rights reserved.</p>
+          <p>Built on a reusable company foundation.</p>
         </div>
       </Container>
     </footer>

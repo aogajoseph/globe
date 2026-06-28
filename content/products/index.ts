@@ -12,7 +12,7 @@ export const productsLandingContent: PageContent = {
         {
           title: "Akiba",
           description:
-            "The first product placeholder in the Globe Technologies architecture.",
+            "The first product in Globe Software's architecture.",
           href: "/products/akiba",
         },
       ],
@@ -28,7 +28,7 @@ export const productsLandingContent: PageContent = {
 export const akibaContent: PageContent = {
   eyebrow: "Product",
   title: "Akiba",
-  intro: "Akiba is the initial product placeholder within the Globe Technologies architecture.",
+  intro: "Akiba is the initial product within Globe Software's architecture.",
   sections: [
     {
       title: "Overview",
@@ -39,7 +39,7 @@ export const akibaContent: PageContent = {
     {
       title: "Purpose",
       paragraphs: [
-        "The purpose section will eventually explain what Akiba does and how it fits within the wider institution.",
+        "The purpose section will eventually explain what Akiba does and how it fits within the wider company.",
       ],
     },
     {
@@ -60,6 +60,6 @@ export const akibaContent: PageContent = {
   related: [
     { label: "Products", href: "/products" },
     { label: "Globe Software", href: "/divisions/software" },
-    { label: "Research", href: "/research" },
+    { label: "The Company", href: "/institution" },
   ],
 };

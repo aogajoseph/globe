@@ -5,7 +5,7 @@ import { softwareDivisionContent } from "../../../content/divisions";
 export const metadata: Metadata = {
   title: "Globe Software | Divisions",
   description:
-    "Globe Software is the software division of Globe Technologies, focused on durable digital systems and infrastructure.",
+    "Globe Software is the software division of Globe Technologies, focused on researching, designing, developing and maintaining software products and digital platforms.",
 };
 
 export default function SoftwareDivisionPage() {

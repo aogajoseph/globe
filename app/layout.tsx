@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Globe Technologies",
   },
   description:
-    "Official institutional website foundation for Globe Technologies.",
+    "Official website foundation for Globe Technologies, a technology company that researches, develops and delivers innovative solutions that solve meaningful problems and contribute to a better future.",
 };
 
 type RootLayoutProps = {

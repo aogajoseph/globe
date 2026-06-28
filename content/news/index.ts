@@ -11,7 +11,7 @@ export const newsLandingContent: PageContent = {
       cards: [
         {
           title: "Company News",
-          description: "Institution-wide announcements and updates.",
+          description: "Company-wide announcements and updates.",
           href: "/news/company-news",
         },
         {
@@ -26,7 +26,7 @@ export const newsLandingContent: PageContent = {
         },
         {
           title: "Events",
-          description: "Events, appearances, and institutional gatherings.",
+          description: "Events, appearances, and company gatherings.",
           href: "/news/events",
         },
       ],
@@ -82,7 +82,7 @@ export const newsCategoryContent = {
   events: {
     eyebrow: "News",
     title: "Events",
-    intro: "Static placeholder space for events and institutional appearances.",
+    intro: "Static placeholder space for events and company appearances.",
     sections: [
       { title: "Upcoming and Past Events", paragraphs: ["Future event listings will appear here."] },
     ],

@@ -5,12 +5,12 @@ export default function HomePage() {
   return (
     <InstitutionSection
       title="Foundation Phase"
-      subtitle="Globe Technologies website architecture"
-      intro="This phase establishes the shared layout, design tokens, and reusable systems that future institutional pages will build on."
+      subtitle="Globe Technologies company platform"
+      intro="This phase establishes the shared layout, design tokens, and reusable systems that future company pages will build on."
     >
       <PlaceholderPage
         title="Home"
-        description="The homepage content is intentionally deferred until Phase 2."
+        description="The homepage content is intentionally deferred until the company summary phase."
       />
     </InstitutionSection>
   );
