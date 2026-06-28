@@ -10,16 +10,16 @@ export const divisionsLandingContent: PageContent = {
       title: "Division Structure",
       cards: [
         {
-          title: "Software Division",
+          title: "Globe Software",
           description:
-            "The software division develops tools, systems, and digital infrastructure aligned with Globe Technologies' institutional goals.",
+            "Globe Software develops tools, systems, and digital infrastructure aligned with Globe Technologies' institutional goals.",
           href: "/divisions/software",
         },
         {
-          title: "Awake Media",
+          title: "Globe Media",
           description:
-            "Awake Media represents Globe Technologies' media-oriented division and future knowledge distribution work.",
-          href: "/divisions/awake-media",
+            "Globe Media represents Globe Technologies' media-oriented division and future knowledge distribution work.",
+          href: "/divisions/media",
         },
       ],
     },
@@ -33,13 +33,13 @@ export const divisionsLandingContent: PageContent = {
 
 export const softwareDivisionContent: PageContent = {
   eyebrow: "Division",
-  title: "Software Division",
-  intro: "The software division builds reliable digital systems in support of Globe Technologies.",
+  title: "Globe Software",
+  intro: "Globe Software builds reliable digital systems in support of Globe Technologies.",
   sections: [
     {
       title: "Overview",
       paragraphs: [
-        "The software division is responsible for the design and delivery of software capabilities that serve the institution's long-term direction.",
+        "Globe Software is responsible for the design and delivery of software capabilities that serve the institution's long-term direction.",
       ],
     },
     {
@@ -74,21 +74,21 @@ export const softwareDivisionContent: PageContent = {
     },
   ],
   related: [
-    { label: "Awake Media", href: "/divisions/awake-media" },
+    { label: "Globe Media", href: "/divisions/media" },
     { label: "Products", href: "/products" },
     { label: "Careers", href: "/careers" },
   ],
 };
 
-export const awakeMediaContent: PageContent = {
+export const mediaDivisionContent: PageContent = {
   eyebrow: "Division",
-  title: "Awake Media",
-  intro: "Awake Media will support knowledge communication, publishing, and future media work.",
+  title: "Globe Media",
+  intro: "Globe Media will support knowledge communication, publishing, and future media work.",
   sections: [
     {
       title: "Overview",
       paragraphs: [
-        "Awake Media provides a division framework for communication, storytelling, and the structured sharing of knowledge.",
+        "Globe Media provides a division framework for communication, storytelling, and the structured sharing of knowledge.",
       ],
     },
     {
@@ -103,7 +103,7 @@ export const awakeMediaContent: PageContent = {
     {
       title: "Relationship to Globe Technologies",
       paragraphs: [
-        "Awake Media operates as a division of Globe Technologies and remains aligned with the institution's standards and priorities.",
+        "Globe Media operates as a division of Globe Technologies and remains aligned with the institution's standards and priorities.",
       ],
     },
     {
@@ -123,7 +123,7 @@ export const awakeMediaContent: PageContent = {
     },
   ],
   related: [
-    { label: "Software Division", href: "/divisions/software" },
+    { label: "Globe Software", href: "/divisions/software" },
     { label: "News", href: "/news" },
     { label: "Research", href: "/research" },
   ],

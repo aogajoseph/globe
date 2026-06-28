@@ -19,7 +19,7 @@ export const productsLandingContent: PageContent = {
     },
   ],
   related: [
-    { label: "Software Division", href: "/divisions/software" },
+    { label: "Globe Software", href: "/divisions/software" },
     { label: "Research", href: "/research" },
     { label: "News", href: "/news" },
   ],
@@ -59,7 +59,7 @@ export const akibaContent: PageContent = {
   ],
   related: [
     { label: "Products", href: "/products" },
-    { label: "Software Division", href: "/divisions/software" },
+    { label: "Globe Software", href: "/divisions/software" },
     { label: "Research", href: "/research" },
   ],
 };
