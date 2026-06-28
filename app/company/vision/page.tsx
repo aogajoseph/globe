@@ -4,3 +4,5 @@ import { visionContent } from "../../../content/institution";
 export default function VisionPage() {
   return <InstitutionalPage content={visionContent} />;
 }
+
+

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "Learn about Globe Technologies, the company structure, and the two current divisions: Globe Software and Globe Media.",
 };
 
-export default function InstitutionPage() {
+export default function CompanyPage() {
   return <InstitutionalPage content={institutionLandingContent} />;
 }
+

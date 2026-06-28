@@ -60,6 +60,7 @@ export const akibaContent: PageContent = {
   related: [
     { label: "Products", href: "/products" },
     { label: "Globe Software", href: "/divisions/software" },
-    { label: "The Company", href: "/institution" },
+    { label: "The Company", href: "/company" },
   ],
 };
+

@@ -4,3 +4,5 @@ import { brandContent } from "../../../content/institution";
 export default function BrandPage() {
   return <InstitutionalPage content={brandContent} />;
 }
+
+

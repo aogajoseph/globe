@@ -81,7 +81,7 @@ export const softwareDivisionContent: PageContent = {
   related: [
     { label: "Globe Media", href: "/divisions/media" },
     { label: "Products", href: "/products" },
-    { label: "The Company", href: "/institution" },
+    { label: "The Company", href: "/company" },
   ],
 };
 
@@ -130,6 +130,7 @@ export const mediaDivisionContent: PageContent = {
   related: [
     { label: "Globe Software", href: "/divisions/software" },
     { label: "News", href: "/news" },
-    { label: "The Company", href: "/institution" },
+    { label: "The Company", href: "/company" },
   ],
 };
+

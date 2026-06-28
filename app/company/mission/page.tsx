@@ -4,3 +4,5 @@ import { missionContent } from "../../../content/institution";
 export default function MissionPage() {
   return <InstitutionalPage content={missionContent} />;
 }
+
+

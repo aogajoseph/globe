@@ -4,3 +4,5 @@ import { aboutContent } from "../../../content/institution";
 export default function AboutPage() {
   return <InstitutionalPage content={aboutContent} />;
 }
+
+

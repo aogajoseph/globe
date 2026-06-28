@@ -4,3 +4,5 @@ import { ourStoryContent } from "../../../content/institution";
 export default function OurStoryPage() {
   return <InstitutionalPage content={ourStoryContent} />;
 }
+
+

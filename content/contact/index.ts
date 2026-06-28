@@ -28,8 +28,9 @@ export const contactContent: PageContent = {
     },
   ],
   related: [
-    { label: "The Company", href: "/institution" },
+    { label: "The Company", href: "/company" },
     { label: "Divisions", href: "/divisions" },
     { label: "News", href: "/news" },
   ],
 };
+

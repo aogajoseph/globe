@@ -2,19 +2,19 @@ import type { ReactNode } from "react";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 
-type InstitutionSectionProps = {
+type CompanySectionProps = {
   title?: string;
   subtitle?: string;
   intro?: string;
   children?: ReactNode;
 };
 
-export function InstitutionSection({
+export function CompanySection({
   title,
   subtitle,
   intro,
   children,
-}: InstitutionSectionProps) {
+}: CompanySectionProps) {
   return (
     <Section>
       <Container className="space-y-8">

@@ -4,3 +4,5 @@ import { akibaContent } from "../../../content/products";
 export default function AkibaPage() {
   return <InstitutionalPage content={akibaContent} />;
 }
+
+

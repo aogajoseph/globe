@@ -44,22 +44,22 @@ export const institutionLandingContent: PageContent = {
         {
           title: "About Globe",
           description: "A concise introduction to Globe Technologies as a company.",
-          href: "/institution/about",
+          href: "/company/about",
         },
         {
           title: "Our Story",
           description: "A placeholder for the origin and evolution of Globe Technologies.",
-          href: "/institution/our-story",
+          href: "/company/our-story",
         },
         {
           title: "Constitution",
           description: "The company framework that will guide the organization over time.",
-          href: "/institution/constitution",
+          href: "/company/constitution",
         },
         {
           title: "Leadership",
           description: "The people and structures responsible for stewardship and direction.",
-          href: "/institution/leadership",
+          href: "/company/leadership",
         },
       ],
     },
@@ -67,17 +67,17 @@ export const institutionLandingContent: PageContent = {
   related: [
     {
       label: "Governance",
-      href: "/institution/governance",
+      href: "/company/governance",
       description: "Company oversight and decision-making structures.",
     },
     {
       label: "Company Profile",
-      href: "/institution/company-profile",
+      href: "/company/company-profile",
       description: "A structured profile for external understanding and reference.",
     },
     {
       label: "Brand",
-      href: "/institution/brand",
+      href: "/company/brand",
       description: "Identity and brand architecture placeholders.",
     },
   ],
@@ -106,9 +106,9 @@ export const aboutContent: PageContent = {
     },
   ],
   related: [
-    { label: "Our Story", href: "/institution/our-story" },
-    { label: "Vision", href: "/institution/vision" },
-    { label: "Company Profile", href: "/institution/company-profile" },
+    { label: "Our Story", href: "/company/our-story" },
+    { label: "Vision", href: "/company/vision" },
+    { label: "Company Profile", href: "/company/company-profile" },
   ],
 };
 
@@ -126,9 +126,9 @@ export const ourStoryContent: PageContent = {
     },
   ],
   related: [
-    { label: "About Globe", href: "/institution/about" },
-    { label: "Constitution", href: "/institution/constitution" },
-    { label: "Brand", href: "/institution/brand" },
+    { label: "About Globe", href: "/company/about" },
+    { label: "Constitution", href: "/company/constitution" },
+    { label: "Brand", href: "/company/brand" },
   ],
 };
 
@@ -155,9 +155,9 @@ export const constitutionContent: PageContent = {
     },
   ],
   related: [
-    { label: "Governance", href: "/institution/governance" },
-    { label: "Leadership", href: "/institution/leadership" },
-    { label: "Vision", href: "/institution/vision" },
+    { label: "Governance", href: "/company/governance" },
+    { label: "Leadership", href: "/company/leadership" },
+    { label: "Vision", href: "/company/vision" },
   ],
 };
 
@@ -183,9 +183,9 @@ export const visionContent: PageContent = {
     },
   ],
   related: [
-    { label: "Mission", href: "/institution/mission" },
-    { label: "Constitution", href: "/institution/constitution" },
-    { label: "The Company", href: "/institution" },
+    { label: "Mission", href: "/company/mission" },
+    { label: "Constitution", href: "/company/constitution" },
+    { label: "The Company", href: "/company" },
   ],
 };
 
@@ -211,9 +211,9 @@ export const missionContent: PageContent = {
     },
   ],
   related: [
-    { label: "Vision", href: "/institution/vision" },
-    { label: "Leadership", href: "/institution/leadership" },
-    { label: "Governance", href: "/institution/governance" },
+    { label: "Vision", href: "/company/vision" },
+    { label: "Leadership", href: "/company/leadership" },
+    { label: "Governance", href: "/company/governance" },
   ],
 };
 
@@ -231,9 +231,9 @@ export const leadershipContent: PageContent = {
     },
   ],
   related: [
-    { label: "Governance", href: "/institution/governance" },
-    { label: "Constitution", href: "/institution/constitution" },
-    { label: "Company Profile", href: "/institution/company-profile" },
+    { label: "Governance", href: "/company/governance" },
+    { label: "Constitution", href: "/company/constitution" },
+    { label: "Company Profile", href: "/company/company-profile" },
   ],
 };
 
@@ -254,9 +254,9 @@ export const governanceContent: PageContent = {
     },
   ],
   related: [
-    { label: "Leadership", href: "/institution/leadership" },
-    { label: "Constitution", href: "/institution/constitution" },
-    { label: "Company Profile", href: "/institution/company-profile" },
+    { label: "Leadership", href: "/company/leadership" },
+    { label: "Constitution", href: "/company/constitution" },
+    { label: "Company Profile", href: "/company/company-profile" },
   ],
 };
 
@@ -273,9 +273,9 @@ export const companyProfileContent: PageContent = {
     },
   ],
   related: [
-    { label: "About Globe", href: "/institution/about" },
-    { label: "Governance", href: "/institution/governance" },
-    { label: "Brand", href: "/institution/brand" },
+    { label: "About Globe", href: "/company/about" },
+    { label: "Governance", href: "/company/governance" },
+    { label: "Brand", href: "/company/brand" },
   ],
 };
 
@@ -292,8 +292,9 @@ export const brandContent: PageContent = {
     },
   ],
   related: [
-    { label: "Company Profile", href: "/institution/company-profile" },
-    { label: "The Company", href: "/institution" },
-    { label: "About Globe", href: "/institution/about" },
+    { label: "Company Profile", href: "/company/company-profile" },
+    { label: "The Company", href: "/company" },
+    { label: "About Globe", href: "/company/about" },
   ],
 };
+
