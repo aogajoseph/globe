@@ -1,5 +1,5 @@
-import { InstitutionalPage } from "../../../components/layout/institutional-page";
-import { governanceContent } from "../../../content/institution";
+import { InstitutionalPage } from "../../../components/layout/company-page";
+import { governanceContent } from "../../../content/company";
 
 export default function GovernancePage() {
   return <InstitutionalPage content={governanceContent} />;

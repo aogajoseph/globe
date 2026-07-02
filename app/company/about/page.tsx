@@ -1,5 +1,5 @@
-import { InstitutionalPage } from "../../../components/layout/institutional-page";
-import { aboutContent } from "../../../content/institution";
+import { InstitutionalPage } from "../../../components/layout/company-page";
+import { aboutContent } from "../../../content/company";
 
 export default function AboutPage() {
   return <InstitutionalPage content={aboutContent} />;

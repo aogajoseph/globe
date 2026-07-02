@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "../../../components/layout/institutional-page";
+import { InstitutionalPage } from "../../../components/layout/company-page";
 import { softwareDivisionContent } from "../../../content/divisions";
 
 export const metadata: Metadata = {

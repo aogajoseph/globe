@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "../../components/layout/institutional-page";
-import { institutionLandingContent } from "../../content/institution";
+import { InstitutionalPage } from "../../components/layout/company-page";
+import { institutionLandingContent } from "../../content/company";
 
 export const metadata: Metadata = {
   title: "The Company | Globe Technologies",

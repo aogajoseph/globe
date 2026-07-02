@@ -1,4 +1,4 @@
-import { InstitutionalPage } from "../components/layout/institutional-page";
+import { InstitutionalPage } from "../components/layout/company-page";
 
 const quickLinks = [
   { label: "Learn About the Company", href: "/company" },

@@ -15,8 +15,8 @@ export const navigationGroups: NavigationGroup[] = [
     label: "The Company",
     href: "/company",
     children: [
-      { label: "The Company", href: "/company" },
-      { label: "About Globe", href: "/company/about" },
+      { label: "Overview", href: "/company" },
+      { label: "About Us", href: "/company/about" },
       { label: "Our Story", href: "/company/our-story" },
       { label: "Company Profile", href: "/company/company-profile" },
       { label: "Constitution", href: "/company/constitution" },

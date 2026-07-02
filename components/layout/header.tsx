@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { navigationGroups, primaryNavigation } from "../../lib/site";
 import { cn } from "../../lib/utils";
@@ -77,7 +77,6 @@ function DesktopDropdown({
         }}
       >
         {group.label}
-        <ChevronDown className="h-4 w-4" />
       </button>
 
       <div
@@ -136,12 +135,6 @@ function MobileAccordion({
         onClick={onToggle}
       >
         {group.label}
-        <ChevronDown
-          className={cn(
-            "h-5 w-5 transition-transform motion-reduce:transition-none",
-            isOpen && "rotate-180",
-          )}
-        />
       </button>
 
       <div

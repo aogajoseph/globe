@@ -1,4 +1,4 @@
-import { InstitutionalPage } from "../../../components/layout/institutional-page";
+import { InstitutionalPage } from "../../../components/layout/company-page";
 import { akibaContent } from "../../../content/products";
 
 export default function AkibaPage() {
