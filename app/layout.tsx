@@ -21,7 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">
+        <a className="skip-link" href="#main-content">label
           Skip to content
         </a>
         <div className="flex min-h-dvh flex-col bg-[rgb(var(--color-background))] text-[rgb(var(--color-foreground))]">

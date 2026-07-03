@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
@@ -91,12 +92,6 @@ function DesktopDropdown({
         aria-label={group.label}
       >
         <div className="overflow-hidden rounded-3xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
-          <Link
-            href={group.href}
-            className="block px-5 py-4 text-small font-semibold text-[rgb(var(--color-primary))] transition-colors hover:bg-[rgb(var(--color-background))]"
-          >
-            {group.label}
-          </Link>
           <div className="grid gap-1 p-2">
             {group.children.map((child) => (
               <Link
@@ -255,13 +250,15 @@ export function Header() {
       className="sticky top-0 z-40 border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
     >
       <Container className="flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex flex-col">
-          <span className="text-small font-semibold tracking-[0.18em] uppercase text-[rgb(var(--color-primary))]">
-            Globe Technologies
-          </span>
-          <span className="text-caption tracking-[0.12em] text-[rgb(var(--color-muted))]">
-            Company Website
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logos/logo.png"
+            alt="Globe Technologies Logo"
+            width={260}
+            height={71}
+            priority
+            className="h-16 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-stretch gap-1 lg:flex" aria-label="Primary">
