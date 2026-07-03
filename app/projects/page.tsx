@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "../../components/layout/company-page";
+import { CompanyPage } from "../../components/layout/company-page";
 import { projectsLandingContent } from "../../content/projects";
 
 export const metadata: Metadata = {
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <InstitutionalPage content={projectsLandingContent} />;
+  return <CompanyPage content={projectsLandingContent} />;
 }
 
