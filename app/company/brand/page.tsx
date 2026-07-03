@@ -1,8 +1,8 @@
-import { InstitutionalPage } from "../../../components/layout/company-page";
+import { CompanyPage } from "../../../components/layout/company-page";
 import { brandContent } from "../../../content/company";
 
 export default function BrandPage() {
-  return <InstitutionalPage content={brandContent} />;
+  return <CompanyPage content={brandContent} />;
 }
 
 

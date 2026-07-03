@@ -1,6 +1,6 @@
 import type { PageContent } from "../../types/content";
 
-export const institutionLandingContent: PageContent = {
+export const companyLandingContent: PageContent = {
   eyebrow: "The Company",
   title: "The Company",
   intro:

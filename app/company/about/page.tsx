@@ -1,8 +1,8 @@
-import { InstitutionalPage } from "../../../components/layout/company-page";
+import { CompanyPage } from "../../../components/layout/company-page";
 import { aboutContent } from "../../../content/company";
 
 export default function AboutPage() {
-  return <InstitutionalPage content={aboutContent} />;
+  return <CompanyPage content={aboutContent} />;
 }
 
 

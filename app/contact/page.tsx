@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "../../components/layout/company-page";
+import { CompanyPage } from "../../components/layout/company-page";
 import { contactContent } from "../../content/contact";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <InstitutionalPage content={contactContent} />;
+  return <CompanyPage content={contactContent} />;
 }
 
 

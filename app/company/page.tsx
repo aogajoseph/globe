@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "../../components/layout/company-page";
-import { institutionLandingContent } from "../../content/company";
+import {CompanyPage } from "../../components/layout/company-page";
+import { companyLandingContent } from "../../content/company";
 
 export const metadata: Metadata = {
   title: "The Company | Globe Technologies",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Learn about Globe Technologies, the company structure, and the two current divisions: Globe Software and Globe Media.",
 };
 
-export default function CompanyPage() {
-  return <InstitutionalPage content={institutionLandingContent} />;
+export default function CompanyPageRoute() {
+  return <CompanyPage content={companyLandingContent} />;
 }
 

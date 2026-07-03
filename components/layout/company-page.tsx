@@ -5,7 +5,7 @@ import { Card } from "../common/card";
 import { Container } from "./container";
 import { Section } from "./section";
 
-type InstitutionalPageProps = {
+type CompanyPageProps = {
   content: PageContent;
 };
 
@@ -73,7 +73,7 @@ function renderSection(section: PageSection) {
   );
 }
 
-export function InstitutionalPage({ content }: InstitutionalPageProps) {
+export function CompanyPage({ content }: CompanyPageProps) {
   return (
     <>
       <Section className="pt-12 md:pt-16">

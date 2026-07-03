@@ -1,8 +1,8 @@
-import { InstitutionalPage } from "../../../components/layout/company-page";
+import { CompanyPage } from "../../../components/layout/company-page";
 import { companyProfileContent } from "../../../content/company";
 
 export default function CompanyProfilePage() {
-  return <InstitutionalPage content={companyProfileContent} />;
+  return <CompanyPage content={companyProfileContent} />;
 }
 
 
