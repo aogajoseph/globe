@@ -245,88 +245,90 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      ref={headerRef}
-      className="sticky top-0 z-40 border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
-    >
-      <Container className="flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logos/logo.png"
-            alt="Globe Technologies Logo"
-            width={260}
-            height={71}
-            priority
-            className="h-16 w-auto"
-          />
-        </Link>
-
-        <nav className="hidden items-stretch gap-1 lg:flex" aria-label="Primary">
-          <Link
-            href={homeLink.href}
-            className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
-          >
-            {homeLink.label}
+    <>
+      <header
+        ref={headerRef}
+        className="sticky top-0 z-40 border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
+      >
+        <Container className="flex h-20 items-center justify-between gap-6">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logos/logo.png"
+              alt="Globe Technologies Logo"
+              width={260}
+              height={71}
+              priority
+              className="h-16 w-auto"
+            />
           </Link>
 
-          {navigationGroups.map((group) => {
-            const isOpen = openGroup === group.label;
-            return (
-              <DesktopDropdown
-                key={group.label}
-                group={group}
-                isOpen={isOpen}
-                onOpen={() => openDesktopGroup(group.label)}
-                onClose={closeDesktopGroup}
-                panelRef={(node) => {
-                  desktopPanelRefs.current[group.label] = node;
-                }}
-                onKeyboardOpen={(direction = "first") => {
-                  window.requestAnimationFrame(() => {
-                    const panelRef = desktopPanelRefs.current[group.label];
-                    if (panelRef) {
-                      const links = Array.from(
-                        panelRef.querySelectorAll<HTMLElement>(
-                          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-                        ),
-                      ).filter((element) => !element.hasAttribute("disabled"));
-                      const target = direction === "last" ? links.at(-1) : links[0];
-                      target?.focus();
-                    }
-                  });
-                }}
-              />
-            );
-          })}
+          <nav className="hidden items-stretch gap-1 lg:flex" aria-label="Primary">
+            <Link
+              href={homeLink.href}
+              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+            >
+              {homeLink.label}
+            </Link>
 
-          <Link
-            href={researchLink.href}
-            className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+            {navigationGroups.map((group) => {
+              const isOpen = openGroup === group.label;
+              return (
+                <DesktopDropdown
+                  key={group.label}
+                  group={group}
+                  isOpen={isOpen}
+                  onOpen={() => openDesktopGroup(group.label)}
+                  onClose={closeDesktopGroup}
+                  panelRef={(node) => {
+                    desktopPanelRefs.current[group.label] = node;
+                  }}
+                  onKeyboardOpen={(direction = "first") => {
+                    window.requestAnimationFrame(() => {
+                      const panelRef = desktopPanelRefs.current[group.label];
+                      if (panelRef) {
+                        const links = Array.from(
+                          panelRef.querySelectorAll<HTMLElement>(
+                            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+                          ),
+                        ).filter((element) => !element.hasAttribute("disabled"));
+                        const target = direction === "last" ? links.at(-1) : links[0];
+                        target?.focus();
+                      }
+                    });
+                  }}
+                />
+              );
+            })}
+
+            <Link
+              href={researchLink.href}
+              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+            >
+              {researchLink.label}
+            </Link>
+
+            <Link
+              href={contactLink.href}
+              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+            >
+              {contactLink.label}
+            </Link>
+          </nav>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen((current) => !current)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-primary))] lg:hidden"
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
-            {researchLink.label}
-          </Link>
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </Container>
+      </header>
 
-          <Link
-            href={contactLink.href}
-            className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
-          >
-            {contactLink.label}
-          </Link>
-        </nav>
-
-        <button
-          type="button"
-          onClick={() => setMobileOpen((current) => !current)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-primary))] lg:hidden"
-          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-navigation"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
-      </Container>
-
-      <div
+      <div 
         id="mobile-navigation"
         role="dialog"
         aria-modal="true"
@@ -382,6 +384,6 @@ export function Header() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
