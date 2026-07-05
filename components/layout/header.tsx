@@ -164,7 +164,7 @@ function DesktopDropdown({
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
         className={cn(
-          "fixed z-[60] hidden min-w-[11rem] transition-opacity duration-150 ease-out motion-reduce:transition-none lg:block",
+          "fixed z-[60] hidden min-w-[13rem] transition-opacity duration-150 ease-out motion-reduce:transition-none lg:block",
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
@@ -174,11 +174,11 @@ function DesktopDropdown({
       >
         <div
           className={cn(
-            "border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]",
-            opensAboveHeader ? "border-b-0" : "border-t-0",
+            "border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-[0_6px_20px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.03)]",
+            opensAboveHeader ? "rounded-t-sm border-b-0" : "rounded-b-sm border-t-0",
           )}
         >
-          <div className="divide-y divide-[rgb(var(--color-border))]">
+          <div className="py-1">
             {group.children.map((child) => {
               const isChildActive = pathname === child.href;
 
@@ -188,10 +188,10 @@ function DesktopDropdown({
                   href={child.href}
                   role="menuitem"
                   className={cn(
-                    "block touch-manipulation px-3 py-1.5 text-[0.8125rem] leading-5 text-[rgb(var(--color-secondary))] transition-colors",
+                    "block touch-manipulation border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2.5 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
                     isChildActive
-                      ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
-                      : "hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+                      ? "border-l-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                      : "border-l-transparent hover:bg-[rgb(var(--color-primary-soft))]/70 hover:text-[rgb(var(--color-primary))]",
                   )}
                 >
                   {child.label}
