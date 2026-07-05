@@ -22,6 +22,7 @@ function DesktopDropdown({
   onClose,
   panelRef,
   onKeyboardOpen,
+  pathname,
 }: {
   group: NavigationGroup;
   isOpen: boolean;
@@ -29,8 +30,14 @@ function DesktopDropdown({
   onClose: () => void;
   panelRef: (node: HTMLDivElement | null) => void;
   onKeyboardOpen: (direction?: "first" | "last") => void;
+  pathname: string;
 }) {
   const menuId = useId();
+  const isGroupActive =
+    pathname === group.href ||
+    group.children.some(
+      (child) => pathname === child.href || pathname.startsWith(`${child.href}/`),
+    );
 
   return (
     <div
@@ -48,9 +55,9 @@ function DesktopDropdown({
         type="button"
         className={cn(
           "inline-flex items-center gap-1 rounded-full px-4 py-2 text-small font-medium transition-colors",
-          isOpen
+          isOpen || isGroupActive
             ? "bg-[rgb(var(--color-primary))] text-white"
-            : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]",
+            : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
         )}
         aria-haspopup="menu"
         aria-expanded={isOpen}
@@ -84,24 +91,33 @@ function DesktopDropdown({
         id={menuId}
         ref={panelRef}
         className={cn(
-          "absolute left-0 top-full z-50 min-w-[19rem] pt-3 transition duration-200 ease-out motion-reduce:transition-none",
+          "absolute left-0 top-full z-50 min-w-[11rem] transition-opacity duration-150 ease-out motion-reduce:transition-none",
           isOpen
-            ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
-            : "pointer-events-none -translate-y-2 scale-[0.98] opacity-0",
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
         )}
         aria-label={group.label}
       >
-        <div className="overflow-hidden rounded-3xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
-          <div className="grid gap-1 p-2">
-            {group.children.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                className="rounded-2xl px-4 py-3 text-small text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-background))] hover:text-[rgb(var(--color-primary))]"
-              >
-                {child.label}
-              </Link>
-            ))}
+        <div className="border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]">
+          <div className="divide-y divide-[rgb(var(--color-border))]">
+            {group.children.map((child) => {
+              const isChildActive = pathname === child.href;
+
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  className={cn(
+                    "block px-3 py-1.5 text-[0.8125rem] leading-5 text-[rgb(var(--color-secondary))] transition-colors",
+                    isChildActive
+                      ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                      : "hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+                  )}
+                >
+                  {child.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -113,18 +129,30 @@ function MobileAccordion({
   group,
   isOpen,
   onToggle,
+  pathname,
 }: {
   group: NavigationGroup;
   isOpen: boolean;
   onToggle: () => void;
+  pathname: string;
 }) {
   const sectionId = useId();
+  const isGroupActive =
+    pathname === group.href ||
+    group.children.some(
+      (child) => pathname === child.href || pathname.startsWith(`${child.href}/`),
+    );
 
   return (
-    <div className="rounded-3xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] p-2">
+    <div className="border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]">
       <button
         type="button"
-        className="flex w-full items-center justify-between rounded-2xl px-4 py-4 text-left text-h3"
+        className={cn(
+          "flex w-full items-center justify-between border-b border-[rgb(var(--color-border))] px-4 py-3 text-left text-small font-semibold transition-colors",
+          isGroupActive
+            ? "bg-[rgb(var(--color-primary-soft))] text-[rgb(var(--color-primary))]"
+            : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+        )}
         aria-expanded={isOpen}
         aria-controls={sectionId}
         onClick={onToggle}
@@ -139,22 +167,36 @@ function MobileAccordion({
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
-        <div className="min-h-0 space-y-2 px-2 pb-2">
+        <div className="min-h-0 divide-y divide-[rgb(var(--color-border))]">
           <Link
             href={group.href}
-            className="block rounded-2xl px-4 py-3 text-small font-semibold text-[rgb(var(--color-primary))]"
+            className={cn(
+              "block px-4 py-2 text-[0.8125rem] leading-5 transition-colors",
+              pathname === group.href
+                ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+            )}
           >
             {group.label}
           </Link>
-          {group.children.map((child) => (
-            <Link
-              key={child.href}
-              href={child.href}
-              className="block rounded-2xl px-4 py-3 text-small text-[rgb(var(--color-secondary))]"
-            >
-              {child.label}
-            </Link>
-          ))}
+          {group.children.map((child) => {
+            const isChildActive = pathname === child.href;
+
+            return (
+              <Link
+                key={child.href}
+                href={child.href}
+                className={cn(
+                  "block px-4 py-2 text-[0.8125rem] leading-5 transition-colors",
+                  isChildActive
+                    ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                    : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+                )}
+              >
+                {child.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -248,7 +290,7 @@ export function Header() {
     <>
       <header
         ref={headerRef}
-        className="sticky top-0 z-40 border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
+        className="sticky top-0 z-40 overflow-visible border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
       >
         <Container className="flex h-20 items-center justify-between gap-6">
           <Link href="/" className="flex items-center">
@@ -262,10 +304,15 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-stretch gap-1 lg:flex" aria-label="Primary">
+          <nav className="hidden items-stretch gap-1 overflow-visible lg:flex" aria-label="Primary">
             <Link
               href={homeLink.href}
-              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+              className={cn(
+                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
+                pathname === homeLink.href
+                  ? "bg-[rgb(var(--color-primary))] text-white"
+                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              )}
             >
               {homeLink.label}
             </Link>
@@ -277,6 +324,7 @@ export function Header() {
                   key={group.label}
                   group={group}
                   isOpen={isOpen}
+                  pathname={pathname}
                   onOpen={() => openDesktopGroup(group.label)}
                   onClose={closeDesktopGroup}
                   panelRef={(node) => {
@@ -302,14 +350,24 @@ export function Header() {
 
             <Link
               href={researchLink.href}
-              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+              className={cn(
+                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
+                pathname === researchLink.href || pathname.startsWith(`${researchLink.href}/`)
+                  ? "bg-[rgb(var(--color-primary))] text-white"
+                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              )}
             >
               {researchLink.label}
             </Link>
 
             <Link
               href={contactLink.href}
-              className="inline-flex items-center rounded-full px-4 py-2 text-small font-medium text-[rgb(var(--color-secondary))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-primary))]"
+              className={cn(
+                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
+                pathname === contactLink.href || pathname.startsWith(`${contactLink.href}/`)
+                  ? "bg-[rgb(var(--color-primary))] text-white"
+                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              )}
             >
               {contactLink.label}
             </Link>
@@ -365,6 +423,7 @@ export function Header() {
               key={group.label}
               group={group}
               isOpen={Boolean(mobileSectionsOpen[group.label])}
+              pathname={pathname}
               onToggle={() => toggleMobileSection(group.label)}
             />
           ))}
