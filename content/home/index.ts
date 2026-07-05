@@ -8,7 +8,7 @@ export const homePageContent: PageContent = {
     sections: [
       {
         title: "About Globe Technologies",
-        body: [
+        paragraphs: [
           "Globe Technologies is committed to advancing society through research, innovation and responsible engineering.",
           "Our work spans software, media, research and emerging technologies, united by a common purpose: creating solutions that improve lives, strengthen communities and shape a better future.",
         ],
@@ -42,7 +42,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Our Purpose",
-        body: [
+        paragraphs: [
           "Technology is most valuable when it solves real problems.",
           "Our purpose is to discover meaningful opportunities, develop innovative solutions and deliver technologies that create lasting impact for individuals, organizations and society.",
         ],
@@ -67,7 +67,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Our Divisions",
-        body: [
+        paragraphs: [
           "Globe Technologies brings together specialized divisions that operate independently while sharing one vision and one philosophy.",
         ],
         cards: [
@@ -88,7 +88,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Products",
-        body: [
+        paragraphs: [
           "Our products are designed to solve real-world problems through practical, reliable and user-focused technology.",
         ],
         cards: [
@@ -103,7 +103,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Projects",
-        body: [
+        paragraphs: [
           "Some ideas require exploration before becoming products. Our projects represent long-term initiatives through which we investigate emerging technologies and prepare future innovations.",
         ],
         cards: [
@@ -118,7 +118,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Research",
-        body: [
+        paragraphs: [
           "Research is the foundation of everything we do.",
           "Before we design products or launch projects, we seek to understand the problems worth solving. Through continuous learning, investigation and experimentation, research shapes every decision we make.",
         ],
@@ -134,7 +134,7 @@ export const homePageContent: PageContent = {
 
       {
         title: "Let's Build the Future Together",
-        body: [
+        paragraphs: [
           "Whether you're interested in partnerships, research collaborations or learning more about Globe Technologies, we'd love to hear from you.",
         ],
         cards: [

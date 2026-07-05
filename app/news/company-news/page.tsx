@@ -1,8 +1,8 @@
-import { InstitutionalPage } from "../../../components/layout/company-page";
+import { CompanyPage } from "../../../components/layout/company-page";
 import { newsCategoryContent } from "../../../content/news";
 
 export default function CompanyNewsPage() {
-  return <InstitutionalPage content={newsCategoryContent.companyNews} />;
+  return <CompanyPage content={newsCategoryContent.companyNews} />;
 }
 
 

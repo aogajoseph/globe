@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import { navigationGroups, primaryNavigation } from "../../lib/site";
 import { cn } from "../../lib/utils";
 import { Container } from "./container";
@@ -15,33 +15,104 @@ const homeLink = primaryNavigation[0];
 const researchLink = primaryNavigation[5];
 const contactLink = primaryNavigation[6];
 
+const desktopNavItemClass = (isActive: boolean) =>
+  cn(
+    "flex h-full items-center px-4 text-small font-medium transition-colors",
+    isActive
+      ? "bg-[rgb(var(--color-primary-soft))] text-[rgb(var(--color-primary))]"
+      : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+  );
+
+const mobileTopLevelNavClass = (isActive: boolean) =>
+  cn(
+    "block w-full rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-5 py-4 text-left text-h3 transition-colors",
+    isActive
+      ? "bg-[rgb(var(--color-primary-soft))] text-[rgb(var(--color-primary))]"
+      : "hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+  );
+
 function DesktopDropdown({
   group,
   isOpen,
   onOpen,
   onClose,
+  onCloseImmediate,
   panelRef,
   onKeyboardOpen,
   pathname,
+  headerRef,
 }: {
   group: NavigationGroup;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  onCloseImmediate: () => void;
   panelRef: (node: HTMLDivElement | null) => void;
   onKeyboardOpen: (direction?: "first" | "last") => void;
   pathname: string;
+  headerRef: RefObject<HTMLElement | null>;
 }) {
   const menuId = useId();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const internalPanelRef = useRef<HTMLDivElement | null>(null);
+  const [submenuPosition, setSubmenuPosition] = useState({ top: 0, left: 0 });
+  const [opensAboveHeader, setOpensAboveHeader] = useState(false);
   const isGroupActive =
     pathname === group.href ||
     group.children.some(
       (child) => pathname === child.href || pathname.startsWith(`${child.href}/`),
     );
 
+  useLayoutEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const updatePosition = () => {
+      const header = headerRef.current;
+      const trigger = triggerRef.current;
+      const panel = internalPanelRef.current;
+      if (!header || !trigger || !panel) {
+        return;
+      }
+
+      const headerRect = header.getBoundingClientRect();
+      const triggerRect = trigger.getBoundingClientRect();
+      const panelHeight = panel.getBoundingClientRect().height;
+      const viewportHeight = window.innerHeight;
+      const belowTop = headerRect.bottom;
+      const fitsBelow = belowTop + panelHeight <= viewportHeight;
+      const aboveTop = headerRect.top - panelHeight;
+
+      if (fitsBelow || aboveTop < 0) {
+        setOpensAboveHeader(false);
+        setSubmenuPosition({
+          top: fitsBelow ? belowTop : Math.max(0, viewportHeight - panelHeight),
+          left: triggerRect.left,
+        });
+        return;
+      }
+
+      setOpensAboveHeader(true);
+      setSubmenuPosition({
+        top: aboveTop,
+        left: triggerRect.left,
+      });
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
+
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [headerRef, isOpen, group.children.length]);
+
   return (
     <div
-      className="relative flex items-stretch"
+      className="relative flex h-full items-stretch"
       onMouseEnter={onOpen}
       onMouseLeave={onClose}
       onFocusCapture={onOpen}
@@ -52,17 +123,13 @@ function DesktopDropdown({
       }}
     >
       <button
+        ref={triggerRef}
         type="button"
-        className={cn(
-          "inline-flex items-center gap-1 rounded-full px-4 py-2 text-small font-medium transition-colors",
-          isOpen || isGroupActive
-            ? "bg-[rgb(var(--color-primary))] text-white"
-            : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
-        )}
+        className={cn(desktopNavItemClass(isOpen || isGroupActive), "touch-manipulation")}
         aria-haspopup="menu"
         aria-expanded={isOpen}
         aria-controls={menuId}
-        onClick={() => (isOpen ? onClose() : onOpen())}
+        onClick={() => (isOpen ? onCloseImmediate() : onOpen())}
         onKeyDown={(event) => {
           if (event.key === "Escape") {
             event.preventDefault();
@@ -89,16 +156,28 @@ function DesktopDropdown({
 
       <div
         id={menuId}
-        ref={panelRef}
+        ref={(node) => {
+          internalPanelRef.current = node;
+          panelRef(node);
+        }}
+        style={{ top: submenuPosition.top, left: submenuPosition.left }}
+        onMouseEnter={onOpen}
+        onMouseLeave={onClose}
         className={cn(
-          "absolute left-0 top-full z-50 min-w-[11rem] transition-opacity duration-150 ease-out motion-reduce:transition-none",
+          "fixed z-[60] hidden min-w-[11rem] transition-opacity duration-150 ease-out motion-reduce:transition-none lg:block",
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
         )}
         aria-label={group.label}
+        role="menu"
       >
-        <div className="border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]">
+        <div
+          className={cn(
+            "border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]",
+            opensAboveHeader ? "border-b-0" : "border-t-0",
+          )}
+        >
           <div className="divide-y divide-[rgb(var(--color-border))]">
             {group.children.map((child) => {
               const isChildActive = pathname === child.href;
@@ -107,8 +186,9 @@ function DesktopDropdown({
                 <Link
                   key={child.href}
                   href={child.href}
+                  role="menuitem"
                   className={cn(
-                    "block px-3 py-1.5 text-[0.8125rem] leading-5 text-[rgb(var(--color-secondary))] transition-colors",
+                    "block touch-manipulation px-3 py-1.5 text-[0.8125rem] leading-5 text-[rgb(var(--color-secondary))] transition-colors",
                     isChildActive
                       ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
                       : "hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
@@ -144,14 +224,17 @@ function MobileAccordion({
     );
 
   return (
-    <div className="border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]">
+    <div
+      className={cn(
+        "rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))]",
+        isOpen ? "overflow-visible" : "overflow-hidden",
+      )}
+    >
       <button
         type="button"
         className={cn(
-          "flex w-full items-center justify-between border-b border-[rgb(var(--color-border))] px-4 py-3 text-left text-small font-semibold transition-colors",
-          isGroupActive
-            ? "bg-[rgb(var(--color-primary-soft))] text-[rgb(var(--color-primary))]"
-            : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+          mobileTopLevelNavClass(isGroupActive),
+          "touch-manipulation rounded-none border-0",
         )}
         aria-expanded={isOpen}
         aria-controls={sectionId}
@@ -163,22 +246,11 @@ function MobileAccordion({
       <div
         id={sectionId}
         className={cn(
-          "grid overflow-hidden transition-all duration-200 motion-reduce:transition-none",
-          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+          "grid transition-all duration-200 motion-reduce:transition-none",
+          isOpen ? "grid-rows-[1fr] overflow-visible" : "grid-rows-[0fr] overflow-hidden",
         )}
       >
-        <div className="min-h-0 divide-y divide-[rgb(var(--color-border))]">
-          <Link
-            href={group.href}
-            className={cn(
-              "block px-4 py-2 text-[0.8125rem] leading-5 transition-colors",
-              pathname === group.href
-                ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
-                : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
-            )}
-          >
-            {group.label}
-          </Link>
+        <div className="min-h-0 divide-y divide-[rgb(var(--color-border))] border-t border-[rgb(var(--color-border))]">
           {group.children.map((child) => {
             const isChildActive = pathname === child.href;
 
@@ -187,7 +259,7 @@ function MobileAccordion({
                 key={child.href}
                 href={child.href}
                 className={cn(
-                  "block px-4 py-2 text-[0.8125rem] leading-5 transition-colors",
+                  "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
                   isChildActive
                     ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
                     : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
@@ -231,6 +303,11 @@ export function Header() {
     }, 120);
   };
 
+  const closeDesktopGroupImmediate = () => {
+    clearOpenTimer();
+    setOpenGroup(null);
+  };
+
   const toggleMobileSection = (label: string) => {
     setMobileSectionsOpen((current) => ({
       ...current,
@@ -262,9 +339,31 @@ export function Header() {
     };
 
     const handlePointerDown = (event: PointerEvent) => {
-      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
-        setOpenGroup(null);
+      const target = event.target as Node;
+      const mobileNavigation = document.getElementById("mobile-navigation");
+
+      if (mobileOpen) {
+        if (
+          headerRef.current?.contains(target) ||
+          mobileNavigation?.contains(target)
+        ) {
+          return;
+        }
+
         setMobileOpen(false);
+        return;
+      }
+
+      if (openGroup) {
+        const openPanel = Object.values(desktopPanelRefs.current).find(
+          (panel) => panel?.contains(target),
+        );
+
+        if (openPanel || headerRef.current?.contains(target)) {
+          return;
+        }
+
+        setOpenGroup(null);
       }
     };
 
@@ -304,15 +403,13 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-stretch gap-1 overflow-visible lg:flex" aria-label="Primary">
+          <nav
+            className="hidden h-full self-stretch items-stretch overflow-visible lg:flex"
+            aria-label="Primary"
+          >
             <Link
               href={homeLink.href}
-              className={cn(
-                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
-                pathname === homeLink.href
-                  ? "bg-[rgb(var(--color-primary))] text-white"
-                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
-              )}
+              className={desktopNavItemClass(pathname === homeLink.href)}
             >
               {homeLink.label}
             </Link>
@@ -325,8 +422,10 @@ export function Header() {
                   group={group}
                   isOpen={isOpen}
                   pathname={pathname}
+                  headerRef={headerRef}
                   onOpen={() => openDesktopGroup(group.label)}
                   onClose={closeDesktopGroup}
+                  onCloseImmediate={closeDesktopGroupImmediate}
                   panelRef={(node) => {
                     desktopPanelRefs.current[group.label] = node;
                   }}
@@ -350,11 +449,9 @@ export function Header() {
 
             <Link
               href={researchLink.href}
-              className={cn(
-                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
-                pathname === researchLink.href || pathname.startsWith(`${researchLink.href}/`)
-                  ? "bg-[rgb(var(--color-primary))] text-white"
-                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              className={desktopNavItemClass(
+                pathname === researchLink.href ||
+                  pathname.startsWith(`${researchLink.href}/`),
               )}
             >
               {researchLink.label}
@@ -362,11 +459,9 @@ export function Header() {
 
             <Link
               href={contactLink.href}
-              className={cn(
-                "inline-flex items-center rounded-full px-4 py-2 text-small font-medium transition-colors",
-                pathname === contactLink.href || pathname.startsWith(`${contactLink.href}/`)
-                  ? "bg-[rgb(var(--color-primary))] text-white"
-                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              className={desktopNavItemClass(
+                pathname === contactLink.href ||
+                  pathname.startsWith(`${contactLink.href}/`),
               )}
             >
               {contactLink.label}
@@ -376,7 +471,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen((current) => !current)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-primary))] lg:hidden"
+            className="relative z-[60] inline-flex h-11 w-11 shrink-0 touch-manipulation items-center justify-center rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-primary))] lg:hidden"
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
@@ -392,18 +487,19 @@ export function Header() {
         aria-modal="true"
         aria-label="Mobile navigation"
         className={cn(
-          "fixed inset-0 z-50 flex flex-col bg-[rgb(var(--color-background))] px-6 py-8 transition-transform duration-300 motion-reduce:transition-none lg:hidden",
-          mobileOpen ? "translate-x-0" : "pointer-events-none translate-x-full",
+          "fixed inset-0 flex flex-col bg-[rgb(var(--color-background))] px-6 py-8 transition-transform duration-300 motion-reduce:transition-none lg:hidden",
+          mobileOpen
+            ? "z-50 translate-x-0 pointer-events-auto"
+            : "z-20 pointer-events-none invisible translate-x-full",
         )}
       >
         <div className="mb-8 flex items-center justify-between">
           <span className="text-small font-semibold tracking-[0.18em] uppercase text-[rgb(var(--color-primary))]">
-            Navigation
           </span>
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
-            className="rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] p-3 text-[rgb(var(--color-primary))]"
+            className="relative z-[60] touch-manipulation rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] p-3 text-[rgb(var(--color-primary))]"
             aria-label="Close navigation menu"
           >
             <X className="h-5 w-5" />
@@ -413,7 +509,7 @@ export function Header() {
         <nav className="flex flex-1 flex-col gap-4 overflow-y-auto" aria-label="Mobile primary">
           <Link
             href={homeLink.href}
-            className="rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-5 py-4 text-h3"
+            className={mobileTopLevelNavClass(pathname === homeLink.href)}
           >
             {homeLink.label}
           </Link>
@@ -430,14 +526,20 @@ export function Header() {
 
           <Link
             href={researchLink.href}
-            className="rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-5 py-4 text-h3"
+            className={mobileTopLevelNavClass(
+              pathname === researchLink.href ||
+                pathname.startsWith(`${researchLink.href}/`),
+            )}
           >
             {researchLink.label}
           </Link>
 
           <Link
             href={contactLink.href}
-            className="rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-5 py-4 text-h3"
+            className={mobileTopLevelNavClass(
+              pathname === contactLink.href ||
+                pathname.startsWith(`${contactLink.href}/`),
+            )}
           >
             {contactLink.label}
           </Link>
