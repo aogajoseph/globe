@@ -102,9 +102,16 @@
   }
 
   .text-h3 {
-    font-size: 1.25rem;
-    line-height: 1.25;
+    font-size: 1.125rem;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
     font-weight: 600;
+  }
+
+  .text-lead {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgb(var(--color-secondary));
   }
 
   .text-body {
