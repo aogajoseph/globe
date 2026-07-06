@@ -157,35 +157,90 @@ function SectionCards({ cards }: { cards: PageCard[] }) {
   );
 }
 
-function renderSection(section: PageSection, index: number) {
-  const layout = getSectionLayout(section);
-  const isHighlight = layout === "features" && (section.cards?.length ?? 0) >= 2;
-
+function renderSection(section: PageSection) {
   return (
     <Section
       key={section.title}
       id={section.id}
-      className={cn(
-        "py-14 md:py-20",
-        index > 0 && "border-t border-[rgb(var(--color-border))]/60",
-        isHighlight && "bg-[rgb(var(--color-surface))]",
-      )}
+      className="border-b border-[rgb(var(--color-border))] py-16 last:border-none"
     >
-      <Container
-        className={cn(
-          "space-y-10",
-          layout === "content" && "max-w-4xl",
-          layout === "list" && "max-w-4xl",
+      <div className="space-y-10">
+        {/* Section Header */}
+        <div className="max-w-3xl space-y-4">
+          <h2 className="text-h2">
+            {section.title}
+          </h2>
+
+          {section.description && (
+            <p className="text-body text-[rgb(var(--color-secondary))]">
+              {section.description}
+            </p>
+          )}
+
+          <div className="h-px w-20 bg-[rgb(var(--color-border))]" />
+        </div>
+
+        {/* Paragraphs */}
+        {section.paragraphs && (
+          <div className="max-w-3xl space-y-5">
+            {section.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-body leading-8 text-[rgb(var(--color-secondary))]"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         )}
-      >
-        <SectionHeader section={section} />
 
-        {section.paragraphs ? <SectionParagraphs paragraphs={section.paragraphs} /> : null}
+        {/* Items */}
+        {section.items && (
+          <ul className="grid gap-4 md:grid-cols-2">
+            {section.items.map((item) => (
+              <li
+                key={item}
+                className="border border-[rgb(var(--color-border))]
+                           bg-[rgb(var(--color-surface))]
+                           p-5"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
 
-        {section.items ? <SectionItems items={section.items} /> : null}
+        {/* Cards */}
+        {section.cards && (
+          <div className="grid gap-6 md:grid-cols-2">
+            {section.cards.map((card) => (
+              <Card
+                key={card.title}
+                className="group flex h-full flex-col justify-between border transition-all duration-200 hover:border-[rgb(var(--color-primary))]"
+              >
+                <div className="space-y-4">
+                  <h3 className="text-h3">
+                    {card.title}
+                  </h3>
 
-        {section.cards ? <SectionCards cards={section.cards} /> : null}
-      </Container>
+                  <p className="text-body text-[rgb(var(--color-secondary))]">
+                    {card.description}
+                  </p>
+                </div>
+
+                {card.href && (
+                  <Link
+                    href={card.href}
+                    className="mt-8 inline-flex text-small font-semibold text-[rgb(var(--color-primary))]"
+                  >
+                    Learn more →
+                  </Link>
+                )}
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
     </Section>
   );
 }
