@@ -23,6 +23,7 @@ export type PageContent = {
   eyebrow?: string;
   title: string;
   intro?: string;
+  heroImage?: string;
   sections: PageSection[];
   related?: RelatedLink[];
   cta?: RelatedLink & {

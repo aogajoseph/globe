@@ -1,74 +1,74 @@
 import type { PageContent } from "../../types/content";
 
 export const homePageContent: PageContent = {
-  eyebrow: "Research",
+  eyebrow: "Globe Technologies",
   title: "Researching. Building. Advancing the Future.",
+  heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Globe Technologies is an innovation-driven technology company dedicated to researching, designing and developing solutions that solve meaningful problems, create lasting value and contribute to a better future. We believe technology reaches its highest purpose when it serves people.",
+    "Globe Technologies is a technology company dedicated to researching, creating and delivering innovative solutions that solve meaningful problems, improve lives, strengthen communities and create lasting value.",
     sections: [
       {
-        title: "About Globe Technologies",
+        title: "Why Globe Technologies Exists",
         paragraphs: [
-          "Globe Technologies is committed to advancing society through research, innovation and responsible engineering.",
-          "Our work spans software, media, research and emerging technologies, united by a common purpose: creating solutions that improve lives, strengthen communities and shape a better future.",
+          "Every generation faces problems that require new ideas, better tools and responsible leadership. Globe Technologies exists to help solve those challenges through research, innovation and technology.",
+
+          "Our purpose is not simply to build software or create media. It is to create solutions that improve lives, strengthen communities and contribute to a better future."
         ],
         cards: [
           {
-            title: "Company Profile",
+            title: "Purpose",
             description:
-              "Learn about our identity, history and Company philosophy.",
-            href: "/company/company-profile",
+            "Solving meaningful problems through innovation.",
           },
           {
-            title: "Constitution",
+            title: "Vision",
             description:
-              "Explore the principles that guide our organization.",
-            href: "/company/constitution",
+            "Becoming a trusted global technology company..",
           },
           {
-            title: "Leadership",
+            title: "Mission",
             description:
-              "Meet the people responsible for stewarding Globe Technologies.",
-            href: "/company/leadership",
+            "Research. Create. Deliver.",
           },
           {
-            title: "Governance",
+            title: "Our Philosophy",
             description:
-              "Understand how the company is structured and governed.",
-            href: "/company/governance",
+            "Technology should always serve people.",
           },
         ],
       },
 
       {
-        title: "Our Purpose",
+        title: "Our Approach",
         paragraphs: [
-          "Technology is most valuable when it solves real problems.",
-          "Our purpose is to discover meaningful opportunities, develop innovative solutions and deliver technologies that create lasting impact for individuals, organizations and society.",
+
+          "Everything we build begins with research.",
+          
+          "Before pursuing any significant initiative, we ask whether it solves a meaningful problem, improves people's lives, strengthens communities, advances our purpose, creates lasting value and reflects excellence, integrity and responsible stewardship."  
         ],
         cards: [
           {
-            title: "Research",
+            title: "Research First",
             description:
-              "We investigate important questions before building solutions.",
+            "Innovation begins with understanding.",
           },
           {
-            title: "Innovation",
+            title: "Purpose-Driven",
             description:
-              "We transform ideas into practical technologies through thoughtful engineering.",
+            "Every initiative serves a meaningful purpose.",
           },
           {
-            title: "Impact",
+            title: "Long-Term Thinking",
             description:
-              "We create solutions that generate meaningful and lasting value.",
+            "Building value that endures.",
           },
         ],
       },
 
       {
-        title: "Our Divisions",
+        title: "The Company",
         paragraphs: [
-          "Globe Technologies brings together specialized divisions that operate independently while sharing one vision and one philosophy.",
+          "Globe Technologies operates through specialized divisions united by one identity, one purpose and one Constitution."  
         ],
         cards: [
           {
@@ -89,7 +89,7 @@ export const homePageContent: PageContent = {
       {
         title: "Products",
         paragraphs: [
-          "Our products are designed to solve real-world problems through practical, reliable and user-focused technology.",
+          "Our products are designed to improve everyday life.",
         ],
         cards: [
           {
@@ -104,7 +104,7 @@ export const homePageContent: PageContent = {
       {
         title: "Projects",
         paragraphs: [
-          "Some ideas require exploration before becoming products. Our projects represent long-term initiatives through which we investigate emerging technologies and prepare future innovations.",
+          "Our Projects shape the future.",
         ],
         cards: [
           {
@@ -120,13 +120,13 @@ export const homePageContent: PageContent = {
         title: "Research",
         paragraphs: [
           "Research is the foundation of everything we do.",
-          "Before we design products or launch projects, we seek to understand the problems worth solving. Through continuous learning, investigation and experimentation, research shapes every decision we make.",
+          "Before we design products, launch projects or pursue an initiative, we seek to understand the problems worth solving. Through continuous learning, investigation and experimentation, research shapes every decision we make.",
         ],
         cards: [
           {
-            title: "Explore Our Research",
+            title: "Explore Research",
             description:
-              "Discover the research that informs our products, projects and future innovations.",
+              "Discover the research that informs our products, projects and initiatives.",
             href: "/research",
           },
         ],
@@ -135,7 +135,9 @@ export const homePageContent: PageContent = {
       {
         title: "Let's Build the Future Together",
         paragraphs: [
-          "Whether you're interested in partnerships, research collaborations or learning more about Globe Technologies, we'd love to hear from you.",
+          "Globe Technologies is built for generations.",
+          "We believe companies should endure through principled leadership, responsible stewardship and continual innovation.",
+          "Success is measured not only by growth, but by the trust we earn, the people we develop, the communities we strengthen and the future we help create.",
         ],
         cards: [
           {

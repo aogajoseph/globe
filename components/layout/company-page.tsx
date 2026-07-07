@@ -265,18 +265,69 @@ function renderSection(section: PageSection) {
 export function CompanyPage({ content }: CompanyPageProps) {
   return (
     <>
-      <Section className="border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))] py-0">
-        <Container className="py-16 md:py-24">
+      <Section
+        className={cn(
+          "relative overflow-hidden border-b border-[rgb(var(--color-border))]/80 py-0",
+          content.heroImage
+            ? "text-white"
+            : "bg-[rgb(var(--color-surface))]",
+        )}
+      >
+        {/* Background Image */}
+        {content.heroImage ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url(${content.heroImage})`,
+              }}
+            />
+
+            {/* Globe Technologies dark overlay */}
+            <div className="absolute inset-0 bg-[rgba(15,23,42,0.68)]" />
+
+            {/* subtle bottom gradient */}
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[rgba(15,23,42,0.35)] to-transparent" />
+          </>
+        ) : null}
+
+        <Container className="relative z-10 py-20 md:py-32">
           <div className="max-w-4xl space-y-8">
-            {content.eyebrow ? <Badge className="w-fit">{content.eyebrow}</Badge> : null}
+            {content.eyebrow ? (
+              <Badge
+                className={cn(
+                  "w-fit",
+                  content.heroImage &&
+                    "border border-white/20 bg-white/10 text-white backdrop-blur-sm",
+                )}
+              >
+                {content.eyebrow}
+              </Badge>
+            ) : null}
 
             <div className="space-y-6">
-              <h1 className="max-w-4xl text-display text-[rgb(var(--color-foreground))]">
+              <h1
+                className={cn(
+                  "max-w-4xl text-display",
+                  content.heroImage
+                    ? "text-white"
+                    : "text-[rgb(var(--color-foreground))]",
+                )}
+              >
                 {content.title}
               </h1>
 
               {content.intro ? (
-                <p className="max-w-2xl text-lead">{content.intro}</p>
+                <p
+                  className={cn(
+                    "max-w-2xl text-body",
+                    content.heroImage
+                      ? "text-white/90"
+                      : "text-[rgb(var(--color-secondary))]",
+                  )}
+                >
+                  {content.intro}
+                </p>
               ) : null}
             </div>
           </div>
