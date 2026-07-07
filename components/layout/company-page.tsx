@@ -100,7 +100,7 @@ function SectionParagraphs({ paragraphs }: { paragraphs: string[] }) {
   return (
     <div className="max-w-3xl space-y-5">
       {paragraphs.map((paragraph) => (
-        <p key={paragraph} className="text-body text-[rgb(var(--color-secondary))]">
+        <p key={paragraph} className="text-body leading-7 text-[rgb(var(--color-secondary))]">
           {paragraph}
         </p>
       ))}
@@ -114,7 +114,7 @@ function SectionItems({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-4 py-4 text-body text-[rgb(var(--color-secondary))] first:pt-0 last:pb-0"
+          className="flex gap-8 py-4 text-body leading-7 text-[rgb(var(--color-secondary))] first:pt-0 last:pb-0"
         >
           <span
             className="mt-[0.65rem] h-px w-4 shrink-0 bg-[rgb(var(--color-primary))]/35"
@@ -134,19 +134,29 @@ function SectionCards({ cards }: { cards: PageCard[] }) {
         <Card
           key={card.title}
           className={cn(
-            "flex h-full flex-col gap-4 transition-[border-color,box-shadow] duration-200 ease-out",
+            "flex h-full flex-col gap-8 transition-[border-color,box-shadow] duration-200 ease-out",
             card.href &&
               "hover:border-[rgb(var(--color-primary))]/15 hover:shadow-[0_4px_18px_rgba(15,23,42,0.05)]",
           )}
         >
           <div className="space-y-3">
             <h3 className="text-h3 text-[rgb(var(--color-foreground))]">{card.title}</h3>
-            <p className="text-body text-[rgb(var(--color-secondary))]">{card.description}</p>
+            <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">{card.description}</p>
           </div>
           {card.href ? (
             <Link
               href={card.href}
-              className="mt-auto inline-flex text-small font-medium text-[rgb(var(--color-primary))] transition-colors duration-200 hover:text-[rgb(var(--color-foreground))]"
+              className="
+                mt-8
+                inline-flex
+                items-center
+                gap-2
+                text-small
+                font-semibold
+                text-[rgb(var(--color-primary))]
+                transition-colors
+                group-hover:gap-3
+              "
             >
               {getCardActionLabel(card)}
             </Link>
@@ -172,7 +182,7 @@ function renderSection(section: PageSection) {
           </h2>
 
           {section.description && (
-            <p className="text-body text-[rgb(var(--color-secondary))]">
+            <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
               {section.description}
             </p>
           )}
@@ -186,7 +196,7 @@ function renderSection(section: PageSection) {
             {section.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-body leading-8 text-[rgb(var(--color-secondary))]"
+                className="text-body leading-7 leading-8 text-[rgb(var(--color-secondary))]"
               >
                 {paragraph}
               </p>
@@ -196,13 +206,14 @@ function renderSection(section: PageSection) {
 
         {/* Items */}
         {section.items && (
-          <ul className="grid gap-4 md:grid-cols-2">
+          <ul className="grid gap-8 md:grid-cols-2">
             {section.items.map((item) => (
               <li
                 key={item}
-                className="border border-[rgb(var(--color-border))]
-                           bg-[rgb(var(--color-surface))]
-                           p-5"
+                className="
+                  border border-[rgb(var(--color-border))]
+                  bg-[rgb(var(--color-surface))]
+                  p-5"
               >
                 {item}
               </li>
@@ -216,14 +227,14 @@ function renderSection(section: PageSection) {
             {section.cards.map((card) => (
               <Card
                 key={card.title}
-                className="group flex h-full flex-col justify-between border transition-all duration-200 hover:border-[rgb(var(--color-primary))]"
+                className="group flex h-full flex-col justify-between border transition-all duration-200 hover:border-[rgb(var(--color-primary-soft))]"
               >
                 <div className="space-y-4">
-                  <h3 className="text-h3">
+                  <h3 className="text-h3 leading-snug space-y-5">
                     {card.title}
                   </h3>
 
-                  <p className="text-body text-[rgb(var(--color-secondary))]">
+                  <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
                     {card.description}
                   </p>
                 </div>
@@ -231,7 +242,17 @@ function renderSection(section: PageSection) {
                 {card.href && (
                   <Link
                     href={card.href}
-                    className="mt-8 inline-flex text-small font-semibold text-[rgb(var(--color-primary))]"
+                    className="
+                      mt-8
+                      inline-flex
+                      items-center
+                      gap-2
+                      text-small
+                      font-semibold
+                      text-[rgb(var(--color-primary))]
+                      transition-colors
+                      group-hover:gap-3
+                    "
                   >
                     Learn more →
                   </Link>
@@ -281,12 +302,27 @@ export function CompanyPage({ content }: CompanyPageProps) {
       {content.cta ? (
         <Section>
           <Container>
-            <Card className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <Card className="
+            group
+            flex
+            h-full
+            flex-col
+            justify-between
+            border
+            border-[rgb(var(--color-border))]
+            bg-[rgb(var(--color-surface))]
+            p-8
+            transition-all
+            duration-200
+            hover:border-[rgb(var(--color-primary))]
+            hover:-translate-y-0.5
+          "
+        >
               <div className="space-y-2">
                 <h2 className="text-h2">{content.cta.label}</h2>
 
                 {content.cta.description ? (
-                  <p className="text-body text-[rgb(var(--color-secondary))]">
+                  <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
                     {content.cta.description}
                   </p>
                 ) : null}
@@ -294,7 +330,17 @@ export function CompanyPage({ content }: CompanyPageProps) {
 
               <Link
                 href={content.cta.href}
-                className="inline-flex rounded-full bg-[rgb(var(--color-primary))] px-5 py-3 text-small font-medium text-white transition-colors hover:opacity-90"
+                className="
+                  mt-8
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-small
+                  font-semibold
+                  text-[rgb(var(--color-primary))]
+                  transition-colors
+                  group-hover:gap-3
+                "
               >
                 Continue
               </Link>
@@ -310,11 +356,24 @@ export function CompanyPage({ content }: CompanyPageProps) {
               <h2 className="text-h3">Related Pages</h2>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {content.related.map((item) => (
                 <Card key={item.href} className="space-y-2">
-                  <Link href={item.href} className="block">
-                    <h3 className="text-h3">{item.label}</h3>
+                  <Link 
+                    href={item.href}
+                    className="
+                      mt-8
+                      inline-flex
+                      items-center
+                      gap-2
+                      text-small
+                      font-semibold
+                      text-[rgb(var(--color-primary))]
+                      transition-colors
+                      group-hover:gap-3
+                    "
+                  >
+                    <h3 className="text-h3 leading-snug space-y-5">{item.label}</h3>
                   </Link>
 
                   {item.description ? (
