@@ -112,6 +112,7 @@
     font-size: 1.0625rem;
     line-height: 1.75;
     color: rgb(var(--color-secondary));
+    letter-spacing: -0.01em;
   }
 
   .text-body {

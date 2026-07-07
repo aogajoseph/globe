@@ -12,6 +12,9 @@ type CompanyPageProps = {
 
 type SectionLayout = "content" | "list" | "features" | "mixed";
 
+const actionLinkClass =
+  "inline-flex items-center gap-2 text-small font-medium text-[rgb(var(--color-primary))] transition-[gap,color] duration-200 ease-out group-hover:gap-2.5";
+
 function getSectionLayout(section: PageSection): SectionLayout {
   if (section.cards && section.paragraphs?.length) {
     return "mixed";
@@ -64,6 +67,10 @@ function getCardActionLabel(card: PageCard): string {
     return "View project →";
   }
 
+  if (href.includes("/company/")) {
+    return "Learn more →";
+  }
+
   return "Learn more →";
 }
 
@@ -82,15 +89,65 @@ function getCtaActionLabel(cta: RelatedLink): string {
     return "View careers";
   }
 
+  if (href.includes("/products/akiba")) {
+    return "Discover Akiba";
+  }
+
   return cta.label;
 }
 
-function SectionHeader({ section }: { section: PageSection }) {
+function getRelatedActionLabel(item: RelatedLink): string {
+  const href = item.href.toLowerCase();
+
+  if (href.includes("/contact")) {
+    return "Contact us";
+  }
+
+  if (href.includes("/divisions/")) {
+    return "View division";
+  }
+
+  if (href.includes("/products/")) {
+    return "View product";
+  }
+
+  if (href.includes("/projects/")) {
+    return "View project";
+  }
+
+  if (href.includes("/research")) {
+    return "Read more";
+  }
+
+  return "Learn more";
+}
+
+function SectionHeader({
+  section,
+  layout,
+}: {
+  section: PageSection;
+  layout: SectionLayout;
+}) {
   return (
-    <div className="max-w-3xl space-y-4">
+    <div
+      className={cn(
+        "max-w-3xl",
+        layout === "features" ? "space-y-4" : "space-y-5",
+      )}
+    >
       <h2 className="text-h2 text-[rgb(var(--color-foreground))]">{section.title}</h2>
       {section.description ? (
-        <p className="max-w-2xl text-lead">{section.description}</p>
+        <p
+          className={cn(
+            "max-w-2xl",
+            layout === "content" || layout === "mixed"
+              ? "text-lead"
+              : "text-body text-[rgb(var(--color-secondary))]",
+          )}
+        >
+          {section.description}
+        </p>
       ) : null}
     </div>
   );
@@ -98,9 +155,12 @@ function SectionHeader({ section }: { section: PageSection }) {
 
 function SectionParagraphs({ paragraphs }: { paragraphs: string[] }) {
   return (
-    <div className="max-w-3xl space-y-5">
+    <div className="max-w-3xl space-y-6">
       {paragraphs.map((paragraph) => (
-        <p key={paragraph} className="text-body leading-7 text-[rgb(var(--color-secondary))]">
+        <p
+          key={paragraph}
+          className="text-body leading-[1.75] text-[rgb(var(--color-secondary))]"
+        >
           {paragraph}
         </p>
       ))}
@@ -110,14 +170,14 @@ function SectionParagraphs({ paragraphs }: { paragraphs: string[] }) {
 
 function SectionItems({ items }: { items: string[] }) {
   return (
-    <ul className="max-w-3xl divide-y divide-[rgb(var(--color-border))]/60">
+    <ul className="max-w-3xl divide-y divide-[rgb(var(--color-border))]/55">
       {items.map((item) => (
         <li
           key={item}
-          className="flex gap-8 py-4 text-body leading-7 text-[rgb(var(--color-secondary))] first:pt-0 last:pb-0"
+          className="flex gap-5 py-5 text-body leading-[1.75] text-[rgb(var(--color-secondary))] first:pt-0 last:pb-0"
         >
           <span
-            className="mt-[0.65rem] h-px w-4 shrink-0 bg-[rgb(var(--color-primary))]/35"
+            className="mt-[0.7rem] h-px w-5 shrink-0 bg-[rgb(var(--color-primary))]/30"
             aria-hidden
           />
           {item}
@@ -127,40 +187,43 @@ function SectionItems({ items }: { items: string[] }) {
   );
 }
 
-function SectionCards({ cards }: { cards: PageCard[] }) {
+function SectionCards({
+  cards,
+  layout,
+}: {
+  cards: PageCard[];
+  layout: SectionLayout;
+}) {
   return (
-    <div className="grid gap-5 md:grid-cols-2">
+    <div
+      className={cn(
+        "grid gap-5",
+        layout === "mixed" ? "md:grid-cols-2 md:gap-6" : "md:grid-cols-2 lg:gap-6",
+        cards.length === 1 && "md:max-w-xl",
+      )}
+    >
       {cards.map((card) => (
         <Card
           key={card.title}
           className={cn(
-            "flex h-full flex-col gap-8 transition-[border-color,box-shadow] duration-200 ease-out",
+            "group flex h-full flex-col",
             card.href &&
-              "hover:border-[rgb(var(--color-primary))]/15 hover:shadow-[0_4px_18px_rgba(15,23,42,0.05)]",
+              "transition-[border-color,box-shadow] duration-200 ease-out hover:border-[rgb(var(--color-primary))]/20 hover:shadow-[0_6px_20px_rgba(15,23,42,0.05)]",
           )}
         >
-          <div className="space-y-3">
-            <h3 className="text-h3 text-[rgb(var(--color-foreground))]">{card.title}</h3>
-            <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">{card.description}</p>
+          <div className="flex flex-1 flex-col gap-5">
+            <div className="space-y-3">
+              <h3 className="text-h3 text-[rgb(var(--color-foreground))]">{card.title}</h3>
+              <p className="text-body leading-[1.75] text-[rgb(var(--color-secondary))]">
+                {card.description}
+              </p>
+            </div>
+            {card.href ? (
+              <Link href={card.href} className={cn(actionLinkClass, "mt-auto pt-2")}>
+                {getCardActionLabel(card)}
+              </Link>
+            ) : null}
           </div>
-          {card.href ? (
-            <Link
-              href={card.href}
-              className="
-                mt-8
-                inline-flex
-                items-center
-                gap-2
-                text-small
-                font-semibold
-                text-[rgb(var(--color-primary))]
-                transition-colors
-                group-hover:gap-3
-              "
-            >
-              {getCardActionLabel(card)}
-            </Link>
-          ) : null}
         </Card>
       ))}
     </div>
@@ -168,221 +231,122 @@ function SectionCards({ cards }: { cards: PageCard[] }) {
 }
 
 function renderSection(section: PageSection) {
+  const layout = getSectionLayout(section);
+
   return (
-    <Section
+    <div
       key={section.title}
       id={section.id}
-      className="border-b border-[rgb(var(--color-border))] py-16 last:border-none"
+      className={cn(
+        "py-14 md:py-20",
+        layout === "features" && "md:py-24",
+      )}
     >
-      <div className="space-y-10">
-        {/* Section Header */}
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-h2">
-            {section.title}
-          </h2>
-
-          {section.description && (
-            <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
-              {section.description}
-            </p>
-          )}
-
-          <div className="h-px w-20 bg-[rgb(var(--color-border))]" />
-        </div>
-
-        {/* Paragraphs */}
-        {section.paragraphs && (
-          <div className="max-w-3xl space-y-5">
-            {section.paragraphs.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="text-body leading-7 leading-8 text-[rgb(var(--color-secondary))]"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
+      <div
+        className={cn(
+          layout === "mixed" ? "space-y-12" : "space-y-10",
+          layout === "content" && section.paragraphs && "space-y-8",
         )}
+      >
+        <SectionHeader section={section} layout={layout} />
 
-        {/* Items */}
-        {section.items && (
-          <ul className="grid gap-8 md:grid-cols-2">
-            {section.items.map((item) => (
-              <li
-                key={item}
-                className="
-                  border border-[rgb(var(--color-border))]
-                  bg-[rgb(var(--color-surface))]
-                  p-5"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
+        {section.paragraphs ? (
+          <SectionParagraphs paragraphs={section.paragraphs} />
+        ) : null}
 
-        {/* Cards */}
-        {section.cards && (
-          <div className="grid gap-6 md:grid-cols-2">
-            {section.cards.map((card) => (
-              <Card
-                key={card.title}
-                className="group flex h-full flex-col justify-between border transition-all duration-200 hover:border-[rgb(var(--color-primary-soft))]"
-              >
-                <div className="space-y-4">
-                  <h3 className="text-h3 leading-snug space-y-5">
-                    {card.title}
-                  </h3>
+        {section.items ? <SectionItems items={section.items} /> : null}
 
-                  <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
-                    {card.description}
-                  </p>
-                </div>
-
-                {card.href && (
-                  <Link
-                    href={card.href}
-                    className="
-                      mt-8
-                      inline-flex
-                      items-center
-                      gap-2
-                      text-small
-                      font-semibold
-                      text-[rgb(var(--color-primary))]
-                      transition-colors
-                      group-hover:gap-3
-                    "
-                  >
-                    Learn more →
-                  </Link>
-                )}
-              </Card>
-            ))}
-          </div>
-        )}
+        {section.cards ? <SectionCards cards={section.cards} layout={layout} /> : null}
       </div>
-    </Section>
+    </div>
   );
 }
 
 export function CompanyPage({ content }: CompanyPageProps) {
   return (
     <>
-      {/* Hero */}
-      <Section className="border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] pt-20 pb-16 md:pt-28 md:pb-20">
-        <Container>
-          <div className="max-w-5xl space-y-8">
-            {content.eyebrow ? (
-              <Badge className="w-fit">
-                {content.eyebrow}
-              </Badge>
-            ) : null}
+      <Section className="border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))] py-0">
+        <Container className="py-16 md:py-24">
+          <div className="max-w-4xl space-y-8">
+            {content.eyebrow ? <Badge className="w-fit">{content.eyebrow}</Badge> : null}
 
             <div className="space-y-6">
-              <h1 className="max-w-4xl text-display">
+              <h1 className="max-w-4xl text-display text-[rgb(var(--color-foreground))]">
                 {content.title}
               </h1>
 
               {content.intro ? (
-                <p className="max-w-3xl text-lg leading-8 text-[rgb(var(--color-secondary))]">
-                  {content.intro}
-                </p>
+                <p className="max-w-2xl text-lead">{content.intro}</p>
               ) : null}
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* Main Content */}
-      <Container className="space-y-8 py-12 md:space-y-10 md:py-16">
-        {content.sections.map((section) => renderSection(section))}
-      </Container>
+      <Section className="py-0">
+        <Container className="py-4 md:py-6">
+          <div className="divide-y divide-[rgb(var(--color-border))]/60">
+            {content.sections.map((section) => renderSection(section))}
+          </div>
+        </Container>
+      </Section>
 
       {content.cta ? (
-        <Section>
-          <Container>
-          <Card className="
-            group
-            flex
-            h-full
-            flex-col
-            justify-between
-            border
-            border-[rgb(var(--color-border))]
-            bg-[rgb(var(--color-surface))]
-            p-8
-            transition-all
-            duration-200
-            hover:border-[rgb(var(--color-primary))]
-            hover:-translate-y-0.5
-          "
-        >
-              <div className="space-y-2">
-                <h2 className="text-h2">{content.cta.label}</h2>
-
+        <Section className="border-t border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))] py-0">
+          <Container className="py-16 md:py-20">
+            <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between md:gap-16">
+              <div className="max-w-2xl space-y-4">
+                <h2 className="text-h2 text-[rgb(var(--color-foreground))]">
+                  {content.cta.label}
+                </h2>
                 {content.cta.description ? (
-                  <p className="text-body leading-7 text-[rgb(var(--color-secondary))]">
-                    {content.cta.description}
-                  </p>
+                  <p className="text-lead">{content.cta.description}</p>
                 ) : null}
               </div>
 
               <Link
                 href={content.cta.href}
-                className="
-                  mt-8
-                  inline-flex
-                  items-center
-                  gap-2
-                  text-small
-                  font-semibold
-                  text-[rgb(var(--color-primary))]
-                  transition-colors
-                  group-hover:gap-3
-                "
+                className="inline-flex shrink-0 items-center gap-2 border border-[rgb(var(--color-border))] bg-[rgb(var(--color-background))] px-5 py-3 text-small font-medium text-[rgb(var(--color-primary))] transition-[border-color,background-color,gap] duration-200 ease-out hover:border-[rgb(var(--color-primary))]/25 hover:bg-[rgb(var(--color-primary-soft))]/50 hover:gap-2.5"
               >
-                Continue
+                {getCtaActionLabel(content.cta)} →
               </Link>
-            </Card>
+            </div>
           </Container>
         </Section>
       ) : null}
 
       {content.related ? (
-        <Section className="pt-0">
-          <Container className="space-y-6">
-            <div className="border-t border-[rgb(var(--color-border))] pt-8">
-              <h2 className="text-h3">Related Pages</h2>
-            </div>
+        <Section className="border-t border-[rgb(var(--color-border))]/80 py-0">
+          <Container className="py-14 md:py-20">
+            <div className="space-y-10">
+              <div className="max-w-3xl space-y-3">
+                <p className="text-caption font-semibold text-[rgb(var(--color-muted))]">
+                  Continue exploring
+                </p>
+                <h2 className="text-h2 text-[rgb(var(--color-foreground))]">Related pages</h2>
+              </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {content.related.map((item) => (
-                <Card key={item.href} className="space-y-2">
-                  <Link 
+              <div className="grid gap-px overflow-hidden rounded-sm border border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-border))]/50 md:grid-cols-2 lg:grid-cols-3">
+                {content.related.map((item) => (
+                  <Link
+                    key={item.href}
                     href={item.href}
-                    className="
-                      mt-8
-                      inline-flex
-                      items-center
-                      gap-2
-                      text-small
-                      font-semibold
-                      text-[rgb(var(--color-primary))]
-                      transition-colors
-                      group-hover:gap-3
-                    "
+                    className="group flex h-full flex-col bg-[rgb(var(--color-surface))] p-6 transition-[background-color] duration-200 ease-out hover:bg-[rgb(var(--color-primary-soft))]/35 md:p-7"
                   >
-                    <h3 className="text-h3 leading-snug space-y-5">{item.label}</h3>
+                    <h3 className="text-h3 text-[rgb(var(--color-foreground))] transition-colors duration-200 group-hover:text-[rgb(var(--color-primary))]">
+                      {item.label}
+                    </h3>
+                    {item.description ? (
+                      <p className="mt-3 flex-1 text-small leading-relaxed text-[rgb(var(--color-muted))]">
+                        {item.description}
+                      </p>
+                    ) : null}
+                    <span className={cn(actionLinkClass, "mt-5")}>
+                      {getRelatedActionLabel(item)} →
+                    </span>
                   </Link>
-
-                  {item.description ? (
-                    <p className="text-small text-[rgb(var(--color-secondary))]">
-                      {item.description}
-                    </p>
-                  ) : null}
-                </Card>
-              ))}
+                ))}
+              </div>
             </div>
           </Container>
         </Section>
