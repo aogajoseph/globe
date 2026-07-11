@@ -44,11 +44,11 @@ function getCardActionLabel(card: PageCard): string {
   }
 
   if (title.includes("akiba") || href.includes("/products/akiba")) {
-    return "Discover Akiba →";
+    return "Learn More →";
   }
 
   if (title.includes("addam") || href.includes("/projects/addam")) {
-    return "Learn about Addam →";
+    return "Learn More →";
   }
 
   if (href.includes("/divisions/")) {
@@ -372,9 +372,9 @@ export function CompanyPage({ content }: CompanyPageProps) {
             <div className="space-y-10">
               <div className="max-w-3xl space-y-3">
                 <p className="text-caption font-semibold text-[rgb(var(--color-muted))]">
-                  Continue exploring
+                  Explore
                 </p>
-                <h2 className="text-h2 text-[rgb(var(--color-foreground))]">Related pages</h2>
+                <h2 className="text-h2 text-[rgb(var(--color-foreground))]">Related Pages</h2>
               </div>
 
               <div className="grid gap-px overflow-hidden rounded-sm border border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-border))]/50 md:grid-cols-2 lg:grid-cols-3">
