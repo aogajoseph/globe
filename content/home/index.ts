@@ -5,7 +5,7 @@ export const homePageContent: PageContent = {
   title: "Inventing the Future.",
   heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Researching, creating and delivering innovative solutions that solve meaningful problems, improve lives, strengthen communities and contribute to a better future.",
+    "Globe Technologies creates innovative solutions that contribute to a better future.",
   sections: [
     {
       title: "Why Globe Technologies Exists",
@@ -16,22 +16,22 @@ export const homePageContent: PageContent = {
         {
           title: "Purpose",
           description:
-          "Researching, developing and delivering innovative solutions that solve meaningful problems, improve lives, strengthen communities and contribute to a better future.",
+          "Creating innovative solutions that contribute to a better future.",
         },
         {
           title: "Vision",
           description:
-          "To be the most trusted global creator of innovative solutions that solve meaningful problems, improve lives, strengthen communities and contribute to a better future.",
+          "Becoming the most trusted global creator of innovative solutions that contribute to a better future.",
         },
         {
           title: "Mission",
           description:
-          "To research, develop and deliver innovative solutions that solve meaningful problems, improve lives, strengthen communities and contribute to a better future.",
+          "Innovating for a better future.",
         },
         {
           title: "Our Philosophy",
           description:
-          "We believe that meaningful innovation is achieved through research, responsible engineering, improving lives and strengthening communities continually.",
+          "Purpose. Excellence. Stewardship.",
         },
       ],
     },
@@ -42,7 +42,7 @@ export const homePageContent: PageContent = {
 
         "Everything we build begins with research.",
         
-        "Before pursuing any significant initiative, we ask whether it advances our purpose by solving a meaningful problem, improving people's lives, strengthening communities, and if it reflects excellence and responsible stewardship to create lasting value for the people we serve."  
+        "Before pursuing any significant initiative, we ensure it advances our purpose, reflects excellence and promotes responsible stewardship, thereby creating lasting value."  
       ],
       cards: [
         {
@@ -83,7 +83,7 @@ export const homePageContent: PageContent = {
         {
           title: "Globe Media",
           description:
-            "Creating educational and creative media that informs, inspires and empowers generations.",
+            "Creating educational and creative works that inform, inspire and empower generations.",
           href: "/divisions/media",
         },
       ],
@@ -92,7 +92,7 @@ export const homePageContent: PageContent = {
     {
       title: "Products",
       paragraphs: [
-        "Our products are designed to and improve productivity, efficiency and convenience.",
+        "Our products are designed to enhance productivity, efficiency and convenience.",
       ],
       cards: [
         {
@@ -113,7 +113,7 @@ export const homePageContent: PageContent = {
         {
           title: "Addam",
           description:
-            "An original dramatic series following the life of Addam. It invites audiences to reflect on the unseen battle surrounding the human experience.",
+            "An original dramatic series on humanity. It invites audiences to reflect on the unseen battle surrounding the human experience.",
           href: "/projects/addam",
         },
       ],
@@ -122,11 +122,11 @@ export const homePageContent: PageContent = {
     {
       title: "Research",
       paragraphs: [
-        "Every great solution begins with understanding. Before we design products, launch projects or pursue new initiatives, we invest in research to uncover meaningful problems and discover the best ways to address them.",
+        "Every great solution begins with understanding. Before we design products, launch projects or pursue new initiatives, we research to uncover meaningful problems and discover the best ways to address them.",
       ],
       cards: [
         {
-          title: "Explore Research",
+          title: "Explore Our Research",
           description:
             "Explore the research insights behind our products, projects and initiatives.",
           href: "/research",
@@ -138,7 +138,7 @@ export const homePageContent: PageContent = {
       title: "Let's Invent the Future Together",
       paragraphs: [
         "Globe Technologies is built for generations.",
-        "Our success is measured not only by growth, but by the trust we earn, the people we develop, the communities we strengthen and the future we help create.",
+        "Our success is measured not only by growth, but by the trust we earn, the communities we strengthen and the future we help create.",
       ],
       cards: [
         {

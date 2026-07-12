@@ -52,11 +52,11 @@ function getCardActionLabel(card: PageCard): string {
   }
 
   if (href.includes("/divisions/")) {
-    return "View division →";
+    return "Explore →";
   }
 
   if (href.includes("/research") || title.includes("research")) {
-    return "Read more →";
+    return "Learn More →";
   }
 
   if (href.includes("/products/")) {
