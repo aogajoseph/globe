@@ -2,10 +2,10 @@ import type { PageContent } from "../../types/content";
 
 export const homePageContent: PageContent = {
   eyebrow: "Globe Technologies",
-  title: "Inventing the Future.",
+  title: "Inventing the Future",
   heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Globe Technologies creates innovative solutions that contribute to a better future.",
+    "Contributing to a better future through Research and innovation.",
   sections: [
     {
       title: "Why Globe Technologies Exists",
@@ -132,6 +132,13 @@ export const homePageContent: PageContent = {
           href: "/research",
         },
       ],
+    },
+
+    {
+      type: "image",
+      id: "hq-panorama",
+      src: "/images/home/hq-panorama.png",
+      alt: "Globe Technologies headquarters",
     },
 
     {

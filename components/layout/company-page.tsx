@@ -1,8 +1,16 @@
 import Link from "next/link";
-import type { PageCard, PageContent, PageSection, RelatedLink } from "../../types/content";
+import type {
+  PageCard,
+  PageContent,
+  PageContentSection,
+  PageSection,
+  RelatedLink,
+} from "../../types/content";
+import { isPageImageSection } from "../../types/content";
 import { Badge } from "../common/badge";
 import { Card } from "../common/card";
 import { Container } from "./container";
+import { PanoramicImageSection } from "./panoramic-image-section";
 import { Section } from "./section";
 import { cn } from "../../lib/utils";
 
@@ -15,7 +23,7 @@ type SectionLayout = "content" | "list" | "features" | "mixed";
 const actionLinkClass =
   "inline-flex items-center gap-2 text-small font-medium text-[rgb(var(--color-primary))] transition-[gap,color] duration-200 ease-out group-hover:gap-2.5";
 
-function getSectionLayout(section: PageSection): SectionLayout {
+function getSectionLayout(section: PageContentSection): SectionLayout {
   if (section.cards && section.paragraphs?.length) {
     return "mixed";
   }
@@ -126,7 +134,7 @@ function SectionHeader({
   section,
   layout,
 }: {
-  section: PageSection;
+  section: PageContentSection;
   layout: SectionLayout;
 }) {
   return (
@@ -231,6 +239,17 @@ function SectionCards({
 }
 
 function renderSection(section: PageSection) {
+  if (isPageImageSection(section)) {
+    return (
+      <PanoramicImageSection
+        key={section.id ?? section.src}
+        id={section.id}
+        src={section.src}
+        alt={section.alt}
+      />
+    );
+  }
+
   const layout = getSectionLayout(section);
 
   return (

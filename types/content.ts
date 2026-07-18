@@ -10,7 +10,8 @@ export type PageCard = {
   href?: string;
 };
 
-export type PageSection = {
+export type PageContentSection = {
+  type?: "content";
   id?: string;
   title: string;
   description?: string;
@@ -18,6 +19,21 @@ export type PageSection = {
   items?: string[];
   cards?: PageCard[];
 };
+
+export type PageImageSection = {
+  type: "image";
+  id?: string;
+  src: string;
+  alt?: string;
+};
+
+export type PageSection = PageContentSection | PageImageSection;
+
+export function isPageImageSection(
+  section: PageSection,
+): section is PageImageSection {
+  return section.type === "image";
+}
 
 export type PageContent = {
   eyebrow?: string;
