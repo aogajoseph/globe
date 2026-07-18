@@ -18,7 +18,7 @@ export const missionContent: PageContent = {
       title: "How We Deliver Our Mission",
       paragraphs: [
         "Every solution begins with understanding. We invest in research to uncover meaningful challenges, develop thoughtful solutions through innovation and deliver work that creates lasting value for individuals, organizations and communities.",
-        "Whether building software, creating media or pursuing strategic initiatives, we remain committed to excellence, responsible stewardship and long-term impact.",
+        "Whether building software, creating media or pursuing strategic initiatives, we remain committed to our enduring purpose, excellence and responsible stewardship.",
       ],
     },
 
@@ -30,7 +30,7 @@ export const missionContent: PageContent = {
         "Pursue excellence in everything we create",
         "Act with integrity and responsible stewardship",
         "Create lasting value for people and communities",
-        "Build for generations, not just for today",
+        "Build for generations",
       ],
     },
 

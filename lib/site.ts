@@ -24,7 +24,7 @@ export const navigationGroups: NavigationGroup[] = [
       { label: "Mission", href: "/company/mission" },
       { label: "Leadership", href: "/company/leadership" },
       { label: "Governance", href: "/company/governance" },
-      { label: "Brand", href: "/company/brand" },
+      { label: "Our Brand", href: "/company/brand" },
     ],
   },
   {
