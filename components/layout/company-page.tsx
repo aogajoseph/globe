@@ -68,18 +68,18 @@ function getCardActionLabel(card: PageCard): string {
   }
 
   if (href.includes("/products/")) {
-    return "View product →";
+    return "Explore →";
   }
 
   if (href.includes("/projects/")) {
-    return "View project →";
+    return "Explore →";
   }
 
   if (href.includes("/company/")) {
-    return "Learn more →";
+    return "Learn More →";
   }
 
-  return "Learn more →";
+  return "Learn More →";
 }
 
 function getCtaActionLabel(cta: RelatedLink): string {
@@ -94,11 +94,11 @@ function getCtaActionLabel(cta: RelatedLink): string {
   }
 
   if (href.includes("/careers")) {
-    return "View careers";
+    return "View Careers";
   }
 
   if (href.includes("/products/akiba")) {
-    return "Discover Akiba";
+    return "Learn More";
   }
 
   return cta.label;
@@ -112,22 +112,22 @@ function getRelatedActionLabel(item: RelatedLink): string {
   }
 
   if (href.includes("/divisions/")) {
-    return "View division";
+    return "Explore";
   }
 
   if (href.includes("/products/")) {
-    return "View product";
+    return "Explore";
   }
 
   if (href.includes("/projects/")) {
-    return "View project";
+    return "Explore";
   }
 
   if (href.includes("/research")) {
-    return "Read more";
+    return "Learn More";
   }
 
-  return "Learn more";
+  return "Learn More";
 }
 
 function SectionHeader({

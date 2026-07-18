@@ -159,11 +159,13 @@ export const homePageContent: PageContent = {
   ],
 
   related: [
-    { label: "The Company", href: "/company" },
+    { label: "Company Overview", href: "/company" },
     { label: "Divisions", href: "/divisions" },
     { label: "Products", href: "/products" },
     { label: "Projects", href: "/projects" },
     { label: "Research", href: "/research" },
-    { label: "Contact", href: "/contact" },
+    { label: "Constitution", href: "/company/constitution" },
   ],
 };
+
+;
