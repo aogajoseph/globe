@@ -1,8 +1,8 @@
 import type { PageContent } from "../../types/content";
 
 export const aboutContent: PageContent = {
-  eyebrow: "About Us",
-  title: "About Globe Technologies",
+  eyebrow: "The Company",
+  title: "About Us",
   intro:
     "Globe Technologies is a research-driven company dedicated to innovating for a better future through products, projects and initiatives that create lasting value.",
 
@@ -18,7 +18,7 @@ export const aboutContent: PageContent = {
       title: "What We Do",
       paragraphs: [
         "Our work spans software, media and other specialized areas through dedicated divisions that share one identity, one purpose and one standard of excellence.",
-        "Some of our ideas become products that solve practical challenges. Others become projects or long-term initiatives that educate, inspire or create lasting impact. Together, they reflect our commitment to meaningful innovation.",
+        "Some of our ideas become products that solve practical challenges. Others become projects or long-term initiatives that educate, inspire and create lasting impact. Together, they reflect our commitment to meaningful innovation.",
       ],
     },
     {

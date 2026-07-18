@@ -31,6 +31,11 @@ export const leadershipContent: PageContent = {
       title: "Leadership Structure",
       cards: [
         {
+          title: "Board of Directors",
+          description:
+            "Provides independent oversight, safeguards the company's long-term interests and ensures responsible governance.",
+        },
+        {
           title: "Office of the Chief Executive Officer",
           description:
             "Provides strategic leadership, corporate direction and stewardship of Globe Technologies.",
@@ -39,11 +44,6 @@ export const leadershipContent: PageContent = {
           title: "Executive Leadership",
           description:
             "Leads the company's divisions, operations and long-term strategic priorities.",
-        },
-        {
-          title: "Division Leadership",
-          description:
-            "Guides each division while ensuring alignment with the company's purpose, standards and vision.",
         },
         {
           title: "Future Leadership",

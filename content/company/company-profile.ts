@@ -26,7 +26,7 @@ export const companyProfileContent: PageContent = {
         {
           title: "Headquarters",
           description:
-            "To be announced",
+            "Remote",
         },
         {
           title: "Business Model",
