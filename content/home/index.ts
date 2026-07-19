@@ -5,7 +5,7 @@ export const homePageContent: PageContent = {
   title: "Inventing the Future",
   heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Contributing to a better future through Research and innovation.",
+    "Contributing to a better future through Research and Innovation.",
   sections: [
     {
       title: "Why Globe Technologies Exists",

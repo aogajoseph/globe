@@ -1,8 +1,8 @@
 import { CompanyPage } from "../../../components/layout/company-page";
-import { akibaContent } from "../../../content/products";
+import { akibaProductContent } from "../../../content/products";
 
 export default function AkibaPage() {
-  return <CompanyPage content={akibaContent} />;
+  return <CompanyPage content={akibaProductContent} />;
 }
 
 
