@@ -10,8 +10,8 @@ export const addamProjectContent: PageContent = {
     {
       title: "The Story",
       paragraphs: [
-        "Addam follows the journey of one man from the beginning of his life through the defining moments that shape his character, relationships and understanding of the world. His story becomes a reflection of humanity itself, exploring the hopes, fears, struggles and aspirations that connect people across cultures and generations.",
-        "Through compelling storytelling, the series encourages audiences to consider the visible choices we make and the unseen influences that often shape them.",
+        "Addam follows the journey of one man as he navigates the defining moments of life. His experiences become a reflection of humanity itself, exploring the hopes, fears, struggles and aspirations that connect people across cultures and generations.",
+        "Through compelling storytelling, the series invites audiences to consider not only the choices we make, but also the unseen influences that shape our lives and the world around us.",
       ],
     },
 
@@ -26,17 +26,17 @@ export const addamProjectContent: PageContent = {
         {
           title: "Identity & Purpose",
           description:
-            "Examining the questions of who we are, why we exist and what gives our lives meaning.",
+            "Reflecting on the search for meaning, belonging and purpose.",
         },
         {
           title: "Choice & Consequence",
           description:
-            "Reflecting on the decisions we make and the lasting impact they have on ourselves and others.",
+            "Examining how decisions shape individuals, relationships and communities.",
         },
         {
           title: "The Unseen Battle",
           description:
-            "Inviting audiences to reflect on the invisible influences that shape human thoughts, choices and relationships.",
+            "Inviting audiences to consider the invisible influences surrounding the human experience.",
         },
       ],
     },
@@ -44,15 +44,15 @@ export const addamProjectContent: PageContent = {
     {
       title: "Why We Created Addam",
       paragraphs: [
-        "Stories have the power to help people understand themselves and the world around them. Addam was created to encourage thoughtful reflection on the human condition through a compelling narrative that resonates across cultures, generations and backgrounds.",
-        "Rather than providing simple answers, the series invites audiences to wrestle with timeless questions about humanity, purpose and the choices that define our lives.",
+        "Stories have the power to help people understand themselves and one another. Addam was created to encourage thoughtful reflection on the human condition through a compelling narrative that resonates across cultures, generations and backgrounds.",
+        "Rather than offering simple answers, the series invites audiences to wrestle with timeless questions about humanity, purpose and the choices that define our lives.",
       ],
     },
 
     {
       title: "Looking Ahead",
       paragraphs: [
-        "Addam is envisioned as Globe Media's flagship dramatic series. As development continues, the project will expand through thoughtful storytelling, world-building and creative collaboration while remaining grounded in the ideas that inspired its creation.",
+        "As Globe Media's flagship dramatic series, Addam will continue to grow through thoughtful storytelling, world-building and creative collaboration, inviting new audiences to engage with its exploration of the human experience.",
       ],
     },
 
