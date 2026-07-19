@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../../components/layout/company-page";
-import { addamContent } from "../../../content/projects";
+import { addamProjectContent } from "../../../content/projects";
 
 export const metadata: Metadata = {
   title: "Addam | Projects",
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function AddamPage() {
-  return <CompanyPage content={addamContent} />;
+  return <CompanyPage content={addamProjectContent} />;
 }
 
