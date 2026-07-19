@@ -2,7 +2,7 @@ import type { PageContent } from "../../types/content";
 
 export const companyProfileContent: PageContent = {
   eyebrow: "The Company",
-  title: "Company Profile",
+  title: "Profile",
   intro:
     "Globe Technologies is a research-driven technology company dedicated to innovating for a better future through products, projects and initiatives that create lasting value.",
 
