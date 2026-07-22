@@ -4,7 +4,7 @@ export const careersContent: PageContent = {
   eyebrow: "Careers",
   title: "Careers at Globe Technologies",
   intro:
-    "Great companies are built by great people united by a shared purpose. While we are not currently recruiting, we are committed to building a workplace where curiosity, integrity, excellence and innovation thrive.",
+    "Great companies are built by great people united by a shared purpose. We remain committed to building a workplace where curiosity, integrity, excellence and innovation thrive.",
 
   sections: [
     {

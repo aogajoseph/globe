@@ -11,7 +11,7 @@ export const companyLandingContent: PageContent = {
       title: "Built for the Future",
       paragraphs: [
         "The challenges of tomorrow will require more than individual ideas. They will require research, imagination, disciplined execution and a willingness to build for the long term.",
-        "Globe Technologies brings these qualities together under one company, developing products, projects and initiatives across specialized areas while remaining united by a shared purpose: innovating for a better future.",
+        "Globe Technologies brings these qualities together under one company, developing products, projects and initiatives across specialized areas while remaining united by a shared purpose: innovating towards a better future.",
       ],
     },
 

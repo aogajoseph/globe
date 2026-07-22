@@ -4,7 +4,7 @@ export const ourStoryContent: PageContent = {
   eyebrow: "The Company",
   title: "Our Story",
   intro:
-    "Every company begins with an idea. Globe Technologies began with a belief that meaningful innovation can help shape a better future.",
+    "Globe Technologies began with a belief that meaningful innovation can help shape a better future.",
 
   sections: [
     {
@@ -26,7 +26,7 @@ export const ourStoryContent: PageContent = {
     {
       title: "Growing Beyond Products",
       paragraphs: [
-        "From the beginning, Globe Technologies was envisioned as more than a software company. It was imagined as a home for ideas—a company where research, technology, creativity and responsible stewardship come together to build solutions that improve lives and strengthen communities.",
+        "From the beginning, Globe Technologies was envisioned as more than a software company. It was imagined as a home for ideas—a company where research, technology, creativity and responsible stewardship come together to build solutions that improve lives and strengthen communities for generations.",
         "As the company grows, new divisions, products and initiatives will continue to expand that vision while remaining united by one purpose and one identity.",
       ],
     },

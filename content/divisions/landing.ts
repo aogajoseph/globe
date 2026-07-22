@@ -10,7 +10,7 @@ export const divisionsLandingContent: PageContent = {
     {
       title: "Built Around Purpose",
       paragraphs: [
-        "Meaningful innovation rarely happens within a single discipline. By organizing our work into dedicated divisions, we enable teams to develop deep expertise while collaborating toward a shared vision of innovating for a better future.",
+        "Meaningful innovation rarely happens within a single discipline. By organizing our work into dedicated divisions, we enable teams to develop deep expertise while collaborating toward a shared vision of innovating towards a better future.",
         "Each division focuses on a distinct area of opportunity, yet every product, project and initiative reflects the values and long-term purpose of Globe Technologies.",
       ],
     },

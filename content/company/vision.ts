@@ -10,7 +10,7 @@ export const visionContent: PageContent = {
     {
       title: "Vision Statement",
       paragraphs: [
-        "To be the world's most trusted creator of innovative solutions that contribute to a better future.",
+        "To be the world's most trusted creator of global, innovative solutions that contribute to a better future.",
       ],
     },
 
@@ -28,7 +28,7 @@ export const visionContent: PageContent = {
         "Long-term thinking",
         "Purpose-driven innovation",
         "Research-led decision-making",
-        "Excellence in everything we create",
+        "Excellence in everything we do",
         "Responsible stewardship",
         "A lasting positive impact on people and communities",
       ],

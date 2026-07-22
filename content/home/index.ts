@@ -5,12 +5,12 @@ export const homePageContent: PageContent = {
   title: "Inventing the Future",
   heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Contributing to a better future through Research and Innovation.",
+    "Globe Technologies is a multi-division technology company dedicated to researching, creating and delivering innovative solutions that contribute to a better future.",
   sections: [
     {
       title: "Why Globe Technologies Exists",
       paragraphs: [
-        "Every generation faces problems that require new ideas, better tools and responsible leadership. Globe Technologies is a multi-division technology company that addresses those challenges through research and innovation.",
+        "Every generation faces problems that require new ideas, better tools and responsible leadership. Globe Technologies addresses these challenges through research and innovation.",
       ],
       cards: [
         {
@@ -21,12 +21,12 @@ export const homePageContent: PageContent = {
         {
           title: "Vision",
           description:
-          "Becoming the most trusted global creator of innovative solutions that contribute to a better future.",
+          "To be the world's most trusted creator of global, innovative solutions that contribute to a better future.",
         },
         {
           title: "Mission",
           description:
-          "Innovating for a better future.",
+          "Innovating towards a better future.",
         },
         {
           title: "Our Philosophy",
@@ -42,28 +42,28 @@ export const homePageContent: PageContent = {
 
         "Everything we build begins with research.",
         
-        "Before pursuing any significant initiative, we ensure it advances our purpose, reflects excellence and promotes responsible stewardship, thereby creating lasting value."  
+        "Before pursuing any significant initiative, we ensure it advances our purpose, reflects excellence and promotes responsible stewardship."  
       ],
       cards: [
         {
           title: "Research First",
           description:
-          "We invest in research, responsible experimentation and meaningful innovation.",
+          "We invest in research and responsible experimentation.",
         },
         {
           title: "Purpose",
           description:
-          "We seek to address meaningful problems through thoughtful products, projects and initiatives. ",
+          "We seek to address meaningful problems through thoughtful products and initiatives. ",
         },
         {
           title: "Excellence",
           description:
-          "We pursue excellence as a discipline rather than an achievement.",
+          "We pursue the highest standards in everything we do.",
         },
         {
           title: "Stewardship",
           description:
-          "We strive to leave the company stronger than we found it.",
+          "We strive to leave the company and the world better than we found it.",
         },
       ],
     },
@@ -128,7 +128,7 @@ export const homePageContent: PageContent = {
         {
           title: "Explore Our Research",
           description:
-            "Explore the research insights behind our products, projects and initiatives.",
+            "Explore the research insights behind our products and initiatives.",
           href: "/research",
         },
       ],

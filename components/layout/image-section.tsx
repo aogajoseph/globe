@@ -50,7 +50,7 @@ export function ImageSection({
           src={src}
           alt={alt}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes={
             variant === "feature"
               ? "(max-width: 768px) 100vw, 42rem"

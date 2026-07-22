@@ -4,7 +4,7 @@ export const mediaDivisionContent: PageContent = {
   eyebrow: "Division",
   title: "Globe Media",
   intro:
-    "Globe Media researches, creates and publishes educational and creative media that informs, inspires and empowers generations.",
+    "Globe Media creates and publishes educational and creative media that informs, inspires and empowers generations.",
 
   sections: [
     {
@@ -34,7 +34,7 @@ export const mediaDivisionContent: PageContent = {
         {
           title: "Storytelling",
           description:
-            "Creating original narratives that entertain, challenge perspectives and inspire conversation.",
+            "Creating original narratives that entertain, challenge perspectives and inspire conversations.",
         },
         {
           title: "Publishing",
@@ -52,7 +52,7 @@ export const mediaDivisionContent: PageContent = {
     {
       title: "Current Work",
       paragraphs: [
-        "Addam is Globe Media's flagship project. The original dramatic series explores the human experience through the life of one man, inviting audiences to reflect on identity, choice, purpose, relationships and the unseen forces that shape our lives. While inspired by timeless themes, Addam speaks to questions that transcend culture, generation and background.",
+        "Addam. An original dramatic series exploring the human experience through the life of the main character, inviting audiences to reflect on identity, choice, purpose, relationships and the unseen forces that shape our lives. While inspired by timeless themes, Addam speaks to questions that transcend culture, generation and background.",
       ],
       cards: [
         {

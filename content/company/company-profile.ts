@@ -4,7 +4,7 @@ export const companyProfileContent: PageContent = {
   eyebrow: "The Company",
   title: "Profile",
   intro:
-    "Globe Technologies is a research-driven technology company dedicated to innovating for a better future through products, projects and initiatives that create lasting value.",
+    "Globe Technologies is a research-driven technology company dedicated to innovating towards a better future through products and initiatives that create lasting value.",
 
   sections: [
     {
@@ -39,7 +39,7 @@ export const companyProfileContent: PageContent = {
         {
           title: "Business Model",
           description:
-            "Research, product development, creative media and strategic initiatives.",
+            "Research, product development and strategic initiatives.",
         },
         {
           title: "Tagline",
@@ -52,7 +52,7 @@ export const companyProfileContent: PageContent = {
     {
       title: "Our Purpose",
       paragraphs: [
-        "Globe Technologies exists to innovate for a better future by creating solutions that improve lives, strengthen communities and contribute lasting value.",
+        "Globe Technologies exists to innovate towards a better future by creating solutions that improve lives, strengthen communities and contribute lasting value.",
       ],
     },
 

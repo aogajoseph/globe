@@ -4,7 +4,7 @@ export const contactContent: PageContent = {
   eyebrow: "Contact",
   title: "Get in Touch",
   intro:
-    "Whether you have a question, an idea, a partnership opportunity or simply want to learn more about us, we'd love to hear from you.",
+    "Do you have a question, an idea, a partnership opportunity or simply want to learn more about us? We'd love to hear from you.",
 
   sections: [
     {
@@ -45,20 +45,6 @@ export const contactContent: PageContent = {
           description:
             "Enquire about future opportunities to join Globe Technologies.",
         },
-      ],
-    },
-
-    {
-      title: "How to Reach Us",
-      paragraphs: [
-        "We primarily communicate through email, phone, WhatsApp and our official social media channels. These digital channels enable us to collaborate efficiently with people and organizations around the world.",
-      ],
-    },
-
-    {
-      title: "Remote-First",
-      paragraphs: [
-        "Globe Technologies operates as a remote-first company. Our teams collaborate across locations using digital tools while remaining connected by a shared purpose, common standards and a commitment to excellence.",
       ],
     },
 

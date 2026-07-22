@@ -60,7 +60,7 @@ export const researchContent: PageContent = {
     {
       title: "Knowledge Sharing",
       paragraphs: [
-        "As our research grows, Globe Technologies will publish articles, white papers, technical publications, reports and other resources that contribute to public knowledge and encourage meaningful conversations across industries and communities.",
+        "As our research grows, Globe Technologies will continue to publish articles, white papers, technical publications, reports and other resources that contribute to public knowledge and encourage meaningful conversations across industries and communities.",
       ],
       cards: [
         {

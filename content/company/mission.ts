@@ -27,7 +27,7 @@ export const missionContent: PageContent = {
       items: [
         "Research before innovation",
         "Solve meaningful problems",
-        "Pursue excellence in everything we create",
+        "Pursue excellence in everything we do",
         "Act with integrity and responsible stewardship",
         "Create lasting value for people and communities",
         "Build for generations",

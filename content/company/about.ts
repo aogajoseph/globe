@@ -4,13 +4,13 @@ export const aboutContent: PageContent = {
   eyebrow: "The Company",
   title: "About Us",
   intro:
-    "Globe Technologies is a research-driven company dedicated to innovating for a better future through products, projects and initiatives that create lasting value.",
+    "Globe Technologies is a research-driven company dedicated to innovating towards a better future through products, projects and initiatives that create lasting value.",
 
   sections: [
     {
       title: "Who We Are",
       paragraphs: [
-        "Globe Technologies exists to discover meaningful problems, explore new possibilities and develop innovative solutions that improve lives and contribute to a better future.",
+        "Globe Technologies exists to discover meaningful problems, explore possibilities through research and develop innovative solutions that improve lives, strengthen communities and contribute to a better future.",
         "We believe innovation is most effective when guided by purpose, informed by research and pursued with excellence. This philosophy shapes every decision we make and every solution we create.",
       ],
     },

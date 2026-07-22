@@ -4,7 +4,7 @@ export const brandContent: PageContent = {
   eyebrow: "The Company",
   title: "Our Brand",
   intro:
-    "A brand is more than a name or a logo. It is the experience people have with a company and the trust it earns over time. At Globe Technologies, our brand reflects our commitment to innovating for a better future through research, purposeful innovation and responsible stewardship.",
+    "Our brand represents the experience people have with us and the trust we earn over time. It reflects our commitment to innovating towards a better future through research, purpose and responsible stewardship.",
 
   sections: [
     {
@@ -18,7 +18,7 @@ export const brandContent: PageContent = {
     {
       title: "What You Can Expect",
       paragraphs: [
-        "Every interaction with Globe Technologies should reflect the same commitment to quality, responsibility and purpose. Whether you are using one of our products, collaborating with us or simply learning about our work, these are the standards we strive to uphold.",
+        "Every interaction with Globe Technologies reflects the same commitment to quality, responsibility and purpose. Whether you are using one of our products, collaborating with us or simply learning about our work, these are the standards we strive to uphold:",
       ],
       items: [
         "Purpose before popularity",
