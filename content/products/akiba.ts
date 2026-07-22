@@ -8,6 +8,14 @@ export const akibaProductContent: PageContent = {
 
   sections: [
     {
+      type: "image",
+      id: "akiba-mockup",
+      src: "/images/products/akiba-app-mockup.png",
+      alt: "Akiba collaborative savings platform on mobile devices",
+      variant: "feature",
+    },
+
+    {
       title: "Why Akiba Exists",
       paragraphs: [
         "Saving money together is built on trust, communication and accountability. Yet many groups continue to rely on informal processes that can be difficult to manage, track and scale.",

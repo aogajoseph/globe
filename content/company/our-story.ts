@@ -16,6 +16,14 @@ export const ourStoryContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "founding-journey",
+      src: "/images/company/founding-journey.png",
+      alt: "The early vision behind Globe Technologies",
+      variant: "editorial",
+    },
+
+    {
       title: "Growing Beyond Products",
       paragraphs: [
         "From the beginning, Globe Technologies was envisioned as more than a software company. It was imagined as a home for ideas—a company where research, technology, creativity and responsible stewardship come together to build solutions that improve lives and strengthen communities.",

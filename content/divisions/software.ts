@@ -16,6 +16,14 @@ export const softwareDivisionContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "engineering-workspace",
+      src: "/images/divisions/engineering-workspace.png",
+      alt: "Globe Software engineering workspace",
+      variant: "editorial",
+    },
+
+    {
       title: "Areas of Focus",
       cards: [
         {

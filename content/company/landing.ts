@@ -1,3 +1,5 @@
+import type { PageContent } from "../../types/content";
+
 export const companyLandingContent: PageContent = {
   eyebrow: "The Company",
   title: "Overview",
@@ -11,6 +13,14 @@ export const companyLandingContent: PageContent = {
         "The challenges of tomorrow will require more than individual ideas. They will require research, imagination, disciplined execution and a willingness to build for the long term.",
         "Globe Technologies brings these qualities together under one company, developing products, projects and initiatives across specialized areas while remaining united by a shared purpose: innovating for a better future.",
       ],
+    },
+
+    {
+      type: "image",
+      id: "hq-architecture",
+      src: "/images/company/reception.png",
+      alt: "Globe Technologies headquarters interior",
+      variant: "panoramic",
     },
 
     {

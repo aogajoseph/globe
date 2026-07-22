@@ -16,6 +16,14 @@ export const researchContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "research-collaboration",
+      src: "/images/research/research-collaboration.png",
+      alt: "Globe Technologies research team collaborating",
+      variant: "editorial",
+    },
+
+    {
       title: "Areas of Research",
       cards: [
         {

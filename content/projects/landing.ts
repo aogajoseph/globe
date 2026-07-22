@@ -16,6 +16,14 @@ export const projectsLandingContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "storytelling-creative",
+      src: "/images/projects/storytelling-creative.png",
+      alt: "Creative storytelling and production at Globe Technologies",
+      variant: "panoramic",
+    },
+
+    {
       title: "Current Projects",
       cards: [
         {

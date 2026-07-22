@@ -14,6 +14,15 @@ export const aboutContent: PageContent = {
         "We believe innovation is most effective when guided by purpose, informed by research and pursued with excellence. This philosophy shapes every decision we make and every solution we create.",
       ],
     },
+
+    {
+      type: "image",
+      id: "team-collaboration",
+      src: "/images/company/team-collaboration.png",
+      alt: "Globe Technologies team collaborating",
+      variant: "editorial",
+    },
+
     {
       title: "What We Do",
       paragraphs: [

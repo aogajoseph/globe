@@ -16,6 +16,14 @@ export const leadershipContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "leadership-discussion",
+      src: "/images/company/leadership-discussion.png",
+      alt: "Globe Technologies leadership in discussion",
+      variant: "editorial",
+    },
+
+    {
       title: "Leadership Responsibilities",
       items: [
         "Preserve the company's purpose and identity",

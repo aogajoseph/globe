@@ -1,3 +1,5 @@
+import type { PageContent } from "../../types/content";
+
 export const divisionsLandingContent: PageContent = {
   eyebrow: "Divisions",
   title: "Our Divisions",
@@ -11,6 +13,14 @@ export const divisionsLandingContent: PageContent = {
         "Meaningful innovation rarely happens within a single discipline. By organizing our work into dedicated divisions, we enable teams to develop deep expertise while collaborating toward a shared vision of innovating for a better future.",
         "Each division focuses on a distinct area of opportunity, yet every product, project and initiative reflects the values and long-term purpose of Globe Technologies.",
       ],
+    },
+
+    {
+      type: "image",
+      id: "divisions-collaboration",
+      src: "/images/divisions/divisions-collaboration.png",
+      alt: "Globe Technologies divisions collaborating across disciplines",
+      variant: "panoramic",
     },
 
     {

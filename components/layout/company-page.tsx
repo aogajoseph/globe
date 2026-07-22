@@ -10,7 +10,7 @@ import { isPageImageSection } from "../../types/content";
 import { Badge } from "../common/badge";
 import { Card } from "../common/card";
 import { Container } from "./container";
-import { PanoramicImageSection } from "./panoramic-image-section";
+import { ImageSection } from "./image-section";
 import { Section } from "./section";
 import { cn } from "../../lib/utils";
 
@@ -241,11 +241,13 @@ function SectionCards({
 function renderSection(section: PageSection) {
   if (isPageImageSection(section)) {
     return (
-      <PanoramicImageSection
+      <ImageSection
         key={section.id ?? section.src}
         id={section.id}
         src={section.src}
         alt={section.alt}
+        caption={section.caption}
+        variant={section.variant ?? "panoramic"}
       />
     );
   }

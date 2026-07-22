@@ -25,6 +25,14 @@ export const careersContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "workplace-culture",
+      src: "/images/careers/workplace-culture.png",
+      alt: "Globe Technologies workplace culture and collaboration",
+      variant: "editorial",
+    },
+
+    {
       title: "Learning & Growth",
       paragraphs: [
         "Learning is central to how we work. We encourage continuous development through research, experimentation, mentorship and the practical application of new knowledge. As Globe Technologies grows, opportunities for personal and professional growth will grow alongside it.",

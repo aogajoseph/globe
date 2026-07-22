@@ -16,6 +16,14 @@ export const companyProfileContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "company-overview",
+      src: "/images/company/profile.png",
+      alt: "Globe Technologies at a glance",
+      variant: "panoramic",
+    },
+
+    {
       title: "At a Glance",
       cards: [
         {

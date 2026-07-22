@@ -10,7 +10,7 @@ export const missionContent: PageContent = {
     {
       title: "Mission Statement",
       paragraphs: [
-        "To research, develop and deliver innovative solutions that contribute to a better future.",
+        "Innovating towards a better future.",
       ],
     },
 

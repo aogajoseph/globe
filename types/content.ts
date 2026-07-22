@@ -20,11 +20,15 @@ export type PageContentSection = {
   cards?: PageCard[];
 };
 
+export type PageImageVariant = "panoramic" | "editorial" | "feature";
+
 export type PageImageSection = {
   type: "image";
   id?: string;
   src: string;
   alt?: string;
+  caption?: string;
+  variant?: PageImageVariant;
 };
 
 export type PageSection = PageContentSection | PageImageSection;

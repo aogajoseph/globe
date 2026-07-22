@@ -4,7 +4,7 @@ export const contactContent: PageContent = {
   eyebrow: "Contact",
   title: "Get in Touch",
   intro:
-    "Whether you have a question, an idea, a partnership opportunity or simply want to learn more about Globe Technologies, we'd love to hear from you. As a remote-first company, we primarily communicate through our digital channels.",
+    "Whether you have a question, an idea, a partnership opportunity or simply want to learn more about us, we'd love to hear from you.",
 
   sections: [
     {
@@ -12,6 +12,14 @@ export const contactContent: PageContent = {
       paragraphs: [
         "We welcome conversations with individuals, organizations and communities who share our interest in meaningful innovation. Whether you're reaching out with an enquiry, exploring a collaboration or seeking more information about our work, our teams are here to help.",
       ],
+    },
+
+    {
+      type: "image",
+      id: "remote-collaboration",
+      src: "/images/contact/remote-collaboration.png",
+      alt: "Remote collaboration at Globe Technologies",
+      variant: "editorial",
     },
 
     {

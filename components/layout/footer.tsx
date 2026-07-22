@@ -267,7 +267,7 @@ export function Footer() {
           </p>
 
           <p className="text-small text-[rgb(var(--color-muted))]">
-            Version 1.0.0
+            Version: 1.0.0
           </p>
 
         </div>

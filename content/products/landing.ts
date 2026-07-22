@@ -16,6 +16,14 @@ export const productsLandingContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "product-development",
+      src: "/images/products/product-development.png",
+      alt: "Globe Technologies product development in progress",
+      variant: "editorial",
+    },
+
+    {
       title: "Current Products",
       cards: [
         {

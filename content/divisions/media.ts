@@ -16,6 +16,14 @@ export const mediaDivisionContent: PageContent = {
     },
 
     {
+      type: "image",
+      id: "creative-studio",
+      src: "/images/divisions/creative-studio.png",
+      alt: "Globe Media creative production studio",
+      variant: "editorial",
+    },
+
+    {
       title: "Areas of Focus",
       cards: [
         {

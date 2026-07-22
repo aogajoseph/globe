@@ -136,8 +136,8 @@ export const homePageContent: PageContent = {
 
     {
       type: "image",
-      id: "hq-panorama",
-      src: "/images/home/hq-panorama.png",
+      id: "hq-teams",
+      src: "/images/home/hq-teams.png",
       alt: "Globe Technologies headquarters",
     },
 
