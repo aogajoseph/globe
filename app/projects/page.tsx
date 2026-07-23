@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../components/layout/company-page";
 import { projectsLandingContent } from "../../content/projects";
+import { createPageMetadata, createPageStructuredData } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Projects | Globe Technologies",
-  description:
-    "Explore long-term initiatives at Globe Technologies, beginning with Addam.",
-};
+export const metadata: Metadata = createPageMetadata("projects");
 
 export default function ProjectsPage() {
-  return <CompanyPage content={projectsLandingContent} />;
+  return (
+    <CompanyPage
+      content={projectsLandingContent}
+      structuredData={createPageStructuredData("projects")}
+    />
+  );
 }
-

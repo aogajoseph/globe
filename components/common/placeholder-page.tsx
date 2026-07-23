@@ -11,7 +11,7 @@ export function PlaceholderPage({ title, description }: PlaceholderPageProps) {
   return (
     <Card className="space-y-4">
       <Badge>Placeholder route</Badge>
-      <h2 className="text-h2">{title}</h2>
+      <h1 className="text-h2">{title}</h1>
       <Paragraph>{description}</Paragraph>
     </Card>
   );

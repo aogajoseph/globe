@@ -1,0 +1,48 @@
+Globe Technologies
+
+Globe Technologies is a research-driven technology company building products, projects and initiatives that contribute to a better future.
+
+Core areas
+- Company: overview, about, story, purpose, vision, mission, governance, leadership, constitution and brand.
+- Divisions: Globe Software and Globe Media.
+- Products: Akiba, a collaborative savings platform.
+- Projects: Addam, an original dramatic series from Globe Media.
+- Research: research-led work that informs products, projects and future initiatives.
+- Careers: company culture, growth and recruitment information.
+- Contact: enquiries, partnerships, careers and collaboration.
+
+Public pages
+- /
+- /company
+- /company/about
+- /company/brand
+- /company/company-profile
+- /company/constitution
+- /company/governance
+- /company/leadership
+- /company/mission
+- /company/our-story
+- /company/purpose
+- /company/vision
+- /divisions
+- /divisions/software
+- /divisions/media
+- /products
+- /products/akiba
+- /projects
+- /projects/addam
+- /research
+- /careers
+- /contact
+- /news
+- /news/company-news
+- /news/product-updates
+- /news/press-releases
+- /news/events
+
+Brand voice
+- Clear
+- Factual
+- Measured
+- Purpose-driven
+

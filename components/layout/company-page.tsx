@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import type {
   PageCard,
   PageContent,
@@ -7,15 +8,18 @@ import type {
   RelatedLink,
 } from "../../types/content";
 import { isPageImageSection } from "../../types/content";
+import type { JsonLdObject } from "../../lib/seo";
+import { cn } from "../../lib/utils";
 import { Badge } from "../common/badge";
 import { Card } from "../common/card";
+import { OptimizedImage } from "../common/optimized-image";
 import { Container } from "./container";
 import { ImageSection } from "./image-section";
 import { Section } from "./section";
-import { cn } from "../../lib/utils";
 
 type CompanyPageProps = {
   content: PageContent;
+  structuredData?: JsonLdObject[];
 };
 
 type SectionLayout = "content" | "list" | "features" | "mixed";
@@ -133,9 +137,11 @@ function getRelatedActionLabel(item: RelatedLink): string {
 function SectionHeader({
   section,
   layout,
+  headingId,
 }: {
   section: PageContentSection;
   layout: SectionLayout;
+  headingId: string;
 }) {
   return (
     <div
@@ -144,7 +150,13 @@ function SectionHeader({
         layout === "features" ? "space-y-4" : "space-y-5",
       )}
     >
-      <h2 className="text-h2 text-[rgb(var(--color-foreground))]">{section.title}</h2>
+      <h2
+        id={headingId}
+        className="text-h2 text-[rgb(var(--color-foreground))]"
+      >
+        {section.title}
+      </h2>
+
       {section.description ? (
         <p
           className={cn(
@@ -226,6 +238,7 @@ function SectionCards({
                 {card.description}
               </p>
             </div>
+
             {card.href ? (
               <Link href={card.href} className={cn(actionLinkClass, "mt-auto pt-2")}>
                 {getCardActionLabel(card)}
@@ -253,15 +266,15 @@ function renderSection(section: PageSection) {
   }
 
   const layout = getSectionLayout(section);
+  const headingId =
+    section.id ?? section.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
   return (
-    <div
+    <Section
       key={section.title}
       id={section.id}
-      className={cn(
-        "py-14 md:py-20",
-        layout === "features" && "md:py-24",
-      )}
+      aria-labelledby={headingId}
+      className={cn("py-14 md:py-20", layout === "features" && "md:py-24")}
     >
       <div
         className={cn(
@@ -269,7 +282,7 @@ function renderSection(section: PageSection) {
           layout === "content" && section.paragraphs && "space-y-8",
         )}
       >
-        <SectionHeader section={section} layout={layout} />
+        <SectionHeader section={section} layout={layout} headingId={headingId} />
 
         {section.paragraphs ? (
           <SectionParagraphs paragraphs={section.paragraphs} />
@@ -279,35 +292,35 @@ function renderSection(section: PageSection) {
 
         {section.cards ? <SectionCards cards={section.cards} layout={layout} /> : null}
       </div>
-    </div>
+    </Section>
   );
 }
 
-export function CompanyPage({ content }: CompanyPageProps) {
+export function CompanyPage({ content, structuredData }: CompanyPageProps) {
   return (
     <>
       <Section
         className={cn(
           "relative overflow-hidden border-b border-[rgb(var(--color-border))]/80 py-0",
-          content.heroImage
-            ? "text-white"
-            : "bg-[rgb(var(--color-surface))]",
+          content.heroImage ? "text-white" : "bg-[rgb(var(--color-surface))]",
         )}
       >
-        {/* Background Image */}
         {content.heroImage ? (
           <>
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${content.heroImage})`,
-              }}
-            />
+            <div className="absolute inset-0">
+              <OptimizedImage
+                src={content.heroImage}
+                alt=""
+                fill
+                priority
+                aria-hidden="true"
+                className="object-cover object-center"
+                sizes="100vw"
+              />
+            </div>
 
-            {/* Globe Technologies dark overlay */}
             <div className="absolute inset-0 bg-[rgba(15,23,42,0.68)]" />
 
-            {/* subtle bottom gradient */}
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[rgba(15,23,42,0.35)] to-transparent" />
           </>
         ) : null}
@@ -330,9 +343,7 @@ export function CompanyPage({ content }: CompanyPageProps) {
               <h1
                 className={cn(
                   "max-w-4xl text-display",
-                  content.heroImage
-                    ? "text-white"
-                    : "text-[rgb(var(--color-foreground))]",
+                  content.heroImage ? "text-white" : "text-[rgb(var(--color-foreground))]",
                 )}
               >
                 {content.title}
@@ -342,9 +353,7 @@ export function CompanyPage({ content }: CompanyPageProps) {
                 <p
                   className={cn(
                     "max-w-2xl text-body",
-                    content.heroImage
-                      ? "text-white/90"
-                      : "text-[rgb(var(--color-secondary))]",
+                    content.heroImage ? "text-white/90" : "text-[rgb(var(--color-secondary))]",
                   )}
                 >
                   {content.intro}
@@ -371,6 +380,7 @@ export function CompanyPage({ content }: CompanyPageProps) {
                 <h2 className="text-h2 text-[rgb(var(--color-foreground))]">
                   {content.cta.label}
                 </h2>
+
                 {content.cta.description ? (
                   <p className="text-lead">{content.cta.description}</p>
                 ) : null}
@@ -408,11 +418,13 @@ export function CompanyPage({ content }: CompanyPageProps) {
                     <h3 className="text-h3 text-[rgb(var(--color-foreground))] transition-colors duration-200 group-hover:text-[rgb(var(--color-primary))]">
                       {item.label}
                     </h3>
+
                     {item.description ? (
                       <p className="mt-3 flex-1 text-small leading-relaxed text-[rgb(var(--color-muted))]">
                         {item.description}
                       </p>
                     ) : null}
+
                     <span className={cn(actionLinkClass, "mt-5")}>
                       {getRelatedActionLabel(item)} →
                     </span>
@@ -423,6 +435,17 @@ export function CompanyPage({ content }: CompanyPageProps) {
           </Container>
         </Section>
       ) : null}
+
+      {structuredData?.map((schema, index) => (
+        <Script
+          key={`${schema["@type"]}-${index}`}
+          id={`page-schema-${index}`}
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify(schema)}
+        </Script>
+      ))}
     </>
   );
 }

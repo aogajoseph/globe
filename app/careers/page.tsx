@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../components/layout/company-page";
 import { careersContent } from "../../content/careers";
+import { createPageMetadata, createPageStructuredData } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Careers | Globe Technologies",
-  description:
-    "Explore careers at Globe Technologies, including life at Globe, culture, learning, wellness and recruitment.",
-};
+export const metadata: Metadata = createPageMetadata("careers");
 
 export default function CareersPage() {
-  return <CompanyPage content={careersContent} />;
+  return (
+    <CompanyPage
+      content={careersContent}
+      structuredData={createPageStructuredData("careers")}
+    />
+  );
 }
-
 

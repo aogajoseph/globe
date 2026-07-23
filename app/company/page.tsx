@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import {CompanyPage } from "../../components/layout/company-page";
+import { CompanyPage } from "../../components/layout/company-page";
 import { companyLandingContent } from "../../content/company";
+import { createPageMetadata, createPageStructuredData } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Overview | Globe Technologies",
-  description:
-    "Learn about Globe Technologies, the company structure, and the two current divisions: Globe Software and Globe Media.",
-};
+export const metadata: Metadata = createPageMetadata("company");
 
 export default function CompanyPageRoute() {
-  return <CompanyPage content={companyLandingContent} />;
+  return (
+    <CompanyPage
+      content={companyLandingContent}
+      structuredData={createPageStructuredData("company")}
+    />
+  );
 }
-

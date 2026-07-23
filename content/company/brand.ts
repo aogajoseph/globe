@@ -11,7 +11,7 @@ export const brandContent: PageContent = {
       title: "What Our Brand Represents",
       paragraphs: [
         "The Globe Technologies brand represents a promise to pursue meaningful innovation with integrity, excellence and a long-term perspective. It reflects who we are, what we value and the future we are working to help create.",
-        "Everything we create—from products and projects to research, partnerships and experiences—is an opportunity to strengthen that promise and earn the trust of the people we serve.",
+        "Everything we create - from products and projects to research, partnerships and experiences - is an opportunity to strengthen that promise and earn the trust of the people we serve.",
       ],
     },
 
@@ -31,10 +31,9 @@ export const brandContent: PageContent = {
     },
 
     {
-      title: "One Company, One Brand",
+      title: "Unity of Purpose",
       paragraphs: [
         "Globe Technologies operates through multiple divisions, products and initiatives, each serving different audiences and pursuing different opportunities. Together, however, they represent one company with one identity and one shared purpose.",
-        "No matter where you encounter Globe Technologies, you should experience the same commitment to innovation, excellence and stewardship that defines our brand.",
       ],
     },
 
@@ -42,7 +41,7 @@ export const brandContent: PageContent = {
       title: "Looking Ahead",
       paragraphs: [
         "Our brand will continue to grow alongside the company. New divisions, products and initiatives will expand what we do, but they will always remain connected by the same purpose, the same principles and the same commitment to creating lasting value.",
-        "As we continue inventing the future, our goal is to build a brand that people trust—not simply because of what we create, but because of how and why we create it.",
+        "As we continue inventing the future, our goal is to build a brand that people trust - not simply because of what we create, but because of how and why we create it.",
       ],
     },
   ],
@@ -68,3 +67,4 @@ export const brandContent: PageContent = {
     },
   ],
 };
+

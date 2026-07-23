@@ -5,7 +5,7 @@ export const contactInfo = {
   purpose:
     "Researching, developing and delivering innovative solutions that contribute to a better future.",
 
-  email: "info@globe.com",
+  email: "info@globetechnologies.com",
 
   phone: "+254 725 406 004",
 

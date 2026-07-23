@@ -1,10 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useId, useLayoutEffect, useRef, useState, type RefObject } from "react";
+import {
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 import { navigationGroups, primaryNavigation } from "../../lib/site";
 import { cn } from "../../lib/utils";
 import { Container } from "./container";
@@ -165,9 +172,7 @@ function DesktopDropdown({
         onMouseLeave={onClose}
         className={cn(
           "fixed z-[60] hidden min-w-[13rem] transition-opacity duration-150 ease-out motion-reduce:transition-none lg:block",
-          isOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0",
+          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
         )}
         aria-label={group.label}
         role="menu"
@@ -180,13 +185,15 @@ function DesktopDropdown({
         >
           <div className="py-1">
             {group.children.map((child) => {
-              const isChildActive = pathname === child.href;
+              const isChildActive =
+                pathname === child.href || pathname.startsWith(`${child.href}/`);
 
               return (
                 <Link
                   key={child.href}
                   href={child.href}
                   role="menuitem"
+                  aria-current={isChildActive ? "page" : undefined}
                   className={cn(
                     "block touch-manipulation border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2.5 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
                     isChildActive
@@ -252,12 +259,14 @@ function MobileAccordion({
       >
         <div className="min-h-0 divide-y divide-[rgb(var(--color-border))] border-t border-[rgb(var(--color-border))]">
           {group.children.map((child) => {
-            const isChildActive = pathname === child.href;
+            const isChildActive =
+              pathname === child.href || pathname.startsWith(`${child.href}/`);
 
             return (
               <Link
                 key={child.href}
                 href={child.href}
+                aria-current={isChildActive ? "page" : undefined}
                 className={cn(
                   "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
                   isChildActive
@@ -282,7 +291,9 @@ export function Header() {
   const desktopPanelRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSectionsOpen, setMobileSectionsOpen] = useState<Record<string, boolean>>({});
+  const [mobileSectionsOpen, setMobileSectionsOpen] = useState<Record<string, boolean>>(
+    {},
+  );
 
   const clearOpenTimer = () => {
     if (openMenuTimerRef.current !== null) {
@@ -343,10 +354,7 @@ export function Header() {
       const mobileNavigation = document.getElementById("mobile-navigation");
 
       if (mobileOpen) {
-        if (
-          headerRef.current?.contains(target) ||
-          mobileNavigation?.contains(target)
-        ) {
+        if (headerRef.current?.contains(target) || mobileNavigation?.contains(target)) {
           return;
         }
 
@@ -355,8 +363,8 @@ export function Header() {
       }
 
       if (openGroup) {
-        const openPanel = Object.values(desktopPanelRefs.current).find(
-          (panel) => panel?.contains(target),
+        const openPanel = Object.values(desktopPanelRefs.current).find((panel) =>
+          panel?.contains(target),
         );
 
         if (openPanel || headerRef.current?.contains(target)) {
@@ -374,6 +382,7 @@ export function Header() {
       if (mobileOpen) {
         document.body.style.overflow = previousOverflow;
       }
+
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("pointerdown", handlePointerDown);
     };
@@ -392,10 +401,10 @@ export function Header() {
         className="sticky top-0 z-40 overflow-visible border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
       >
         <Container className="flex h-20 items-center justify-between gap-6">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="Globe Technologies home">
             <Image
               src="/logos/logo.png"
-              alt="Globe Technologies Logo"
+              alt="Globe Technologies"
               width={260}
               height={71}
               priority
@@ -409,6 +418,7 @@ export function Header() {
           >
             <Link
               href={homeLink.href}
+              aria-current={pathname === homeLink.href ? "page" : undefined}
               className={desktopNavItemClass(pathname === homeLink.href)}
             >
               {homeLink.label}
@@ -416,6 +426,7 @@ export function Header() {
 
             {navigationGroups.map((group) => {
               const isOpen = openGroup === group.label;
+
               return (
                 <DesktopDropdown
                   key={group.label}
@@ -449,6 +460,12 @@ export function Header() {
 
             <Link
               href={researchLink.href}
+              aria-current={
+                pathname === researchLink.href ||
+                pathname.startsWith(`${researchLink.href}/`)
+                  ? "page"
+                  : undefined
+              }
               className={desktopNavItemClass(
                 pathname === researchLink.href ||
                   pathname.startsWith(`${researchLink.href}/`),
@@ -459,6 +476,12 @@ export function Header() {
 
             <Link
               href={contactLink.href}
+              aria-current={
+                pathname === contactLink.href ||
+                pathname.startsWith(`${contactLink.href}/`)
+                  ? "page"
+                  : undefined
+              }
               className={desktopNavItemClass(
                 pathname === contactLink.href ||
                   pathname.startsWith(`${contactLink.href}/`),
@@ -481,11 +504,12 @@ export function Header() {
         </Container>
       </header>
 
-      <div 
+      <div
         id="mobile-navigation"
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
+        aria-hidden={!mobileOpen}
         className={cn(
           "fixed inset-0 flex flex-col bg-[rgb(var(--color-background))] px-6 py-8 transition-transform duration-300 motion-reduce:transition-none lg:hidden",
           mobileOpen
@@ -494,8 +518,6 @@ export function Header() {
         )}
       >
         <div className="mb-8 flex items-center justify-between">
-          <span className="text-small font-semibold tracking-[0.18em] uppercase text-[rgb(var(--color-primary))]">
-          </span>
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
@@ -509,6 +531,7 @@ export function Header() {
         <nav className="flex flex-1 flex-col gap-4 overflow-y-auto" aria-label="Mobile primary">
           <Link
             href={homeLink.href}
+            aria-current={pathname === homeLink.href ? "page" : undefined}
             className={mobileTopLevelNavClass(pathname === homeLink.href)}
           >
             {homeLink.label}
@@ -526,6 +549,12 @@ export function Header() {
 
           <Link
             href={researchLink.href}
+            aria-current={
+              pathname === researchLink.href ||
+              pathname.startsWith(`${researchLink.href}/`)
+                ? "page"
+                : undefined
+            }
             className={mobileTopLevelNavClass(
               pathname === researchLink.href ||
                 pathname.startsWith(`${researchLink.href}/`),
@@ -536,6 +565,12 @@ export function Header() {
 
           <Link
             href={contactLink.href}
+            aria-current={
+              pathname === contactLink.href ||
+              pathname.startsWith(`${contactLink.href}/`)
+                ? "page"
+                : undefined
+            }
             className={mobileTopLevelNavClass(
               pathname === contactLink.href ||
                 pathname.startsWith(`${contactLink.href}/`),

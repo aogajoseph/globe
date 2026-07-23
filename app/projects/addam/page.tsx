@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../../components/layout/company-page";
 import { addamProjectContent } from "../../../content/projects";
+import { createPageMetadata, createPageStructuredData } from "../../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Addam | Projects",
-  description:
-    "Addam is the initial long-term project placeholder within Globe Technologies.",
-};
+export const metadata: Metadata = createPageMetadata("projectsAddam");
 
 export default function AddamPage() {
-  return <CompanyPage content={addamProjectContent} />;
+  return (
+    <CompanyPage
+      content={addamProjectContent}
+      structuredData={createPageStructuredData("projectsAddam")}
+    />
+  );
 }
-

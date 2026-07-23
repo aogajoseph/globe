@@ -50,6 +50,7 @@ export function ImageSection({
           src={src}
           alt={alt}
           fill
+          loading={variant === "feature" ? "eager" : "lazy"}
           className="object-contain"
           sizes={
             variant === "feature"

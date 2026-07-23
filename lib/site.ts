@@ -10,6 +10,39 @@ export type NavigationGroup = {
   children: NavigationChild[];
 };
 
+function normalizeSiteUrl(value: string): string {
+  const trimmed = value.trim().replace(/\/+$/, "");
+
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    return trimmed;
+  }
+
+  return `https://${trimmed}`;
+}
+
+export const siteConfig = {
+  name: "Globe Technologies",
+  description:
+    "Globe Technologies is a research-driven technology company building products, projects and initiatives that contribute to a better future.",
+  url: normalizeSiteUrl(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://globetechnologies.com",
+  ),
+  locale: "en_US",
+  language: "en",
+  themeColor: "#0f172a",
+  manifestPath: "/manifest.webmanifest",
+  logoPath: "/logos/logo.png",
+  tagline: "Inventing the Future.",
+  keywords: [
+    "Globe Technologies",
+    "Globe Software",
+    "Globe Media",
+    "Globe Research",
+    "Akiba",
+    "Addam",
+  ],
+} as const;
+
 export const navigationGroups: NavigationGroup[] = [
   {
     label: "The Company",
