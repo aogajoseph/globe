@@ -1,11 +1,11 @@
 import type { PageContent } from "../../types/content";
 
 export const homePageContent: PageContent = {
-  eyebrow: "Home",
-  title: "Globe Technologies",
+  eyebrow: "Globe Technologies",
+  title: "Inventing the Future",
   heroImage: "/images/hero/homepage-banner.png",
   intro:
-    "Inventing the Future.",
+    "Globe Technologies is a multi-division technology company dedicated to researching, creating and delivering innovative solutions that contribute to a better future.",
   sections: [
     {
       title: "Why Globe Technologies Exists",
