@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import {
   useEffect,
   useId,
@@ -12,15 +12,20 @@ import {
   useState,
   type RefObject,
 } from "react";
-import { navigationGroups, primaryNavigation } from "../../lib/site";
+
+import {
+  contactLink,
+  navigationGroups,
+  primaryNavigation,
+  type NavigationChild,
+} from "../../lib/site";
 import { cn } from "../../lib/utils";
 import { Container } from "./container";
 
 type NavigationGroup = (typeof navigationGroups)[number];
 
-const homeLink = primaryNavigation[0];
-const researchLink = primaryNavigation[5];
-const contactLink = primaryNavigation[6];
+const homeLink = primaryNavigation.find((item) => item.label === "Home")!;
+const blogLink = primaryNavigation.find((item) => item.label === "Blog")!;
 
 const desktopNavItemClass = (isActive: boolean) =>
   cn(
@@ -37,6 +42,182 @@ const mobileTopLevelNavClass = (isActive: boolean) =>
       ? "bg-[rgb(var(--color-primary-soft))] text-[rgb(var(--color-primary))]"
       : "hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
   );
+
+function isNavigationItemActive(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function DesktopNavigationItems({
+  items,
+  pathname,
+  depth = 0,
+  enableFlyouts = false,
+}: {
+  items: readonly NavigationChild[];
+  pathname: string;
+  depth?: number;
+  enableFlyouts?: boolean;
+}) {
+  return (
+    <>
+      {items.map((item) => {
+        const isActive = isNavigationItemActive(pathname, item.href);
+        const hasChildren =
+          Boolean(item.children && item.children.length > 0);
+
+        /*
+         * IPs only:
+         * Categories with children become hoverable flyout triggers.
+         *
+         * Software     → Akiba
+         * Media        → Addam
+         * Merchandise  → Globe Store
+         */
+        if (enableFlyouts && hasChildren) {
+          return (
+            <div
+              key={item.href}
+              className="group relative"
+            >
+              <Link
+                href={item.href}
+                role="menuitem"
+                aria-haspopup="menu"
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "flex touch-manipulation items-center justify-between gap-4 border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2.5 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
+                  isActive
+                    ? "border-l-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                    : "border-l-transparent hover:bg-[rgb(var(--color-primary-soft))]/70 hover:text-[rgb(var(--color-primary))]",
+                )}
+              >
+                <span>{item.label}</span>
+
+                <ChevronRight
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 shrink-0 text-[rgb(var(--color-secondary))]/45 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-[rgb(var(--color-primary))]"
+                  strokeWidth={1.75}
+                />
+              </Link>
+
+              <div
+                className="pointer-events-none absolute left-full top-0 z-[70] min-56 opacity-0 transition-all duration-150 ease-out group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"
+                role="menu"
+                aria-label={item.label}
+              >
+                <div className="border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-[0_6px_20px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.03)]">
+                  <div className="py-1">
+                    {item.children?.map((child) => {
+                      const childIsActive =
+                        isNavigationItemActive(
+                          pathname,
+                          child.href,
+                        );
+
+                      return (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          role="menuitem"
+                          aria-current={
+                            childIsActive ? "page" : undefined
+                          }
+                          className={cn(
+                            "block touch-manipulation whitespace-nowrap border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
+                            childIsActive
+                              ? "border-l-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                              : "border-l-transparent hover:bg-[rgb(var(--color-primary-soft))]/70 hover:text-[rgb(var(--color-primary))]",
+                          )}
+                        >
+                          {child.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        /*
+         * Existing behavior remains completely unchanged
+         * for every other desktop navigation group.
+         */
+        return (
+          <div key={item.href}>
+            <Link
+              href={item.href}
+              role="menuitem"
+              aria-current={isActive ? "page" : undefined}
+              className={cn(
+                "block touch-manipulation border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2.5 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
+                depth > 0 && "pl-8",
+                isActive
+                  ? "border-l-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                  : "border-l-transparent hover:bg-[rgb(var(--color-primary-soft))]/70 hover:text-[rgb(var(--color-primary))]",
+              )}
+            >
+              {item.label}
+            </Link>
+
+            {hasChildren && (
+              <DesktopNavigationItems
+                items={item.children!}
+                pathname={pathname}
+                depth={depth + 1}
+              />
+            )}
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+function MobileNavigationItems({
+  items,
+  pathname,
+  depth = 0,
+}: {
+  items: readonly NavigationChild[];
+  pathname: string;
+  depth?: number;
+}) {
+  return (
+    <>
+      {items.map((item) => {
+        const isActive = isNavigationItemActive(pathname, item.href);
+
+        return (
+          <div key={item.href}>
+            <Link
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+              className={cn(
+                "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
+                depth > 0 && "pl-9",
+                isActive
+                  ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+              )}
+            >
+              {item.label}
+            </Link>
+
+            {item.children && item.children.length > 0 && (
+              <MobileNavigationItems
+                items={item.children}
+                pathname={pathname}
+                depth={depth + 1}
+              />
+            )}
+          </div>
+        );
+      })}
+    </>
+  );
+}
 
 function DesktopDropdown({
   group,
@@ -62,12 +243,18 @@ function DesktopDropdown({
   const menuId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const internalPanelRef = useRef<HTMLDivElement | null>(null);
-  const [submenuPosition, setSubmenuPosition] = useState({ top: 0, left: 0 });
+
+  const [submenuPosition, setSubmenuPosition] = useState({
+    top: 0,
+    left: 0,
+  });
+
   const [opensAboveHeader, setOpensAboveHeader] = useState(false);
+
   const isGroupActive =
     pathname === group.href ||
-    group.children.some(
-      (child) => pathname === child.href || pathname.startsWith(`${child.href}/`),
+    group.children.some((child) =>
+      isNavigationItemActive(pathname, child.href),
     );
 
   useLayoutEffect(() => {
@@ -79,6 +266,7 @@ function DesktopDropdown({
       const header = headerRef.current;
       const trigger = triggerRef.current;
       const panel = internalPanelRef.current;
+
       if (!header || !trigger || !panel) {
         return;
       }
@@ -87,20 +275,26 @@ function DesktopDropdown({
       const triggerRect = trigger.getBoundingClientRect();
       const panelHeight = panel.getBoundingClientRect().height;
       const viewportHeight = window.innerHeight;
+
       const belowTop = headerRect.bottom;
       const fitsBelow = belowTop + panelHeight <= viewportHeight;
       const aboveTop = headerRect.top - panelHeight;
 
       if (fitsBelow || aboveTop < 0) {
         setOpensAboveHeader(false);
+
         setSubmenuPosition({
-          top: fitsBelow ? belowTop : Math.max(0, viewportHeight - panelHeight),
+          top: fitsBelow
+            ? belowTop
+            : Math.max(0, viewportHeight - panelHeight),
           left: triggerRect.left,
         });
+
         return;
       }
 
       setOpensAboveHeader(true);
+
       setSubmenuPosition({
         top: aboveTop,
         left: triggerRect.left,
@@ -108,6 +302,7 @@ function DesktopDropdown({
     };
 
     updatePosition();
+
     window.addEventListener("resize", updatePosition);
     window.addEventListener("scroll", updatePosition, true);
 
@@ -124,7 +319,11 @@ function DesktopDropdown({
       onMouseLeave={onClose}
       onFocusCapture={onOpen}
       onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+        if (
+          !event.currentTarget.contains(
+            event.relatedTarget as Node | null,
+          )
+        ) {
           onClose();
         }
       }}
@@ -132,7 +331,10 @@ function DesktopDropdown({
       <button
         ref={triggerRef}
         type="button"
-        className={cn(desktopNavItemClass(isOpen || isGroupActive), "touch-manipulation")}
+        className={cn(
+          desktopNavItemClass(isOpen || isGroupActive),
+          "touch-manipulation",
+        )}
         aria-haspopup="menu"
         aria-expanded={isOpen}
         aria-controls={menuId}
@@ -167,12 +369,17 @@ function DesktopDropdown({
           internalPanelRef.current = node;
           panelRef(node);
         }}
-        style={{ top: submenuPosition.top, left: submenuPosition.left }}
+        style={{
+          top: submenuPosition.top,
+          left: submenuPosition.left,
+        }}
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
         className={cn(
           "fixed z-[60] hidden min-w-[13rem] transition-opacity duration-150 ease-out motion-reduce:transition-none lg:block",
-          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
         )}
         aria-label={group.label}
         role="menu"
@@ -180,31 +387,17 @@ function DesktopDropdown({
         <div
           className={cn(
             "border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] shadow-[0_6px_20px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.03)]",
-            opensAboveHeader ? "rounded-t-sm border-b-0" : "rounded-b-sm border-t-0",
+            opensAboveHeader
+              ? "rounded-t-sm border-b-0"
+              : "rounded-b-sm border-t-0",
           )}
         >
           <div className="py-1">
-            {group.children.map((child) => {
-              const isChildActive =
-                pathname === child.href || pathname.startsWith(`${child.href}/`);
-
-              return (
-                <Link
-                  key={child.href}
-                  href={child.href}
-                  role="menuitem"
-                  aria-current={isChildActive ? "page" : undefined}
-                  className={cn(
-                    "block touch-manipulation border-b border-[rgb(var(--color-border))]/45 border-l-2 px-4 py-2.5 text-small leading-relaxed text-[rgb(var(--color-secondary))] transition-colors duration-200 ease-out last:border-b-0",
-                    isChildActive
-                      ? "border-l-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
-                      : "border-l-transparent hover:bg-[rgb(var(--color-primary-soft))]/70 hover:text-[rgb(var(--color-primary))]",
-                  )}
-                >
-                  {child.label}
-                </Link>
-              );
-            })}
+            <DesktopNavigationItems
+              items={group.children}
+              pathname={pathname}
+              enableFlyouts={group.label === "IPs"}
+            />
           </div>
         </div>
       </div>
@@ -224,10 +417,11 @@ function MobileAccordion({
   pathname: string;
 }) {
   const sectionId = useId();
+
   const isGroupActive =
     pathname === group.href ||
-    group.children.some(
-      (child) => pathname === child.href || pathname.startsWith(`${child.href}/`),
+    group.children.some((child) =>
+      isNavigationItemActive(pathname, child.href),
     );
 
   return (
@@ -254,30 +448,16 @@ function MobileAccordion({
         id={sectionId}
         className={cn(
           "grid transition-all duration-200 motion-reduce:transition-none",
-          isOpen ? "grid-rows-[1fr] overflow-visible" : "grid-rows-[0fr] overflow-hidden",
+          isOpen
+            ? "grid-rows-[1fr] overflow-visible"
+            : "grid-rows-[0fr] overflow-hidden",
         )}
       >
         <div className="min-h-0 divide-y divide-[rgb(var(--color-border))] border-t border-[rgb(var(--color-border))]">
-          {group.children.map((child) => {
-            const isChildActive =
-              pathname === child.href || pathname.startsWith(`${child.href}/`);
-
-            return (
-              <Link
-                key={child.href}
-                href={child.href}
-                aria-current={isChildActive ? "page" : undefined}
-                className={cn(
-                  "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
-                  isChildActive
-                    ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
-                    : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
-                )}
-              >
-                {child.label}
-              </Link>
-            );
-          })}
+          <MobileNavigationItems
+            items={group.children}
+            pathname={pathname}
+          />
         </div>
       </div>
     </div>
@@ -286,14 +466,20 @@ function MobileAccordion({
 
 export function Header() {
   const pathname = usePathname();
+
   const headerRef = useRef<HTMLElement | null>(null);
   const openMenuTimerRef = useRef<number | null>(null);
-  const desktopPanelRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const desktopPanelRefs = useRef<
+    Record<string, HTMLDivElement | null>
+  >({});
+
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSectionsOpen, setMobileSectionsOpen] = useState<Record<string, boolean>>(
-    {},
-  );
+
+  const [mobileSectionsOpen, setMobileSectionsOpen] = useState<
+    Record<string, boolean>
+  >({});
 
   const clearOpenTimer = () => {
     if (openMenuTimerRef.current !== null) {
@@ -309,6 +495,7 @@ export function Header() {
 
   const closeDesktopGroup = () => {
     clearOpenTimer();
+
     openMenuTimerRef.current = window.setTimeout(() => {
       setOpenGroup(null);
     }, 120);
@@ -338,6 +525,7 @@ export function Header() {
     }
 
     const previousOverflow = document.body.style.overflow;
+
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
     }
@@ -351,10 +539,14 @@ export function Header() {
 
     const handlePointerDown = (event: PointerEvent) => {
       const target = event.target as Node;
-      const mobileNavigation = document.getElementById("mobile-navigation");
+      const mobileNavigation =
+        document.getElementById("mobile-navigation");
 
       if (mobileOpen) {
-        if (headerRef.current?.contains(target) || mobileNavigation?.contains(target)) {
+        if (
+          headerRef.current?.contains(target) ||
+          mobileNavigation?.contains(target)
+        ) {
           return;
         }
 
@@ -363,11 +555,14 @@ export function Header() {
       }
 
       if (openGroup) {
-        const openPanel = Object.values(desktopPanelRefs.current).find((panel) =>
-          panel?.contains(target),
-        );
+        const openPanel = Object.values(
+          desktopPanelRefs.current,
+        ).find((panel) => panel?.contains(target));
 
-        if (openPanel || headerRef.current?.contains(target)) {
+        if (
+          openPanel ||
+          headerRef.current?.contains(target)
+        ) {
           return;
         }
 
@@ -384,7 +579,10 @@ export function Header() {
       }
 
       document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener(
+        "pointerdown",
+        handlePointerDown,
+      );
     };
   }, [mobileOpen, openGroup]);
 
@@ -394,6 +592,16 @@ export function Header() {
     };
   }, []);
 
+  const blogIsActive = isNavigationItemActive(
+    pathname,
+    blogLink.href,
+  );
+
+  const contactIsActive = isNavigationItemActive(
+    pathname,
+    contactLink.href,
+  );
+
   return (
     <>
       <header
@@ -401,7 +609,11 @@ export function Header() {
         className="sticky top-0 z-40 overflow-visible border-b border-[rgb(var(--color-border))]/80 bg-[rgb(var(--color-surface))]/90 backdrop-blur"
       >
         <Container className="flex h-20 items-center justify-between gap-6">
-          <Link href="/" className="flex items-center" aria-label="Globe Technologies home">
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Globe Technologies home"
+          >
             <Image
               src="/logos/logo.png"
               alt="Globe Technologies"
@@ -418,8 +630,12 @@ export function Header() {
           >
             <Link
               href={homeLink.href}
-              aria-current={pathname === homeLink.href ? "page" : undefined}
-              className={desktopNavItemClass(pathname === homeLink.href)}
+              aria-current={
+                pathname === homeLink.href ? "page" : undefined
+              }
+              className={desktopNavItemClass(
+                pathname === homeLink.href,
+              )}
             >
               {homeLink.label}
             </Link>
@@ -442,16 +658,28 @@ export function Header() {
                   }}
                   onKeyboardOpen={(direction = "first") => {
                     window.requestAnimationFrame(() => {
-                      const panelRef = desktopPanelRefs.current[group.label];
-                      if (panelRef) {
-                        const links = Array.from(
-                          panelRef.querySelectorAll<HTMLElement>(
-                            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-                          ),
-                        ).filter((element) => !element.hasAttribute("disabled"));
-                        const target = direction === "last" ? links.at(-1) : links[0];
-                        target?.focus();
+                      const panelRef =
+                        desktopPanelRefs.current[group.label];
+
+                      if (!panelRef) {
+                        return;
                       }
+
+                      const links = Array.from(
+                        panelRef.querySelectorAll<HTMLElement>(
+                          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+                        ),
+                      ).filter(
+                        (element) =>
+                          !element.hasAttribute("disabled"),
+                      );
+
+                      const target =
+                        direction === "last"
+                          ? links.at(-1)
+                          : links[0];
+
+                      target?.focus();
                     });
                   }}
                 />
@@ -459,33 +687,21 @@ export function Header() {
             })}
 
             <Link
-              href={researchLink.href}
+              href={blogLink.href}
               aria-current={
-                pathname === researchLink.href ||
-                pathname.startsWith(`${researchLink.href}/`)
-                  ? "page"
-                  : undefined
+                blogIsActive ? "page" : undefined
               }
-              className={desktopNavItemClass(
-                pathname === researchLink.href ||
-                  pathname.startsWith(`${researchLink.href}/`),
-              )}
+              className={desktopNavItemClass(blogIsActive)}
             >
-              {researchLink.label}
+              {blogLink.label}
             </Link>
 
             <Link
               href={contactLink.href}
               aria-current={
-                pathname === contactLink.href ||
-                pathname.startsWith(`${contactLink.href}/`)
-                  ? "page"
-                  : undefined
+                contactIsActive ? "page" : undefined
               }
-              className={desktopNavItemClass(
-                pathname === contactLink.href ||
-                  pathname.startsWith(`${contactLink.href}/`),
-              )}
+              className={desktopNavItemClass(contactIsActive)}
             >
               {contactLink.label}
             </Link>
@@ -493,13 +709,23 @@ export function Header() {
 
           <button
             type="button"
-            onClick={() => setMobileOpen((current) => !current)}
+            onClick={() =>
+              setMobileOpen((current) => !current)
+            }
             className="relative z-[60] inline-flex h-11 w-11 shrink-0 touch-manipulation items-center justify-center rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-primary))] lg:hidden"
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              mobileOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </Container>
       </header>
@@ -513,8 +739,8 @@ export function Header() {
         className={cn(
           "fixed inset-0 flex flex-col bg-[rgb(var(--color-background))] px-6 py-8 transition-transform duration-300 motion-reduce:transition-none lg:hidden",
           mobileOpen
-            ? "z-50 translate-x-0 pointer-events-auto"
-            : "z-20 pointer-events-none invisible translate-x-full",
+            ? "pointer-events-auto z-50 translate-x-0"
+            : "pointer-events-none invisible z-20 translate-x-full",
         )}
       >
         <div className="mb-8 flex items-center justify-between">
@@ -528,11 +754,18 @@ export function Header() {
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col gap-4 overflow-y-auto" aria-label="Mobile primary">
+        <nav
+          className="flex flex-1 flex-col gap-4 overflow-y-auto"
+          aria-label="Mobile primary"
+        >
           <Link
             href={homeLink.href}
-            aria-current={pathname === homeLink.href ? "page" : undefined}
-            className={mobileTopLevelNavClass(pathname === homeLink.href)}
+            aria-current={
+              pathname === homeLink.href ? "page" : undefined
+            }
+            className={mobileTopLevelNavClass(
+              pathname === homeLink.href,
+            )}
           >
             {homeLink.label}
           </Link>
@@ -541,39 +774,33 @@ export function Header() {
             <MobileAccordion
               key={group.label}
               group={group}
-              isOpen={Boolean(mobileSectionsOpen[group.label])}
+              isOpen={Boolean(
+                mobileSectionsOpen[group.label],
+              )}
               pathname={pathname}
-              onToggle={() => toggleMobileSection(group.label)}
+              onToggle={() =>
+                toggleMobileSection(group.label)
+              }
             />
           ))}
 
           <Link
-            href={researchLink.href}
+            href={blogLink.href}
             aria-current={
-              pathname === researchLink.href ||
-              pathname.startsWith(`${researchLink.href}/`)
-                ? "page"
-                : undefined
+              blogIsActive ? "page" : undefined
             }
-            className={mobileTopLevelNavClass(
-              pathname === researchLink.href ||
-                pathname.startsWith(`${researchLink.href}/`),
-            )}
+            className={mobileTopLevelNavClass(blogIsActive)}
           >
-            {researchLink.label}
+            {blogLink.label}
           </Link>
 
           <Link
             href={contactLink.href}
             aria-current={
-              pathname === contactLink.href ||
-              pathname.startsWith(`${contactLink.href}/`)
-                ? "page"
-                : undefined
+              contactIsActive ? "page" : undefined
             }
             className={mobileTopLevelNavClass(
-              pathname === contactLink.href ||
-                pathname.startsWith(`${contactLink.href}/`),
+              contactIsActive,
             )}
           >
             {contactLink.label}
