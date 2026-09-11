@@ -1,117 +1,105 @@
 import type { PageContent } from "../../types/content";
 
 export const merchandiseDivisionContent: PageContent = {
-  eyebrow: "Divisions",
+  eyebrow: "Division",
   title: "Globe Merchandise",
   intro:
-    "Research is the foundation of Globe Technologies. Before we design products, launch projects or pursue new initiatives, we seek to understand the problems worth solving. Through continuous learning, investigation and experimentation, Merchandise informs every decision we make.",
+    "Globe Merchandise commercializes Globe's brands and intellectual properties through thoughtfully developed physical products, printed materials and other merchandise.",
 
   sections: [
     {
-      title: "Merchandise That Leads to Innovation",
+      title: "Turning Intellectual Properties into Physical Products",
       paragraphs: [
-        "We believe meaningful innovation begins with understanding. Rather than pursuing technology for its own sake, we invest time in exploring challenges, identifying opportunities and asking better questions before developing solutions.",
-        "Research enables us to create products, projects and initiatives that are thoughtful, relevant and capable of contributing lasting value.",
+        "Globe Merchandise is the commercialization division responsible for extending Globe's brands and intellectual properties into physical form.",
+        "The division develops and manages merchandise that give audiences and customers tangible ways to engage with Globe and its intellectual properties while creating additional commercial value.",
       ],
     },
 
     {
       type: "image",
-      id: "research-collaboration",
+      id: "merchandise-development",
       src: "/images/research/research-collaboration.png",
-      alt: "Globe Technologies research team collaborating",
+      alt: "Globe Merchandise product development workspace",
       variant: "editorial",
     },
 
     {
-      title: "Areas of Research",
+      title: "What We Create",
       cards: [
         {
-          title: "Technology",
+          title: "Branded Products",
           description:
-            "Exploring emerging technologies, software engineering, artificial intelligence, digital platforms and the future of computing.",
+            "Developing physical products that extend Globe's corporate identity and brands beyond digital platforms.",
         },
         {
-          title: "People & Society",
+          title: "IP Merchandise",
           description:
-            "Understanding human behaviour, communities, culture and the social challenges that shape everyday life.",
+            "Creating products inspired by and associated with Globe's intellectual properties.",
         },
         {
-          title: "Media & Storytelling",
+          title: "Printed Materials",
           description:
-            "Researching ideas, history and human experiences that inspire meaningful stories and educational content.",
+            "Producing books, stationery, printed works and other physical materials developed through Globe's divisions.",
         },
         {
-          title: "Future Opportunities",
+          title: "Special Editions",
           description:
-            "Investigating new industries, emerging trends and opportunities that align with Globe Technologies' long-term purpose.",
+            "Developing limited, premium or purpose-specific physical products around selected brands and intellectual properties.",
         },
       ],
     },
 
     {
-      title: "How Research Creates Impact",
+      title: "Globe Store",
       paragraphs: [
-        "Research influences every part of Globe Technologies. It guides the products we build, the projects we pursue, the partnerships we establish and the decisions we make as a company.",
-        "By combining curiosity with disciplined execution, we transform knowledge into practical solutions, meaningful experiences and long-term value.",
-      ],
-    },
-
-    {
-      title: "Knowledge Sharing",
-      paragraphs: [
-        "As our research grows, Globe Technologies will continue to publish articles, white papers, technical publications, reports and other resources that contribute to public knowledge and encourage meaningful conversations across industries and communities.",
+        "Globe Store is the primary platform through which Globe Merchandise commercializes selected Globe brands and intellectual properties.",
+        "The store provides a direct channel for making physical products and merchandise available to customers while supporting the broader commercialization of Globe's intellectual property portfolio.",
       ],
       cards: [
         {
-          title: "Articles",
+          title: "Globe Store",
           description:
-            "Research insights, perspectives and thought leadership.",
-        },
-        {
-          title: "White Papers",
-          description:
-            "In-depth publications exploring emerging ideas, technologies and strategic opportunities.",
-        },
-        {
-          title: "Innovation",
-          description:
-            "Experiments, prototypes and applied research that help shape future products and initiatives.",
-        },
-        {
-          title: "Collaborations",
-          description:
-            "Research partnerships with organizations, institutions and experts who share our commitment to meaningful innovation.",
+            "Explore physical products and merchandise developed from Globe's brands and intellectual properties.",
+          href: "/ips/merchandise/store",
         },
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "From Intellectual Property to the Market",
       paragraphs: [
-        "Our commitment to research extends beyond today's challenges. As Globe Technologies grows, we will continue exploring new disciplines, emerging technologies and future opportunities that enable us to contribute to a better future through knowledge, innovation and responsible stewardship.",
+        "Globe Merchandise works with Globe's intellectual property portfolio to identify opportunities for physical commercialization. Products are developed according to the identity, audience, purpose and commercial potential of the underlying intellectual property.",
+        "Depending on the opportunity, commercialization may involve product development, manufacturing, sourcing, packaging, distribution, direct sales, licensing or other appropriate channels.",
+      ],
+    },
+
+    {
+      title: "Part of Globe",
+      paragraphs: [
+        "Globe Merchandise is a specialized division of Globe Technologies, operating within the company's governance framework and guided by its Constitution, purpose, mission and vision.",
+        "Its work reflects Globe's commitment to purpose, excellence and stewardship, ensuring that physical products are developed thoughtfully and contribute meaningful commercial value to the company's brands and intellectual properties.",
       ],
     },
   ],
 
   related: [
     {
-      label: "Products",
-      href: "/products",
+      label: "Globe Media",
+      href: "/divisions/media",
       description:
-        "Discover how research becomes practical solutions.",
+        "Explore the division responsible for creating Globe's films, publications, podcasts and other creative works.",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Globe Client Services",
+      href: "/divisions/client-services",
       description:
-        "Explore the ideas that grow into long-term creative initiatives.",
+        "Explore the division responsible for bringing in and delivering work for external clients through Globe's specialized capabilities.",
     },
     {
-      label: "Company Overview",
-      href: "/company",
+      label: "Globe Software",
+      href: "/divisions/software",
       description:
-        "Learn more about Globe Technologies and the purpose behind our work.",
+        "Explore the division responsible for creating Globe's software products and digital platforms.",
     },
   ],
 };
