@@ -1,4 +1,5 @@
 import type { Metadata, MetadataRoute } from "next";
+
 import { contactInfo } from "./contact-info";
 import { siteConfig } from "./site";
 
@@ -20,6 +21,7 @@ type PageSchemaKind =
   | "contactPage"
   | "creativeWork"
   | "softwareApplication"
+  | "collectionPage"
   | "webPage";
 
 type PageDefinition = {
@@ -32,7 +34,9 @@ type PageDefinition = {
   category?: string;
   schemaKind?: PageSchemaKind;
   breadcrumbs: readonly BreadcrumbItem[];
-  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+  changeFrequency: NonNullable<
+    MetadataRoute.Sitemap[number]["changeFrequency"]
+  >;
   priority: number;
 };
 
@@ -103,7 +107,9 @@ function buildWebPageSchema(definition: PageDefinition): JsonLdObject {
   };
 }
 
-function buildSpecialSchema(definition: PageDefinition): JsonLdObject | null {
+function buildSpecialSchema(
+  definition: PageDefinition,
+): JsonLdObject | null {
   const url = resolveUrl(definition.pathname);
 
   switch (definition.schemaKind) {
@@ -115,6 +121,7 @@ function buildSpecialSchema(definition: PageDefinition): JsonLdObject | null {
         description: definition.description,
         url,
       };
+
     case "contactPage":
       return {
         "@context": "https://schema.org",
@@ -134,6 +141,7 @@ function buildSpecialSchema(definition: PageDefinition): JsonLdObject | null {
           },
         },
       };
+
     case "softwareApplication":
       return {
         "@context": "https://schema.org",
@@ -154,6 +162,7 @@ function buildSpecialSchema(definition: PageDefinition): JsonLdObject | null {
           url: siteConfig.url,
         },
       };
+
     case "creativeWork":
       return {
         "@context": "https://schema.org",
@@ -172,6 +181,16 @@ function buildSpecialSchema(definition: PageDefinition): JsonLdObject | null {
           },
         },
       };
+
+    case "collectionPage":
+      return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: definition.title,
+        description: definition.description,
+        url,
+      };
+
     default:
       return null;
   }
@@ -182,6 +201,7 @@ function buildPageSchemas(definition: PageDefinition): JsonLdObject[] {
     buildWebPageSchema(definition),
     buildBreadcrumbList(definition),
   ];
+
   const specialSchema = buildSpecialSchema(definition);
 
   if (specialSchema) {
@@ -244,12 +264,18 @@ const pageDefinitions = {
     changeFrequency: "weekly",
     priority: 1,
   },
+
   company: {
     pathname: "/company",
     title: "Company Overview",
     description:
       "Learn how Globe Technologies is structured and how its divisions, products and governance work together.",
-    keywords: ["company overview", "Globe Technologies", "governance", "divisions"],
+    keywords: [
+      "company overview",
+      "Globe Technologies",
+      "governance",
+      "divisions",
+    ],
     image: "/images/company/reception.png",
     imageAlt: "Globe Technologies headquarters reception area",
     breadcrumbs: [
@@ -259,23 +285,30 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.9,
   },
+
   companyAbout: {
-    pathname: "/company/about",
+    pathname: "/about",
     title: "About Us",
     description:
       "Learn about Globe Technologies, its purpose, values and the thinking behind its work.",
-    keywords: ["about Globe Technologies", "purpose", "values", "technology company"],
+    keywords: [
+      "about Globe Technologies",
+      "purpose",
+      "values",
+      "technology company",
+    ],
     image: "/images/company/team-collaboration.png",
     imageAlt: "Globe Technologies team collaborating",
     schemaKind: "aboutPage",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
       { name: "Company Overview", pathname: "/company" },
-      { name: "About Us", pathname: "/company/about" },
+      { name: "About Us", pathname: "/about" },
     ],
     changeFrequency: "monthly",
     priority: 0.8,
   },
+
   companyBrand: {
     pathname: "/company/brand",
     title: "Brand",
@@ -292,28 +325,40 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyProfile: {
-    pathname: "/company/company-profile",
+    pathname: "/about/company-profile",
     title: "Company Profile",
     description:
       "A concise profile of Globe Technologies, including its focus, structure and guiding principles.",
-    keywords: ["company profile", "Globe Technologies", "profile", "structure"],
+    keywords: [
+      "company profile",
+      "Globe Technologies",
+      "profile",
+      "structure",
+    ],
     image: "/images/company/profile.png",
     imageAlt: "Globe Technologies company profile",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
       { name: "Company Overview", pathname: "/company" },
-      { name: "Company Profile", pathname: "/company/company-profile" },
+      { name: "Company Profile", pathname: "/about/company-profile" },
     ],
     changeFrequency: "monthly",
     priority: 0.8,
   },
+
   companyConstitution: {
     pathname: "/company/constitution",
     title: "Constitution",
     description:
       "Learn how the Globe Technologies Constitution protects purpose, governance and continuity.",
-    keywords: ["constitution", "governance", "Globe Technologies", "continuity"],
+    keywords: [
+      "constitution",
+      "governance",
+      "Globe Technologies",
+      "continuity",
+    ],
     image: "/images/company/founding-journey.png",
     imageAlt: "The founding journey behind Globe Technologies",
     breadcrumbs: [
@@ -324,12 +369,18 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyGovernance: {
     pathname: "/company/governance",
     title: "Governance",
     description:
       "Review the governance framework that keeps Globe Technologies accountable, resilient and purpose-led.",
-    keywords: ["governance", "accountability", "Globe Technologies", "leadership"],
+    keywords: [
+      "governance",
+      "accountability",
+      "Globe Technologies",
+      "leadership",
+    ],
     image: "/images/company/leadership-discussion.png",
     imageAlt: "Globe Technologies leadership in discussion",
     breadcrumbs: [
@@ -340,12 +391,18 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyLeadership: {
     pathname: "/company/leadership",
     title: "Leadership",
     description:
       "Meet the leadership approach that guides Globe Technologies with stewardship and accountability.",
-    keywords: ["leadership", "Globe Technologies", "stewardship", "accountability"],
+    keywords: [
+      "leadership",
+      "Globe Technologies",
+      "stewardship",
+      "accountability",
+    ],
     image: "/images/company/leadership-discussion.png",
     imageAlt: "Globe Technologies leadership in discussion",
     breadcrumbs: [
@@ -356,22 +413,24 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
-  companyMission: {
-    pathname: "/company/mission",
-    title: "Mission",
+
+  companyMissionAndVision: {
+    pathname: "/company/mission-vision",
+    title: "Mission & Vision",
     description:
-      "Understand how Globe Technologies turns its purpose into practical action.",
-    keywords: ["mission", "Globe Technologies", "purpose", "action"],
+      "Understand how Globe Technologies turns its purpose into practical action and long-term goals.",
+    keywords: ["mission", "Globe Technologies", "purpose", "action", "vision", "goals"],
     image: "/images/company/profile.png",
     imageAlt: "Globe Technologies company profile",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "Company Overview", pathname: "/company" },
-      { name: "Mission", pathname: "/company/mission" },
+      { name: "Company Overview", pathname: "/about/company" },
+      { name: "Mission & Vision", pathname: "/about/mission-vision" },
     ],
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyOurStory: {
     pathname: "/company/our-story",
     title: "Our Story",
@@ -388,6 +447,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyPurpose: {
     pathname: "/company/purpose",
     title: "Purpose",
@@ -404,6 +464,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   companyVision: {
     pathname: "/company/vision",
     title: "Vision",
@@ -420,6 +481,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   careers: {
     pathname: "/careers",
     title: "Careers",
@@ -435,12 +497,18 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.8,
   },
+
   contact: {
     pathname: "/contact",
     title: "Contact",
     description:
       "Contact Globe Technologies for enquiries, partnerships, careers and collaboration opportunities.",
-    keywords: ["contact", "Globe Technologies", "enquiries", "partnerships"],
+    keywords: [
+      "contact",
+      "Globe Technologies",
+      "enquiries",
+      "partnerships",
+    ],
     image: "/images/contact/remote-collaboration.png",
     imageAlt: "Remote collaboration at Globe Technologies",
     schemaKind: "contactPage",
@@ -451,12 +519,18 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.8,
   },
+
   divisions: {
     pathname: "/divisions",
     title: "Divisions",
     description:
       "See how Globe Technologies is organized across its software and media divisions.",
-    keywords: ["divisions", "Globe Software", "Globe Media", "Globe Technologies"],
+    keywords: [
+      "divisions",
+      "Globe Software",
+      "Globe Media",
+      "Globe Technologies",
+    ],
     image: "/images/divisions/divisions-collaboration.png",
     imageAlt: "Globe Technologies divisions collaborating",
     breadcrumbs: [
@@ -466,12 +540,18 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.8,
   },
+
   divisionsSoftware: {
     pathname: "/divisions/software",
     title: "Globe Software",
     description:
       "Learn how Globe Software develops digital products and platforms through research and engineering.",
-    keywords: ["Globe Software", "software", "engineering", "digital products"],
+    keywords: [
+      "Globe Software",
+      "software",
+      "engineering",
+      "digital products",
+    ],
     image: "/images/divisions/engineering-workspace.png",
     imageAlt: "Globe Software engineering workspace",
     breadcrumbs: [
@@ -482,6 +562,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
   divisionsMedia: {
     pathname: "/divisions/media",
     title: "Globe Media",
@@ -498,6 +579,77 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+
+  divisionsResearch: {
+    pathname: "/divisions/research",
+    title: "Globe Research",
+    description:
+      "Learn how Globe Research investigates ideas, problems and opportunities to guide innovation.",
+    keywords: [
+      "Globe Research",
+      "research",
+      "innovation",
+      "ideas",
+      "opportunities",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Research",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Divisions", pathname: "/divisions" },
+      { name: "Globe Research", pathname: "/divisions/research" },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
+  divisionsMerchandise: {
+    pathname: "/divisions/merchandise",
+    title: "Globe Merchandise",
+    description:
+      "Learn how Globe Merchandise develops and commercializes Globe and IP-branded physical products.",
+    keywords: [
+      "Globe Merchandise",
+      "merchandise",
+      "intellectual property",
+      "physical products",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Merchandise",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Divisions", pathname: "/divisions" },
+      { name: "Globe Merchandise", pathname: "/divisions/merchandise" },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
+  divisionsClientServices: {
+    pathname: "/divisions/client-services",
+    title: "Globe Client Services",
+    description:
+      "Learn how Globe Client Services connects external clients with the capabilities and expertise of Globe.",
+    keywords: [
+      "Globe Client Services",
+      "client services",
+      "consulting",
+      "Globe Technologies",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Client Services",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Divisions", pathname: "/divisions" },
+      {
+        name: "Globe Client Services",
+        pathname: "/divisions/client-services",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
   news: {
     pathname: "/news",
     title: "News",
@@ -513,6 +665,7 @@ const pageDefinitions = {
     changeFrequency: "weekly",
     priority: 0.5,
   },
+
   newsCompany: {
     pathname: "/news/company-news",
     title: "Company News",
@@ -529,6 +682,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.4,
   },
+
   newsEvents: {
     pathname: "/news/events",
     title: "Events",
@@ -545,11 +699,16 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.4,
   },
+
   newsPressReleases: {
     pathname: "/news/press-releases",
     title: "Press Releases",
     description: "Read official press releases from Globe Technologies.",
-    keywords: ["press releases", "Globe Technologies", "official statements"],
+    keywords: [
+      "press releases",
+      "Globe Technologies",
+      "official statements",
+    ],
     image: "/logos/logo.png",
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
@@ -560,6 +719,7 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.4,
   },
+
   newsProductUpdates: {
     pathname: "/news/product-updates",
     title: "Product Updates",
@@ -576,84 +736,217 @@ const pageDefinitions = {
     changeFrequency: "monthly",
     priority: 0.4,
   },
-  products: {
-    pathname: "/products",
-    title: "Products",
+
+  ips: {
+    pathname: "/ips",
+    title: "Intellectual Property",
     description:
-      "Explore Globe Technologies products, beginning with Akiba and the work behind it.",
-    keywords: ["products", "Globe Technologies", "Akiba", "software"],
-    image: "/images/products/product-development.png",
-    imageAlt: "Globe Technologies product development in progress",
+      "Explore Globe's intellectual property portfolio across software, media, research publications and merchandise.",
+    keywords: [
+      "Globe intellectual property",
+      "Globe IP",
+      "software",
+      "media",
+      "research publications",
+      "merchandise",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe intellectual property",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "Products", pathname: "/products" },
+      { name: "Intellectual Property", pathname: "/ips" },
     ],
     changeFrequency: "monthly",
     priority: 0.8,
   },
-  productsAkiba: {
-    pathname: "/products/akiba",
+
+  ipsResearch: {
+    pathname: "/ips/research/research-publications",
+    title: "Research Publications",
+    description:
+      "Research publications and knowledge produced by Globe Research.",
+    keywords: [
+      "Globe Research",
+      "research publications",
+      "research",
+      "knowledge",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Research publications",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      {
+        name: "Research Publications",
+        pathname: "/ips/research/research-publications",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
+  ipsSoftware: {
+    pathname: "/ips/software",
+    title: "Software",
+    description:
+      "Software intellectual property created by Globe Software.",
+    keywords: [
+      "Globe Software",
+      "software",
+      "software intellectual property",
+      "digital products",
+    ],
+    image: "/images/divisions/engineering-workspace.png",
+    imageAlt: "Globe Software",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Software", pathname: "/ips/software" },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
+  ipsSoftwareAkiba: {
+    pathname: "/ips/software/akiba",
     title: "Akiba",
     description:
-      "Akiba is Globe Technologies' collaborative savings platform for families, friends and communities.",
-    keywords: ["Akiba", "savings platform", "Globe Technologies", "finance"],
+      "A collaborative financial platform designed to help groups coordinate, communicate and manage shared financial goals.",
+    keywords: [
+      "Akiba",
+      "collaborative financial platform",
+      "group financial management",
+      "shared financial goals",
+    ],
     image: "/images/products/akiba-app-mockup.png",
-    imageAlt: "Akiba collaborative savings platform on mobile devices",
+    imageAlt: "Akiba collaborative financial platform",
+    category: "Intellectual Property",
     schemaKind: "softwareApplication",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "Products", pathname: "/products" },
-      { name: "Akiba", pathname: "/products/akiba" },
-    ],
-    changeFrequency: "monthly",
-    priority: 0.7,
-  },
-  projects: {
-    pathname: "/projects",
-    title: "Projects",
-    description:
-      "Explore Globe Technologies projects, beginning with Addam and its long-term creative focus.",
-    keywords: ["projects", "Globe Technologies", "Addam", "creative work"],
-    image: "/images/projects/storytelling-creative.png",
-    imageAlt: "Creative storytelling and production at Globe Technologies",
-    breadcrumbs: [
-      { name: siteConfig.name, pathname: "/" },
-      { name: "Projects", pathname: "/projects" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Software", pathname: "/ips/software" },
+      {
+        name: "Akiba",
+        pathname: "/ips/software/akiba",
+      },
     ],
     changeFrequency: "monthly",
     priority: 0.8,
   },
-  projectsAddam: {
-    pathname: "/projects/addam",
+
+  ipsMedia: {
+    pathname: "/ips/media",
+    title: "Media",
+    description:
+      "Media intellectual property created by Globe Media.",
+    keywords: [
+      "Globe Media",
+      "media",
+      "media intellectual property",
+      "creative works",
+    ],
+    image: "/images/divisions/creative-studio.png",
+    imageAlt: "Globe Media",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Media", pathname: "/ips/media" },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+
+  ipsMediaAddam: {
+    pathname: "/ips/media/addam",
     title: "Addam",
     description:
-      "Addam is an original dramatic series from Globe Media exploring identity, purpose and choice.",
-    keywords: ["Addam", "Globe Media", "drama", "storytelling"],
-    image: "/images/projects/addam.png",
-    imageAlt: "Cinematic still from the Addam dramatic series",
+      "An original dramatic series exploring humanity and the unseen forces surrounding the human experience.",
+    keywords: [
+      "Addam",
+      "Globe Media",
+      "dramatic series",
+      "original intellectual property",
+    ],
+    image: "/images/divisions/creative-studio.png",
+    imageAlt: "Addam",
+    category: "Intellectual Property",
     schemaKind: "creativeWork",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "Projects", pathname: "/projects" },
-      { name: "Addam", pathname: "/projects/addam" },
-    ],
-    changeFrequency: "monthly",
-    priority: 0.7,
-  },
-  research: {
-    pathname: "/research",
-    title: "Research",
-    description:
-      "See how research informs Globe Technologies products, projects and long-term decisions.",
-    keywords: ["research", "Globe Technologies", "innovation", "publications"],
-    image: "/images/research/research-collaboration.png",
-    imageAlt: "Globe Technologies research team collaborating",
-    breadcrumbs: [
-      { name: siteConfig.name, pathname: "/" },
-      { name: "Research", pathname: "/research" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Media", pathname: "/ips/media" },
+      {
+        name: "Addam",
+        pathname: "/ips/media/addam",
+      },
     ],
     changeFrequency: "monthly",
     priority: 0.8,
+  },
+
+  ipsMerchandise: {
+    pathname: "/ips/merchandise",
+    title: "Merchandise",
+    description:
+      "Globe's corporate and IP-branded merchandise.",
+    keywords: [
+      "Globe merchandise",
+      "IP merchandise",
+      "branded merchandise",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe merchandise",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      {
+        name: "Merchandise",
+        pathname: "/ips/merchandise",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+
+  ipsMerchandiseStore: {
+    pathname: "/ips/merchandise/store",
+    title: "Globe Store",
+    description:
+      "Shop Globe-branded and IP-branded merchandise.",
+    keywords: [
+      "Globe Store",
+      "Globe merchandise",
+      "branded merchandise",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Store",
+    category: "Intellectual Property",
+    schemaKind: "collectionPage",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      {
+        name: "Merchandise",
+        pathname: "/ips/merchandise",
+      },
+      {
+        name: "Globe Store",
+        pathname: "/ips/merchandise/store",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.6,
   },
 } as const satisfies Record<string, PageDefinition>;
 
@@ -665,7 +958,9 @@ export function createPageMetadata(key: SeoPageKey): Metadata {
   return buildPageMetadata(definition);
 }
 
-export function createPageStructuredData(key: SeoPageKey): JsonLdObject[] {
+export function createPageStructuredData(
+  key: SeoPageKey,
+): JsonLdObject[] {
   const definition = pageDefinitions[key];
 
   return buildPageSchemas(definition);
@@ -734,6 +1029,7 @@ export function createSiteSchemas(): JsonLdObject[] {
         telephone: contactInfo.phone,
       },
     },
+
     {
       "@context": "https://schema.org",
       "@type": "WebSite",

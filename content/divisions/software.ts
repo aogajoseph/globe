@@ -1,7 +1,7 @@
 import type { PageContent } from "../../types/content";
 
 export const softwareDivisionContent: PageContent = {
-  eyebrow: "Division",
+  eyebrow: "Divisions",
   title: "Globe Software",
   intro:
     "Globe Software designs and develops software products and digital platforms that solve meaningful problems, improve everyday life and contribute to a better future.",

@@ -1,7 +1,7 @@
 import type { PageContent } from "../../types/content";
 
 export const mediaDivisionContent: PageContent = {
-  eyebrow: "Division",
+  eyebrow: "Divisions",
   title: "Globe Media",
   intro:
     "Globe Media creates and publishes educational and creative media that informs, inspires and empowers generations.",

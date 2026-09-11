@@ -6,7 +6,7 @@ export const homePageContent: PageContent = {
   heroImage: "/images/hero/homepage-banner.png",
 
   intro:
-    "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual property.",
+    "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual properties.",
 
   sections: [
     {
@@ -106,7 +106,7 @@ export const homePageContent: PageContent = {
     {
       title: "Intellectual Property",
       paragraphs: [
-        "Our intellectual property portfolio includes software, media, research publications and other original works developed through our specialized divisions.",
+        "Our intellectual property portfolio spans software, media, research publications and merchandise, developed and commercialized through our specialized divisions.",
       ],
       cards: [
         {
@@ -125,7 +125,13 @@ export const homePageContent: PageContent = {
           title: "Research Publications",
           description:
             "Research and insights developed to deepen understanding and inform future innovation.",
-          href: "/ips/research",
+          href: "/ips/research/research-publications",
+        },
+        {
+          title: "Globe Store",
+          description:
+            "A platform for commercializing Globe's corporate brands and intellectual properties through physical products.",
+          href: "/ips/merchandise/store",
         },
       ],
     },
@@ -154,11 +160,11 @@ export const homePageContent: PageContent = {
   ],
 
   related: [
-    { label: "About Globe", href: "/about" },
-    { label: "Our Divisions", href: "/divisions" },
-    { label: "Our Work", href: "/ips" },
-    { label: "Research", href: "/ips/research" },
+    { label: "Company Profile", href: "/about/company-profile" },
+    { label: "Mission & Vision", href: "/about/mission-vision" },
+    { label: "Intellectual Property", href: "/ips" },
     { label: "Constitution", href: "/about/constitution" },
-    { label: "Contact", href: "/contact" },
+    { label: "Governance", href: "/about/governance" },
+    { label: "Leadership", href: "/about/leadership" },
   ],
 };

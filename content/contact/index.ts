@@ -1,7 +1,7 @@
 import type { PageContent } from "../../types/content";
 
 export const contactContent: PageContent = {
-  eyebrow: "Contact",
+  eyebrow: "Contact Us",
   title: "Get in Touch",
   intro:
     "Do you have a question, an idea, a partnership opportunity or simply want to learn more about us? We'd love to hear from you.",

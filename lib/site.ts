@@ -26,7 +26,7 @@ export const siteConfig = {
   name: "Globe Technologies",
 
   description:
-    "Globe Technologies is a technology and intellectual property company that researches, creates and delivers innovative assets that contribute to a better future.",
+    "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual property.",
 
   url: normalizeSiteUrl(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://globetechnologies.com",
@@ -36,9 +36,7 @@ export const siteConfig = {
   language: "en",
   themeColor: "#0f172a",
   manifestPath: "/manifest.webmanifest",
-
   logoPath: "/logos/logo.png",
-
   tagline: "Inventing the Future.",
 
   keywords: [
@@ -69,13 +67,9 @@ export const siteConfig = {
  */
 export const navigationGroups: readonly NavigationGroup[] = [
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
     children: [
-      {
-        label: "Overview",
-        href: "/about",
-      },
       {
         label: "The Company",
         href: "/about/company",
@@ -89,12 +83,8 @@ export const navigationGroups: readonly NavigationGroup[] = [
         href: "/about/company-profile",
       },
       {
-        label: "Vision",
-        href: "/about/vision",
-      },
-      {
-        label: "Mission",
-        href: "/about/mission",
+        label: "Mission & Vision",
+        href: "/about/mission-vision",
       },
       {
         label: "Leadership",
@@ -158,7 +148,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
     children: [
       {
         label: "Research Publications",
-        href: "/ips/research",
+        href: "/ips/research/research-publications",
         description:
           "Research publications and knowledge produced by Globe Research.",
       },
@@ -167,7 +157,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
         label: "Software",
         href: "/ips/software",
         description:
-          "Software intellectual property created by Globe Software Division.",
+          "Software intellectual property created by Globe Software.",
         children: [
           {
             label: "Akiba",
@@ -180,7 +170,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
         label: "Media",
         href: "/ips/media",
         description:
-          "Media intellectual property created by Globe Media Division.",
+          "Media intellectual property created by Globe Media.",
         children: [
           {
             label: "Addam",
@@ -191,7 +181,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
 
       {
         label: "Merchandise",
-        href: "/store",
+        href: "/ips/merchandise",
         description:
           "Globe Store for commercializing Globe's corporate and IP-branded merchandise.",
         children: [
@@ -206,7 +196,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
 ] as const;
 
 export const contactLink = {
-  label: "Contact",
+  label: "Contact Us",
   href: "/contact",
 } as const;
 
