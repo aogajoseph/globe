@@ -1,17 +1,17 @@
 import type { PageContent } from "../../types/content";
 
 export const softwareDivisionContent: PageContent = {
-  eyebrow: "Divisions",
+  eyebrow: "Division",
   title: "Globe Software",
   intro:
-    "Globe Software designs and develops software products and digital platforms that solve meaningful problems, improve everyday life and contribute to a better future.",
+    "Globe Software creates software products and digital platforms from ideas identified and validated through Globe's innovation process. The division combines product thinking, engineering and design to turn those ideas into usable technologies.",
 
   sections: [
     {
-      title: "What We Do",
+      title: "Turning Ideas into Software",
       paragraphs: [
-        "Globe Software is the software development division of Globe Technologies. Through research, engineering and thoughtful design, we create digital solutions that help people, organizations and communities solve real-world challenges.",
-        "Every product begins with understanding the problem before designing the technology, ensuring our solutions are practical, reliable and built for long-term value.",
+        "Globe Software takes validated ideas and turns them into practical software products and digital platforms. Its work spans product definition, system design, engineering, development, testing and ongoing monitoring.",
+        "The division focuses on building technologies that are useful, reliable and capable of creating lasting value for the people and organizations they serve.",
       ],
     },
 
@@ -24,27 +24,27 @@ export const softwareDivisionContent: PageContent = {
     },
 
     {
-      title: "Areas of Focus",
+      title: "What We Build",
       cards: [
         {
-          title: "Research",
+          title: "Software Products",
           description:
-            "Exploring meaningful challenges and emerging technologies before building solutions.",
-        },
-        {
-          title: "Software Engineering",
-          description:
-            "Designing, developing and maintaining reliable software systems.",
+            "Developing software products that address defined problems and opportunities.",
         },
         {
           title: "Digital Platforms",
           description:
-            "Creating secure, scalable platforms that empower people and organizations.",
+            "Building platforms that bring people, information, processes and services together.",
         },
         {
-          title: "Innovation",
+          title: "Technical Systems",
           description:
-            "Investigating new ideas and technologies that improve lives and shape the future.",
+            "Designing the underlying systems, integrations and infrastructure required to support reliable software.",
+        },
+        {
+          title: "Product Experiences",
+          description:
+            "Creating clear, usable experiences that connect technology with the needs of its intended users.",
         },
       ],
     },
@@ -52,29 +52,31 @@ export const softwareDivisionContent: PageContent = {
     {
       title: "Current Work",
       paragraphs: [
-        "Akiba is Globe Software's flagship product. It enables families, friends and communities to save, manage and grow funds together through a secure collaborative savings platform.",
+        "Akiba is a Globe Software intellectual property: a collaborative financial platform that enables groups to coordinate, communicate and transparently manage shared financial goals in one trusted environment.",
       ],
       cards: [
         {
           title: "Akiba",
           description:
-            "A collaborative savings platform designed for families, friends and communities.",
-          href: "/products/akiba",
+            "A collaborative financial platform designed to help groups coordinate, communicate and manage shared financial goals.",
+          href: "/ips/software/akiba",
         },
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "From Idea to Product",
       paragraphs: [
-        "Globe Software will continue expanding into new software products, intelligent platforms and emerging technologies that contribute to a better future while remaining grounded in research, excellence and responsible innovation.",
+        "Globe Software works within the wider Globe innovation process. Globe Research investigates ideas, problems and opportunities and provides the understanding and recommendations needed to determine what an idea should become.",
+        "When an idea calls for software, Globe Software takes responsibility for turning that direction into a working product or platform, with further research continuing where development requires it.",
       ],
     },
 
     {
-      title: "Part of Globe Technologies",
+      title: "Part of Globe",
       paragraphs: [
-        "Globe Software operates as a division of Globe Technologies and shares the company's purpose, vision and commitment to excellence. Every solution reflects the same standards of research, innovation and stewardship that define the company as a whole.",
+        "Globe Software is a specialized division of Globe Technologies, operating within the company's governance framework and guided by its Constitution, purpose, mission and vision.",
+        "Its work reflects Globe's commitment to purpose, excellence and stewardship, applying disciplined engineering and thoughtful design to the creation of software and digital platforms.",
       ],
     },
   ],
@@ -84,19 +86,19 @@ export const softwareDivisionContent: PageContent = {
       label: "Globe Media",
       href: "/divisions/media",
       description:
-        "Explore the creative and educational media division.",
+        "Explore the division responsible for creating films, documentaries, podcasts, publications and other creative works.",
     },
     {
-      label: "Products",
-      href: "/products",
+      label: "Globe Merchandise",
+      href: "/divisions/merchandise",
       description:
-        "Discover the products developed by Globe Technologies.",
+        "Explore the division responsible for commercializing Globe's brands and intellectual properties through physical products.",
     },
     {
-      label: "Research",
-      href: "/research",
+      label: "Globe Client Services",
+      href: "/divisions/client-services",
       description:
-        "Learn how research shapes everything we build.",
+        "Explore the division responsible for bringing in and delivering work for external clients through Globe's specialized capabilities.",
     },
   ],
 };
