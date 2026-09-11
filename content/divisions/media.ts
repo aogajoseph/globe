@@ -1,17 +1,17 @@
 import type { PageContent } from "../../types/content";
 
 export const mediaDivisionContent: PageContent = {
-  eyebrow: "Divisions",
+  eyebrow: "Division",
   title: "Globe Media",
   intro:
-    "Globe Media creates and publishes educational and creative media that informs, inspires and empowers generations.",
+    "Globe Media creates films, documentaries, podcasts, publications and other creative works that turn ideas into meaningful stories and intellectual properties.",
 
   sections: [
     {
-      title: "What We Do",
+      title: "Creating Stories and Experiences",
       paragraphs: [
-        "Globe Media is the creative media division of Globe Technologies. Through storytelling, publishing and digital media, we explore ideas that educate, inspire and encourage people to think more deeply about themselves, their communities and the world around them.",
-        "Our work combines research, creativity and thoughtful communication to produce stories and experiences that are engaging, meaningful and enduring.",
+        "Globe Media is the creative division of Globe Technologies. It develops original stories, publications and media experiences across visual, audio and written forms.",
+        "The division combines creative development, production and thoughtful communication to create work that is engaging, distinctive and built for lasting value.",
       ],
     },
 
@@ -24,57 +24,59 @@ export const mediaDivisionContent: PageContent = {
     },
 
     {
-      title: "Areas of Focus",
+      title: "What We Create",
       cards: [
         {
-          title: "Research",
+          title: "Film & Drama",
           description:
-            "Exploring ideas, cultures and history that inspire meaningful stories and educational content.",
+            "Developing original films and dramatic works that explore ideas, experiences and human stories.",
         },
         {
-          title: "Storytelling",
+          title: "Documentaries",
           description:
-            "Creating original narratives that entertain, challenge perspectives and inspire conversations.",
+            "Producing factual works that investigate subjects, preserve stories and present ideas through visual storytelling.",
         },
         {
           title: "Publishing",
           description:
-            "Producing books, articles and publications that share knowledge and ideas.",
+            "Creating books, publications and written works that communicate knowledge, stories and perspectives.",
         },
         {
-          title: "Creative Production",
+          title: "Digital Media",
           description:
-            "Developing visual, audio and interactive experiences across multiple forms of media.",
+            "Developing podcasts, digital experiences and other media formats for contemporary audiences.",
         },
       ],
     },
 
     {
-      title: "Current Work",
+      title: "Current Intellectual Property",
       paragraphs: [
-        "Addam. An original dramatic series exploring the human experience through the life of the main character, inviting audiences to reflect on identity, choice, purpose, relationships and the unseen forces that shape our lives. While inspired by timeless themes, Addam speaks to questions that transcend culture, generation and background.",
+        "Addam is an original Globe Media intellectual property: a dramatic series exploring the human experience through identity, choice, purpose, relationships and the hidden forces that shape our lives.",
       ],
       cards: [
         {
           title: "Addam",
           description:
             "An original dramatic series exploring the complexities of the human experience.",
-          href: "/projects/addam",
+          href: "/ips/media/addam",
         },
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "From Idea to Production",
       paragraphs: [
-        "Globe Media will continue expanding into books, documentaries, films, podcasts and digital experiences that educate, inspire and contribute to meaningful conversations across generations.",
+        "Globe Media develops ideas into creative works according to the form best suited to their purpose. Development may involve concept development, writing, visual development, production and post-production.",
+        "Where an idea originates through Globe Research, research findings and recommendations provide direction for the creative process. Media development may also generate new questions requiring further research.",
       ],
     },
 
     {
-      title: "Part of Globe Technologies",
+      title: "Part of Globe",
       paragraphs: [
-        "Globe Media operates as a division of Globe Technologies and shares the company's purpose, vision and commitment to excellence. Every story, publication and creative work reflects the same principles of research, innovation and responsible stewardship that define the company as a whole.",
+        "Globe Media is a specialized division of Globe Technologies, operating within the company's governance framework and guided by its Constitution, purpose, mission and vision.",
+        "Its work reflects Globe's commitment to purpose, excellence and stewardship, applying creative discipline and thoughtful production to the development of original media and intellectual properties.",
       ],
     },
   ],
@@ -84,19 +86,19 @@ export const mediaDivisionContent: PageContent = {
       label: "Globe Software",
       href: "/divisions/software",
       description:
-        "Explore the software division of Globe Technologies.",
+        "Explore the division responsible for creating Globe's software products and digital platforms.",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Globe Merchandise",
+      href: "/divisions/merchandise",
       description:
-        "Discover the projects and initiatives developed by Globe Technologies.",
+        "Explore the division responsible for commercializing Globe's brands and intellectual properties through physical products.",
     },
     {
-      label: "Research",
-      href: "/research",
+      label: "Globe Client Services",
+      href: "/divisions/client-services",
       description:
-        "Learn how research informs every story and initiative we create.",
+        "Explore the division responsible for bringing in and delivering work for external clients through Globe's specialized capabilities.",
     },
   ],
 };
