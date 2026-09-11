@@ -16,10 +16,18 @@ export const akibaContent: PageContent = {
     },
 
     {
-      title: "Why Akiba Exists",
+      title: "The Problem",
       paragraphs: [
-        "Groups have long relied on informal tools and processes to manage shared financial goals. Contributions, balances and important decisions are often communicated manually, leaving members dependent on incomplete information and trust.",
-        "Akiba was created to bring communication, coordination and financial visibility into one platform, giving groups a clearer and more accountable way to manage shared goals.",
+        "Groups often manage shared financial goals through a combination of messaging apps, bank accounts, spreadsheets and manual updates. Contributions, balances and financial decisions can become difficult to track, leaving members dependent on incomplete information and informal trust.",
+        "Akiba brings these activities into one shared environment, giving groups a clearer way to coordinate, communicate and maintain visibility over their financial goals.",
+      ],
+    },
+
+    {
+      title: "The Group",
+      paragraphs: [
+        "The group is the foundation of Akiba. Each group brings people together around a shared financial goal and provides the structure through which members can communicate, contribute and monitor financial activity.",
+        "Members can participate according to defined roles and access the information they need to understand the group's progress and activity.",
       ],
     },
 
@@ -27,52 +35,54 @@ export const akibaContent: PageContent = {
       title: "What Akiba Enables",
       cards: [
         {
-          title: "Group Coordination",
+          title: "Financial Coordination",
           description:
-            "Bring people together around shared financial goals and give groups a structured environment for coordination.",
+            "Give groups a structured environment for managing contributions and shared financial goals.",
         },
         {
           title: "Transparency",
           description:
-            "Give members clear visibility into contributions, balances and group financial activity.",
+            "Provide members with clear visibility into contributions, balances and group financial activity.",
         },
         {
           title: "Communication",
           description:
-            "Keep group discussions and financial coordination together in one shared environment.",
+            "Keep group discussion and financial coordination together in one shared environment.",
         },
         {
           title: "Accountability",
           description:
-            "Provide clear records and defined roles that help groups manage shared finances responsibly.",
+            "Maintain clear records, defined roles and visible activity to support responsible group financial management.",
         },
       ],
     },
 
     {
-      title: "Built with Purpose",
+      title: "Designed for Shared Goals",
       paragraphs: [
-        "Akiba reflects Globe's approach to developing practical technologies around real problems. By bringing financial coordination, communication and transparency together, the platform is designed to strengthen how groups manage shared financial goals.",
+        "Akiba is designed for situations where people need to manage money together around a common objective. Whether the goal is an event, a recurring contribution, a trip, an asset or another shared financial commitment, the platform provides a common environment for coordination and visibility.",
+        "The platform is built around the principle that people managing money together should have a clear understanding of what is happening within their group.",
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "Development",
       paragraphs: [
-        "Akiba will continue evolving through research, development and user feedback. Future capabilities will expand the platform while preserving the clarity, trust and simplicity at the core of the product.",
+        "Akiba is developed by Globe Software as part of Globe Technologies' intellectual property portfolio. Its development is guided by research, product development and feedback as the platform evolves.",
+        "Future capabilities will expand the platform while preserving its core focus on clarity, transparency, communication and coordinated financial management.",
       ],
     },
 
     {
       title: "Part of Globe Software",
       paragraphs: [
-        "Akiba is developed by Globe Software, the division responsible for creating Globe's software products and digital platforms.",
+        "Akiba is a software intellectual property developed by Globe Software, the Globe division responsible for creating software products and digital platforms.",
       ],
       cards: [
         {
           title: "Globe Software",
           description:
-            "Discover the division behind the development of Akiba.",
+            "Explore the division responsible for developing Akiba and Globe's other software products and platforms.",
           href: "/divisions/software",
         },
       ],
@@ -81,22 +91,16 @@ export const akibaContent: PageContent = {
 
   related: [
     {
-      label: "Software",
-      href: "/ips/software",
-      description:
-        "Explore software intellectual property developed by Globe Software.",
-    },
-    {
-      label: "Globe Software",
-      href: "/divisions/software",
-      description:
-        "Learn more about the division behind Akiba.",
-    },
-    {
       label: "Intellectual Property",
       href: "/ips",
-      description:
-        "Explore Globe's intellectual property portfolio.",
+    },
+    {
+      label: "Company Profile",
+      href: "/about/company-profile",
+    },
+    {
+      label: "Our Brand",
+      href: "/about/brand",
     },
   ],
 };
