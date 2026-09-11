@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../../components/layout/company-page";
-import { ourStoryContent } from "../../../content/company";
+import { ourStoryContent } from "../../../content/about";
 import { createPageMetadata, createPageStructuredData } from "../../../lib/seo";
 
 export const metadata: Metadata = createPageMetadata("companyOurStory");

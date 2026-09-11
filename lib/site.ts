@@ -79,6 +79,10 @@ export const navigationGroups: readonly NavigationGroup[] = [
         href: "/about/our-story",
       },
       {
+        label: "Our Brand",
+        href: "/about/brand",
+      },
+      {
         label: "Company Profile",
         href: "/about/company-profile",
       },
@@ -97,10 +101,6 @@ export const navigationGroups: readonly NavigationGroup[] = [
       {
         label: "Constitution",
         href: "/about/constitution",
-      },
-      {
-        label: "Our Brand",
-        href: "/about/brand",
       },
     ],
   },

@@ -1,7 +1,7 @@
 import type { PageContent } from "../../types/content";
 
 export const brandContent: PageContent = {
-  eyebrow: "The Company",
+  eyebrow: "About Us",
   title: "Our Brand",
   intro:
     "Our brand represents the experience people have with us and the trust we earn over time. It reflects our commitment to innovating towards a better future through research, purpose and responsible stewardship.",

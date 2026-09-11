@@ -1,7 +1,7 @@
 import type { PageContent } from "../../types/content";
 
 export const ourStoryContent: PageContent = {
-  eyebrow: "The Company",
+  eyebrow: "About Us",
   title: "Our Story",
   intro:
     "Globe Technologies began with a belief that meaningful innovation can help shape a better future.",
