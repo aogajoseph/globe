@@ -4,7 +4,7 @@ export const addamContent: PageContent = {
   eyebrow: "Media Intellectual Property",
   title: "Addam",
   intro:
-    "Addam is an original dramatic series by Globe Media that explores the human experience through the life of one man. It invites audiences to reflect on identity, purpose, choice and the unseen battle surrounding the human experience.",
+    "Addam is an original dramatic series developed by Globe Media that explores the human experience through the life of one man. The story examines identity, purpose, choice and the unseen forces surrounding human life.",
 
   sections: [
     {
@@ -18,8 +18,8 @@ export const addamContent: PageContent = {
     {
       title: "The Story",
       paragraphs: [
-        "Addam follows the journey of one man as he navigates the defining moments of life. His experiences become a reflection of humanity itself, exploring the hopes, fears, struggles and aspirations that connect people across cultures and generations.",
-        "Through compelling storytelling, the series invites audiences to consider not only the choices we make, but also the unseen influences that shape our lives and the world around us.",
+        "Addam follows one man's journey through life, using his experiences to explore questions that extend beyond his individual story.",
+        "The series examines the hopes, fears, relationships, choices and struggles that shape human life while introducing an unseen dimension that exists alongside the world people know.",
       ],
     },
 
@@ -29,51 +29,60 @@ export const addamContent: PageContent = {
         {
           title: "Human Nature",
           description:
-            "Exploring the strengths, weaknesses and complexities that define the human experience.",
+            "Exploring the strengths, weaknesses, desires and contradictions that shape human behaviour.",
         },
         {
           title: "Identity & Purpose",
           description:
-            "Reflecting on the search for meaning, belonging and purpose.",
+            "Examining the search for identity, meaning, belonging and purpose throughout life.",
         },
         {
           title: "Choice & Consequence",
           description:
-            "Examining how decisions shape individuals, relationships and communities.",
+            "Exploring how decisions shape individuals, relationships and the course of their lives.",
         },
         {
-          title: "The Unseen Battle",
+          title: "The Unseen",
           description:
-            "Inviting audiences to consider the invisible influences surrounding the human experience.",
+            "Exploring the unseen forces and conflicts that exist alongside the visible human world.",
         },
+      ],
+    },
+
+    {
+      title: "The World of Addam",
+      paragraphs: [
+        "Addam presents an ordinary human world alongside an unseen realm with its own forces, relationships and conflicts. The two dimensions intersect through the lives and choices of human beings.",
+        "The unseen world provides another perspective on the human experience without reducing the story to simple answers. Its purpose is to deepen the questions the series asks about humanity, choice and the forces that influence our lives.",
       ],
     },
 
     {
       title: "Why We Created Addam",
       paragraphs: [
-        "Stories have the power to help people understand themselves and one another. Addam was created to encourage thoughtful reflection on the human condition through a compelling narrative that resonates across cultures, generations and backgrounds.",
-        "Rather than offering simple answers, the series invites audiences to wrestle with timeless questions about humanity, purpose and the choices that define our lives.",
+        "Addam was created to explore the human condition through drama rather than exposition. The series uses one person's life to examine questions that are universal while leaving audiences room to form their own interpretations.",
+        "It is a story about people: how they think, what they want, what they fear, what they choose and what those choices reveal about who they are.",
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "Development",
       paragraphs: [
-        "As Globe Media's flagship dramatic series, Addam will continue to grow through thoughtful storytelling, world-building and creative collaboration, inviting new audiences to engage with its exploration of the human experience.",
+        "Addam is developed as a Globe Media intellectual property, with its story, characters, visual identity and wider world designed to support a long-form dramatic series.",
+        "The intellectual property is intended to grow through storytelling and production while preserving the central questions and themes at the heart of the work.",
       ],
     },
 
     {
       title: "Part of Globe Media",
       paragraphs: [
-        "Addam is developed by Globe Media, the creative media division of Globe Technologies. It reflects the division's commitment to creating original stories that inform, inspire and empower generations through meaningful storytelling.",
+        "Addam is a media intellectual property developed by Globe Media, the division responsible for creating Globe's films, documentaries, podcasts, publications and other creative works.",
       ],
       cards: [
         {
           title: "Globe Media",
           description:
-            "Discover the division behind the creation of Addam.",
+            "Explore the division responsible for developing Addam and Globe's other media intellectual properties.",
           href: "/divisions/media",
         },
       ],
@@ -82,22 +91,16 @@ export const addamContent: PageContent = {
 
   related: [
     {
-      label: "Projects",
-      href: "/projects",
-      description:
-        "Explore other projects and initiatives by Globe Technologies.",
+      label: "Intellectual Property",
+      href: "/ips",
     },
     {
-      label: "Globe Media",
-      href: "/divisions/media",
-      description:
-        "Learn more about the creative media division.",
+      label: "Globe Software",
+      href: "/divisions/software",
     },
     {
-      label: "Research",
-      href: "/research",
-      description:
-        "See how research informs our stories, projects and initiatives.",
+      label: "Leadership",
+      href: "/about/leadership",
     },
   ],
 };
