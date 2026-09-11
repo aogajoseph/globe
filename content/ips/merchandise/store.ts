@@ -4,77 +4,78 @@ export const storeContent: PageContent = {
   eyebrow: "Merchandise Intellectual Property",
   title: "Globe Store",
   intro:
-    "Addam is an original dramatic series by Globe Media that explores the human experience through the life of one man. It invites audiences to reflect on identity, purpose, choice and the unseen battle surrounding the human experience.",
+    "Globe Store is the retail platform through which Globe Merchandise commercializes selected Globe brands and intellectual properties through physical products and merchandise.",
 
   sections: [
     {
       type: "image",
-      id: "addam-cinematic",
-      src: "/images/projects/addam.png",
-      alt: "Cinematic still from the Addam dramatic series",
-      variant: "panoramic",
+      id: "globe-store",
+      src: "/images/research/research-collaboration.png",
+      alt: "Globe Store merchandise collection",
+      variant: "feature",
     },
 
     {
-      title: "The Story",
+      title: "The Store",
       paragraphs: [
-        "Addam follows the journey of one man as he navigates the defining moments of life. His experiences become a reflection of humanity itself, exploring the hopes, fears, struggles and aspirations that connect people across cultures and generations.",
-        "Through compelling storytelling, the series invites audiences to consider not only the choices we make, but also the unseen influences that shape our lives and the world around us.",
+        "Globe Store provides a direct channel for bringing selected Globe brands and intellectual properties into physical form and making them available to customers.",
+        "The Store is designed to extend the experience of Globe's work beyond digital products and media, giving people tangible ways to engage with the company and the intellectual properties it develops.",
       ],
     },
 
     {
-      title: "Themes",
+      title: "What We Offer",
       cards: [
         {
-          title: "Human Nature",
+          title: "Globe Brands",
           description:
-            "Exploring the strengths, weaknesses and complexities that define the human experience.",
+            "Physical products developed around Globe's corporate identity, brands and visual language.",
         },
         {
-          title: "Identity & Purpose",
+          title: "IP Merchandise",
           description:
-            "Reflecting on the search for meaning, belonging and purpose.",
+            "Products developed around selected Globe intellectual properties and their associated identities.",
         },
         {
-          title: "Choice & Consequence",
+          title: "Printed Works",
           description:
-            "Examining how decisions shape individuals, relationships and communities.",
+            "Books, publications and other printed materials produced through Globe's intellectual property portfolio.",
         },
         {
-          title: "The Unseen Battle",
+          title: "Special Editions",
           description:
-            "Inviting audiences to consider the invisible influences surrounding the human experience.",
+            "Limited and purpose-specific products created around selected releases, occasions and intellectual properties.",
         },
       ],
     },
 
     {
-      title: "Why We Created Addam",
+      title: "From IP to Product",
       paragraphs: [
-        "Stories have the power to help people understand themselves and one another. Addam was created to encourage thoughtful reflection on the human condition through a compelling narrative that resonates across cultures, generations and backgrounds.",
-        "Rather than offering simple answers, the series invites audiences to wrestle with timeless questions about humanity, purpose and the choices that define our lives.",
+        "Products offered through Globe Store originate from Globe's brands and intellectual properties and are developed according to the identity, purpose and audience of the underlying work.",
+        "Globe Merchandise manages the process of turning suitable intellectual property into physical products, from product development and sourcing through to presentation and commercial distribution.",
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "A Growing Portfolio",
       paragraphs: [
-        "As Globe Media's flagship dramatic series, Addam will continue to grow through thoughtful storytelling, world-building and creative collaboration, inviting new audiences to engage with its exploration of the human experience.",
+        "The Globe Store portfolio will expand as new brands and intellectual properties are developed and opportunities for physical commercialization emerge.",
+        "Not every Globe intellectual property will require merchandise. Products are developed where physical form adds meaningful value to the work, its audience or its commercial potential.",
       ],
     },
 
     {
-      title: "Part of Globe Media",
+      title: "Part of Globe Merchandise",
       paragraphs: [
-        "Addam is developed by Globe Media, the creative media division of Globe Technologies. It reflects the division's commitment to creating original stories that inform, inspire and empower generations through meaningful storytelling.",
+        "Globe Store is an intellectual property of Globe Merchandise, the division responsible for commercializing Globe's brands and intellectual properties through physical products, printed materials and other merchandise.",
       ],
       cards: [
         {
-          title: "Globe Media",
+          title: "Globe Merchandise",
           description:
-            "Discover the division behind the creation of Addam.",
-          href: "/divisions/media",
+            "Explore the division responsible for developing and commercializing Globe's physical products and merchandise.",
+          href: "/divisions/merchandise",
         },
       ],
     },
@@ -82,22 +83,16 @@ export const storeContent: PageContent = {
 
   related: [
     {
-      label: "Projects",
-      href: "/projects",
-      description:
-        "Explore other projects and initiatives by Globe Technologies.",
+      label: "Intellectual Property",
+      href: "/ips",
     },
     {
-      label: "Globe Media",
-      href: "/divisions/media",
-      description:
-        "Learn more about the creative media division.",
+      label: "Globe Merchandise",
+      href: "/divisions/merchandise",
     },
     {
-      label: "Research",
-      href: "/research",
-      description:
-        "See how research informs our stories, projects and initiatives.",
+      label: "Governance",
+      href: "/about/governance",
     },
   ],
 };
