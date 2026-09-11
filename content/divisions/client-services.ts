@@ -1,117 +1,104 @@
 import type { PageContent } from "../../types/content";
 
 export const clientServicesDivisionContent: PageContent = {
-  eyebrow: "Divisions",
+  eyebrow: "Division",
   title: "Globe Client Services",
   intro:
-    "Research is the foundation of Globe Technologies. Before we design products, launch projects or pursue new initiatives, we seek to understand the problems worth solving. Through continuous learning, investigation and experimentation, Merchandise informs every decision we make.",
+    "Globe Client Services brings Globe's capabilities to external clients, connecting their needs with the expertise required to deliver effective products, services and creative works.",
 
   sections: [
     {
-      title: "Merchandise That Leads to Innovation",
+      title: "Bringing Globe's Capabilities to Clients",
       paragraphs: [
-        "We believe meaningful innovation begins with understanding. Rather than pursuing technology for its own sake, we invest time in exploring challenges, identifying opportunities and asking better questions before developing solutions.",
-        "Research enables us to create products, projects and initiatives that are thoughtful, relevant and capable of contributing lasting value.",
+        "Globe Client Services is the division responsible for external client engagements. It identifies opportunities, understands client needs, develops appropriate engagements and coordinates delivery through the relevant Globe capabilities.",
+        "The division provides clients with access to Globe's multidisciplinary expertise without requiring every engagement to fit within a single specialist division.",
       ],
     },
 
     {
       type: "image",
-      id: "research-collaboration",
+      id: "client-services",
       src: "/images/research/research-collaboration.png",
-      alt: "Globe Technologies research team collaborating",
+      alt: "Globe Client Services team working with a client",
       variant: "editorial",
     },
 
     {
-      title: "Areas of Research",
+      title: "What We Offer",
       cards: [
         {
-          title: "Technology",
+          title: "Web & Software",
           description:
-            "Exploring emerging technologies, software engineering, artificial intelligence, digital platforms and the future of computing.",
+            "Helping clients develop websites, web applications, digital platforms and other software solutions through Globe Software.",
         },
         {
-          title: "People & Society",
+          title: "Media & Creative",
           description:
-            "Understanding human behaviour, communities, culture and the social challenges that shape everyday life.",
+            "Supporting clients with creative development, visual production, publishing and other media capabilities through Globe Media.",
         },
         {
-          title: "Media & Storytelling",
+          title: "Research & Strategy",
           description:
-            "Researching ideas, history and human experiences that inspire meaningful stories and educational content.",
+            "Providing research, analysis and strategic insight where an engagement requires deeper understanding before development.",
         },
         {
-          title: "Future Opportunities",
+          title: "Custom Solutions",
           description:
-            "Investigating new industries, emerging trends and opportunities that align with Globe Technologies' long-term purpose.",
+            "Assembling the appropriate Globe capabilities to address client requirements that span multiple disciplines.",
         },
       ],
     },
 
     {
-      title: "How Research Creates Impact",
+      title: "How Client Engagements Work",
       paragraphs: [
-        "Research influences every part of Globe Technologies. It guides the products we build, the projects we pursue, the partnerships we establish and the decisions we make as a company.",
-        "By combining curiosity with disciplined execution, we transform knowledge into practical solutions, meaningful experiences and long-term value.",
+        "Client engagements begin by understanding the client's objectives, requirements and constraints. Globe Client Services then determines the appropriate scope of work and identifies the capabilities required to deliver it.",
+        "Once an engagement is defined, the relevant Globe division or divisions carry out the specialist work while Client Services coordinates the relationship and overall delivery.",
       ],
     },
 
     {
-      title: "Knowledge Sharing",
+      title: "Working Across Globe",
       paragraphs: [
-        "As our research grows, Globe Technologies will continue to publish articles, white papers, technical publications, reports and other resources that contribute to public knowledge and encourage meaningful conversations across industries and communities.",
+        "Client Services acts as a bridge between external clients and Globe's specialized divisions. A single engagement may involve software development, media production, research, design, merchandise or a combination of capabilities.",
+        "This structure allows Globe to assemble the right expertise around the client's needs rather than forcing every project into a predetermined service category.",
       ],
-      cards: [
-        {
-          title: "Articles",
-          description:
-            "Research insights, perspectives and thought leadership.",
-        },
-        {
-          title: "White Papers",
-          description:
-            "In-depth publications exploring emerging ideas, technologies and strategic opportunities.",
-        },
-        {
-          title: "Innovation",
-          description:
-            "Experiments, prototypes and applied research that help shape future products and initiatives.",
-        },
-        {
-          title: "Collaborations",
-          description:
-            "Research partnerships with organizations, institutions and experts who share our commitment to meaningful innovation.",
-        },
+    },
+
+    {
+      title: "Part of Globe",
+      paragraphs: [
+        "Globe Client Services is a specialized division of Globe Technologies, operating within the company's governance framework and guided by its Constitution, purpose, mission and vision.",
+        "Its work reflects Globe's commitment to purpose, excellence and stewardship, ensuring that external engagements are approached professionally, delivered responsibly and aligned with the capabilities of the company.",
       ],
     },
 
     {
       title: "Looking Ahead",
       paragraphs: [
-        "Our commitment to research extends beyond today's challenges. As Globe Technologies grows, we will continue exploring new disciplines, emerging technologies and future opportunities that enable us to contribute to a better future through knowledge, innovation and responsible stewardship.",
+        "As Globe expands its capabilities, Client Services will provide an increasingly broad channel through which organizations, businesses and individuals can work with the company and access its growing range of expertise.",
       ],
     },
   ],
 
   related: [
     {
-      label: "Products",
-      href: "/products",
+      label: "Globe Software",
+      href: "/divisions/software",
       description:
-        "Discover how research becomes practical solutions.",
+        "Explore the division responsible for creating Globe's software products and digital platforms.",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Globe Media",
+      href: "/divisions/media",
       description:
-        "Explore the ideas that grow into long-term creative initiatives.",
+        "Explore the division responsible for creating Globe's films, publications, podcasts and other creative works.",
     },
     {
-      label: "Company Overview",
-      href: "/company",
+      label: "Globe Merchandise",
+      href: "/divisions/merchandise",
       description:
-        "Learn more about Globe Technologies and the purpose behind our work.",
+        "Explore the division responsible for commercializing Globe's brands and intellectual properties through physical products.",
     },
   ],
 };
