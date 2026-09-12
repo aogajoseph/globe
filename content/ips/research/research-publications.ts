@@ -4,99 +4,58 @@ export const researchPublicationsContent: PageContent = {
   eyebrow: "Research Intellectual Property",
   title: "Research Publications",
   intro:
-    "Akiba is a collaborative financial platform developed by Globe Software. It enables groups to coordinate, communicate and transparently manage shared financial goals in one trusted environment.",
+    "Research outputs, analyses and original insights produced through Globe Research.",
 
   sections: [
     {
-      type: "image",
-      id: "akiba-mockup",
-      src: "/images/products/akiba-app-mockup.png",
-      alt: "Akiba collaborative financial platform on mobile devices",
-      variant: "feature",
-    },
-
-    {
-      title: "Why Akiba Exists",
+      title: "Publications",
       paragraphs: [
-        "Groups have long relied on informal tools and processes to manage shared financial goals. Contributions, balances and important decisions are often communicated manually, leaving members dependent on incomplete information and trust.",
-        "Akiba was created to bring communication, coordination and financial visibility into one platform, giving groups a clearer and more accountable way to manage shared goals.",
-      ],
-    },
-
-    {
-      title: "What Akiba Enables",
-      cards: [
-        {
-          title: "Group Coordination",
-          description:
-            "Bring people together around shared financial goals and give groups a structured environment for coordination.",
-        },
-        {
-          title: "Transparency",
-          description:
-            "Give members clear visibility into contributions, balances and group financial activity.",
-        },
-        {
-          title: "Communication",
-          description:
-            "Keep group discussions and financial coordination together in one shared environment.",
-        },
-        {
-          title: "Accountability",
-          description:
-            "Provide clear records and defined roles that help groups manage shared finances responsibly.",
-        },
-      ],
-    },
-
-    {
-      title: "Built with Purpose",
-      paragraphs: [
-        "Akiba reflects Globe's approach to developing practical technologies around real problems. By bringing financial coordination, communication and transparency together, the platform is designed to strengthen how groups manage shared financial goals.",
-      ],
-    },
-
-    {
-      title: "Looking Ahead",
-      paragraphs: [
-        "Akiba will continue evolving through research, development and user feedback. Future capabilities will expand the platform while preserving the clarity, trust and simplicity at the core of the product.",
-      ],
-    },
-
-    {
-      title: "Part of Globe Software",
-      paragraphs: [
-        "Akiba is developed by Globe Software, the division responsible for creating Globe's software products and digital platforms.",
+        "Explore research publications developed through Globe Research across technology, society, innovation and other areas of interest.",
       ],
       cards: [
         {
-          title: "Globe Software",
+          title:
+            "The State of Digital Financial Coordination in African Community Groups",
           description:
-            "Discover the division behind the development of Akiba.",
-          href: "/divisions/software",
+            "An investigation into how groups coordinate shared finances through messaging apps, bank accounts, spreadsheets and informal processes.",
+          href: "/ips/research/digital-financial-coordination-african-community-groups",
         },
+        {
+          title: "The Village–City Effect: Urban Aspiration, Rural Realities and the African Experience",
+          description:
+            "A comparative study of how the divide between rural and urban life shapes opportunity, identity, social mobility and economic outcomes across Africa, including the experiences of Africans in the diaspora.",
+          href: "/ips/research/village-city-effect-africa",
+        },
+        {
+          title: "The Technology Divide: Social Class, Access and the Future of AI",
+          description:
+            "An examination of how successive waves of technological advancement have shaped social class, opportunity and exclusion, and what widespread AI adoption could mean for societies and economies.",
+          href: "/ips/research/technology-divide-social-class-ai",
+        },
+      ],
+    },
+
+    {
+      title: "About the Publications",
+      paragraphs: [
+        "Globe Research publications document investigations, findings, analysis and perspectives developed through the company's research work.",
+        "Publications may examine ideas being considered by Globe, broader problems and opportunities, emerging technologies or questions relevant to the company's future.",
       ],
     },
   ],
 
   related: [
     {
-      label: "Software",
-      href: "/ips/software",
-      description:
-        "Explore software intellectual property developed by Globe Software.",
-    },
-    {
-      label: "Globe Software",
-      href: "/divisions/software",
-      description:
-        "Learn more about the division behind Akiba.",
+      label: "Globe Research",
+      href: "/divisions/research",
     },
     {
       label: "Intellectual Property",
       href: "/ips",
-      description:
-        "Explore Globe's intellectual property portfolio.",
+    },
+    {
+      label: "Globe Software",
+      href: "/divisions/software",
     },
   ],
 };
