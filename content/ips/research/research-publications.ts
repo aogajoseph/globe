@@ -30,7 +30,7 @@ export const researchPublicationsContent: PageContent = {
           title: "The Technology Divide: Social Class, Access and the Future of AI",
           description:
             "An examination of how successive waves of technological advancement have shaped social class, opportunity and exclusion, and what widespread AI adoption could mean for societies and economies.",
-          href: "/ips/research/technology-divide-social-class-ai",
+          href: "/ips/research/technology-divide",
         },
       ],
     },

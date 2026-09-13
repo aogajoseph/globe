@@ -859,6 +859,46 @@ const pageDefinitions = {
     priority: 0.6,
   },
 
+  ipsResearchTechnologyDivide: {
+    pathname: "/ips/research/technology-divide",
+    title: "The Technology Divide: Social Class, Access and the Future of AI",
+    description:
+      "An examination of how successive waves of technological advancement have shaped social class, opportunity and exclusion, and what widespread AI adoption could mean for societies and economies.",
+    keywords: [
+      "Globe Research",
+      "technology divide",
+      "technology and social class",
+      "technological inequality",
+      "digital divide",
+      "technology access",
+      "social class",
+      "artificial intelligence",
+      "AI inequality",
+      "technological literacy",
+      "digital opportunity",
+      "future of AI",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt:
+      "Globe Research publication on technology, social class and the future of AI",
+    category: "Research Publication",
+    schemaKind: "creativeWork",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      {
+        name: "Research Publications",
+        pathname: "/ips/research/research-publications",
+      },
+      {
+        name: "The Technology Divide: Social Class, Access and the Future of AI",
+        pathname: "/ips/research/technology-divide",
+      },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.6,
+  },
+
   ipsSoftware: {
     pathname: "/ips/software",
     title: "Software",
