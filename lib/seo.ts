@@ -789,6 +789,40 @@ const pageDefinitions = {
     priority: 0.7,
   },
 
+  ipsResearchDigitalFinancialCoordination: {
+    pathname:
+      "/ips/research/digital-financial-coordination-african-community-groups",
+    title:
+      "The State of Digital Financial Coordination in African Community Groups",
+    description:
+      "An examination of how African community groups coordinate shared finances, the limitations of existing tools, and the opportunity for better systems for collective financial management.",
+    keywords: [
+      "Globe Research",
+      "digital financial coordination",
+      "African community groups",
+      "collective financial management",
+      "financial technology",
+      "group finance",
+      "Africa",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Research publication on digital financial coordination",
+    category: "Research Publication",
+    schemaKind: "creativeWork",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Research Publications", pathname: "/ips/research" },
+      {
+        name: "The State of Digital Financial Coordination in African Community Groups",
+        pathname:
+          "/ips/research/digital-financial-coordination-african-community-groups",
+      },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.6,
+  },
+
   ipsSoftware: {
     pathname: "/ips/software",
     title: "Software",
