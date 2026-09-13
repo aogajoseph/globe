@@ -823,6 +823,42 @@ const pageDefinitions = {
     priority: 0.6,
   },
 
+  ipsResearchVillageCityEffectAfrica: {
+    pathname: "/ips/research/village-city-effect-africa",
+    title:
+      "The Village–City Effect: Urban Aspiration, Rural Realities and the African Experience",
+    description:
+      "An examination of how the divide between rural and urban life shapes opportunity, identity, social mobility and economic outcomes across Africa, including the experiences of Africans in the diaspora.",
+    keywords: [
+      "Globe Research",
+      "village-city divide",
+      "rural-urban divide",
+      "Africa",
+      "African urbanization",
+      "rural development",
+      "urban development",
+      "social mobility",
+      "African diaspora",
+      "economic opportunity",
+    ],
+    image: "/images/divisions/research-collaboration.png",
+    imageAlt: "Globe Research publication on the village-city divide in Africa",
+    category: "Research Publication",
+    schemaKind: "creativeWork",
+    breadcrumbs: [
+      { name: siteConfig.name, pathname: "/" },
+      { name: "Intellectual Property", pathname: "/ips" },
+      { name: "Research Publications", pathname: "/ips/research" },
+      {
+        name:
+          "The Village–City Effect: Urban Aspiration, Rural Realities and the African Experience",
+        pathname: "/ips/research/village-city-effect-africa",
+      },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.6,
+  },
+
   ipsSoftware: {
     pathname: "/ips/software",
     title: "Software",

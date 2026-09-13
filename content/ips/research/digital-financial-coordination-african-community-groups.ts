@@ -151,10 +151,10 @@ export const digitalFinancialCoordinationContent: PageContent = {
         "Explore the division responsible for investigating ideas, problems and opportunities.",
     },
     {
-      label: "Akiba",
-      href: "/ips/software/akiba",
+      label: "Research Publications",
+      href: "/ips/research/research-publications",
       description:
-        "Explore the collaborative financial platform developed by Globe Software.",
+        "Explore research outputs, analyses and original insights produced through Globe Research.",
     },
     {
       label: "Intellectual Property",
