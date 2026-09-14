@@ -4,14 +4,14 @@ export const ourStoryContent: PageContent = {
   eyebrow: "About Us",
   title: "Our Story",
   intro:
-    "Globe Technologies began with a belief that meaningful innovation can help shape a better future.",
+  "Globe Technologies began with an idea: to build a company capable of taking ideas seriously, developing them deliberately and turning them into work with real value.",
 
   sections: [
     {
-      title: "Where It Began",
+      title: "The Beginning",
       paragraphs: [
-        "Globe Technologies was founded on a simple conviction: the world's greatest challenges deserve thoughtful solutions. Rather than building technology for its own sake, we believe innovation should begin with understanding people, identifying meaningful problems and creating solutions that make a lasting difference.",
-        "That belief continues to guide every product we develop, every project we pursue and every initiative we undertake.",
+        "Globe Technologies began as an idea before it became a company. At its foundation was a desire to create a company that was not restricted to a single product, discipline or way of creating.",
+        "The early concept was simple: ideas should have room to be explored before they are forced into a predetermined form. Some ideas may become software. Others may become media, research, books, physical products, services or intellectual properties. The company would need the ability to recognize those possibilities and develop them accordingly.",
       ],
     },
 
@@ -24,35 +24,49 @@ export const ourStoryContent: PageContent = {
     },
 
     {
-      title: "Growing Beyond Products",
+      title: "From an Idea to a Company",
       paragraphs: [
-        "From the beginning, Globe Technologies was envisioned as more than a software company. It was imagined as a home for ideas - a company where research, technology, creativity and responsible stewardship come together to build solutions that improve lives and strengthen communities.",
-        "As the company grows, new divisions, products and initiatives will continue to expand that vision while remaining united by one purpose and one identity.",
+        "As the concept developed, Globe Technologies began to take shape around a broader model: research what an idea can become, develop it through the appropriate capabilities and create something that can be delivered, owned or commercialized.",
+        "This led to the development of specialized divisions rather than a company built around one type of output. Research could examine possibilities. Software could build digital products. Media could produce creative work. Merchandise could commercialize physical assets. Client Services could bring external work into the company and coordinate its delivery.",
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "Building the Company",
       paragraphs: [
-        "Our story is still being written. Every breakthrough, every partnership and every solution we create becomes another chapter in a journey driven by curiosity, purpose and the pursuit of excellence.",
-        "While we cannot predict the future, we remain committed to helping invent it - responsibly, thoughtfully and for generations to come.",
+        "With the model taking shape, attention turned from what Globe could create to what it needed to become a functioning company. Systems for operations, finance, technology, legal affairs, administration and other areas became necessary to support the work of the divisions.",
+        "The company therefore developed as both a creative and commercial enterprise: one side focused on discovering and creating value, and the other providing the capabilities required to operate the business responsibly and sustainably.",
       ],
     },
+
+    {
+      title: "The Story Continues",
+      paragraphs: [
+        "Globe Technologies is still developing. Its current divisions, products and intellectual properties represent the company's present stage rather than a final definition of what it can become.",
+        "As new ideas and opportunities emerge, the company will continue to develop its capabilities, pursue new forms of work and establish new areas where appropriate. The story of Globe Technologies is therefore not a completed history, but an ongoing record of a company being built.",
+      ],
+    },
+
   ],
 
   related: [
     {
-      label: "About Us",
-      href: "/company/about",
+      label: "Company Overview",
+      href: "/about",
+      description:
+      "Learn what Globe Technologies is, what it does and how the company approaches its work.",
     },
     {
-      label: "Vision",
-      href: "/company/vision",
+      label: "Our Brand",
+      href: "/about/brand",
+      description:
+      "Explore the identity and standards through which Globe Technologies represents itself.",
     },
     {
       label: "Company Profile",
-      href: "/company/company-profile",
+      href: "/about/company-profile",
+      description:
+      "Explore the company's structure, capabilities and current areas of work.",
     },
   ],
 };
-
