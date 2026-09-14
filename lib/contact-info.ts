@@ -12,11 +12,11 @@ export const contactInfo = {
   whatsapp: "(+xxx) xxxx xxx xxx",
 
   social: {
-    linkedin: "...",
-    github: "...",
-    youtube: "...",
-    x: "...",
-    facebook: "...",
+    linkedin: "https://www.linkedin.com",
+    github: "https://github.com",
+    youtube: "https://www.youtube.com",
+    x: "https://www.x.com",
+    facebook: "https://www.facebook.com",
     instagram: "...",
     tiktok: "...",
     threads: "...",

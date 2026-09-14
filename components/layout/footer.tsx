@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Facebook,
-  Linkedin,
   Mail,
-  MessageCircle,
   Phone,
-  Twitter,
-  Youtube,
 } from "lucide-react";
+
+import { 
+  SiWhatsapp, 
+  SiFacebook, 
+  SiX, 
+  SiYoutube, 
+  SiGithub
+} from "react-icons/si";
+
+import { FaLinkedinIn } from "react-icons/fa6";
 import { contactInfo } from "../../lib/contact-info";
 import { footerNavigation, primaryNavigation } from "../../lib/site";
 import { Container } from "./container";
@@ -19,10 +24,11 @@ function isHttpUrl(value: string): boolean {
 
 export function Footer() {
   const socialLinks = [
-    { href: contactInfo.social.linkedin, label: "LinkedIn", icon: Linkedin },
-    { href: contactInfo.social.facebook, label: "Facebook", icon: Facebook },
-    { href: contactInfo.social.x, label: "X", icon: Twitter },
-    { href: contactInfo.social.youtube, label: "YouTube", icon: Youtube },
+    { href: contactInfo.social.youtube, label: "YouTube", icon: SiYoutube },
+    { href: contactInfo.social.facebook, label: "Facebook", icon: SiFacebook },
+    { href: contactInfo.social.linkedin, label: "Linkedin", icon: FaLinkedinIn },
+    { href: contactInfo.social.github, label: "GitHub", icon: SiGithub },
+    { href: contactInfo.social.x, label: "X", icon: SiX },
   ].filter((link) => isHttpUrl(link.href));
 
   return (
@@ -65,7 +71,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                  className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
                 >
                   {item.label}
                 </Link>
@@ -82,14 +88,14 @@ export function Footer() {
               
               <Link
                 href="/ips/software/akiba"
-                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
               >
                 Akiba
               </Link>
 
               <Link
                 href="/ips/media/addam"
-                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
               >
                 Addam
               </Link>
@@ -100,7 +106,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                  className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
                 >
                   {item.label}
                 </Link>
@@ -118,8 +124,8 @@ export function Footer() {
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-[rgb(var(--color-muted))]" />
                   <Link
-                    href={`mailto:$Globe Technologies {contactInfo.email}`}
-                    className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                    href={`mailto:Globe%20Technologies%20%3C${contactInfo.email}%3E`}
+                    className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
                   >
                     {contactInfo.email}
                   </Link>
@@ -129,17 +135,17 @@ export function Footer() {
                   <Phone size={18} className="text-[rgb(var(--color-muted))]" />
                   <Link
                     href={`tel:${contactInfo.phone}`}
-                    className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                    className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
                   >
                     {contactInfo.phone}
                   </Link>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <MessageCircle size={18} className="text-[rgb(var(--color-muted))]" />
+                  <SiWhatsapp size={18} className="text-[rgb(var(--color-muted))]" />
                   <Link
                     href={`https://wa.me/${contactInfo.whatsapp.replace(/\D/g, "")}`}
-                    className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+                    className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
                   >
                     {contactInfo.whatsapp}
                   </Link>
@@ -162,7 +168,7 @@ export function Footer() {
                         key={link.label}
                         href={link.href}
                         aria-label={link.label}
-                        className="transition-colors hover:text-[rgb(var(--color-primary))]"
+                        className="transition-colors hover:text-[rgb(var(--color-muted))]"
                       >
                         <Icon size={20} />
                       </Link>
@@ -179,7 +185,7 @@ export function Footer() {
             ©{new Date().getFullYear()} Globe Technologies Ltd. All rights reserved.
           </p>
 
-          <p className="text-small text-[rgb(var(--color-muted))]">Version: 1.0.0</p>
+          <p className="text-small text-[rgb(var(--color-muted))]">v0.1.0</p>
         </div>
       </Container>
     </footer>
