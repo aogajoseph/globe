@@ -650,41 +650,41 @@ const pageDefinitions = {
     priority: 0.7,
   },
 
-  news: {
-    pathname: "/news",
-    title: "News",
+  blog: {
+    pathname: "/blog",
+    title: "Blog",
     description:
       "Explore Globe Technologies news, updates, releases and events.",
-    keywords: ["news", "Globe Technologies", "updates", "events"],
+    keywords: ["blog", "news", "Globe Technologies", "updates", "events"],
     image: "/logos/logo.png",
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "News", pathname: "/news" },
+      { name: "Blog", pathname: "/blog" },
     ],
     changeFrequency: "weekly",
     priority: 0.5,
   },
 
   newsCompany: {
-    pathname: "/news/company-news",
+    pathname: "/blog/company-news",
     title: "Company News",
     description:
       "Read company news and internal updates from Globe Technologies.",
-    keywords: ["company news", "Globe Technologies", "updates"],
+    keywords: ["company blog", "company news", "Globe Technologies", "updates"],
     image: "/logos/logo.png",
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "News", pathname: "/news" },
-      { name: "Company News", pathname: "/news/company-news" },
+      { name: "Blog", pathname: "/blog" },
+      { name: "Company News", pathname: "/blog/company-news" },
     ],
     changeFrequency: "monthly",
     priority: 0.4,
   },
 
   newsEvents: {
-    pathname: "/news/events",
+    pathname: "/blog/events",
     title: "Events",
     description:
       "See events, appearances and company gatherings from Globe Technologies.",
@@ -693,15 +693,15 @@ const pageDefinitions = {
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "News", pathname: "/news" },
-      { name: "Events", pathname: "/news/events" },
+      { name: "Blog", pathname: "/blog" },
+      { name: "Events", pathname: "/blog/events" },
     ],
     changeFrequency: "monthly",
     priority: 0.4,
   },
 
   newsPressReleases: {
-    pathname: "/news/press-releases",
+    pathname: "/blog/press-releases",
     title: "Press Releases",
     description: "Read official press releases from Globe Technologies.",
     keywords: [
@@ -713,15 +713,15 @@ const pageDefinitions = {
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "News", pathname: "/news" },
-      { name: "Press Releases", pathname: "/news/press-releases" },
+      { name: "Blog", pathname: "/blog" },
+      { name: "Press Releases", pathname: "/blog/press-releases" },
     ],
     changeFrequency: "monthly",
     priority: 0.4,
   },
 
   newsProductUpdates: {
-    pathname: "/news/product-updates",
+    pathname: "/blog/product-updates",
     title: "Product Updates",
     description:
       "See product updates and release notes from Globe Technologies.",
@@ -730,8 +730,8 @@ const pageDefinitions = {
     imageAlt: "Globe Technologies logo",
     breadcrumbs: [
       { name: siteConfig.name, pathname: "/" },
-      { name: "News", pathname: "/news" },
-      { name: "Product Updates", pathname: "/news/product-updates" },
+      { name: "Blog", pathname: "/blog" },
+      { name: "Product Updates", pathname: "/blog/product-updates" },
     ],
     changeFrequency: "monthly",
     priority: 0.4,

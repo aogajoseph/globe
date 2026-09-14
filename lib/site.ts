@@ -29,7 +29,7 @@ export const siteConfig = {
     "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual property.",
 
   url: normalizeSiteUrl(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://globetechnologies.com",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://globe.com",
   ),
 
   locale: "en_US",
@@ -218,23 +218,15 @@ export const primaryNavigation = [
  */
 export const footerNavigation = [
   {
-    label: "About",
-    href: "/about",
+    label: "Globe Store",
+    href: "/ips/merchandise/store",
   },
   {
-    label: "Divisions",
-    href: "/divisions",
+    label: "Client Services",
+    href: "/divisions/client-services",
   },
   {
-    label: "IPs",
-    href: "/ips",
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
+    label: "Research Publications",
+    href: "/ips/research/research-publications",
   },
 ] as const;

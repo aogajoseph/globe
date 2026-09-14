@@ -46,12 +46,11 @@ export function Footer() {
               />
 
               <h2 className="mt-2 text-md font-semibold tracking-tight text-[rgb(var(--color-primary))]">
-                Inventing the Future.
+                Inventing the Future
               </h2>
 
               <p className="mt-2 max-w-sm text-body leading-relaxed text-[rgb(var(--color-primary))]">
-                Researching, developing and delivering innovative solutions that
-                contribute to a better future.
+                Turning ideas into products, services and intellectual properties.
               </p>
             </div>
           </nav>
@@ -80,6 +79,23 @@ export function Footer() {
             </h3>
 
             <div className="flex flex-col gap-2">
+              
+              <Link
+                href="/ips/software/akiba"
+                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+              >
+                Akiba
+              </Link>
+
+              <Link
+                href="/ips/media/addam"
+                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
+              >
+                Addam
+              </Link>
+
+              <div className="my-2 border-t border-[rgb(var(--color-border))]" />
+
               {footerNavigation.slice(0, 4).map((item) => (
                 <Link
                   key={item.href}
@@ -89,22 +105,6 @@ export function Footer() {
                   {item.label}
                 </Link>
               ))}
-
-              <div className="my-2 border-t border-[rgb(var(--color-border))]" />
-
-              <Link
-                href="/products/akiba"
-                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
-              >
-                Akiba
-              </Link>
-
-              <Link
-                href="/projects/addam"
-                className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
-              >
-                Addam
-              </Link>
             </div>
           </nav>
 
@@ -118,7 +118,7 @@ export function Footer() {
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-[rgb(var(--color-muted))]" />
                   <Link
-                    href={`mailto:${contactInfo.email}`}
+                    href={`mailto:$Globe Technologies {contactInfo.email}`}
                     className="text-small transition-colors hover:text-[rgb(var(--color-primary))]"
                   >
                     {contactInfo.email}

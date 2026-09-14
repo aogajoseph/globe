@@ -1,8 +1,8 @@
 import type { PageContent } from "../../types/content";
 
 export const companyLandingContent: PageContent = {
-  eyebrow: "The Company",
-  title: "Overview",
+  eyebrow: "About Us",
+  title: "Company Overview",
   intro:
     "Globe Technologies is a research-driven company building products, projects and initiatives designed to contribute to a better future.",
 

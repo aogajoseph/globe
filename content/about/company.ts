@@ -1,8 +1,8 @@
 import type { PageContent } from "../../types/content";
 
-export const purposeContent: PageContent = {
-  eyebrow: "The Company",
-  title: "Purpose",
+export const companyContent: PageContent = {
+  eyebrow: "About Us",
+  title: "The Company",
   intro:
     "Our purpose defines why Globe Technologies exists. It is the enduring reason behind every decision, every innovation and every step we take towards the future.",
 

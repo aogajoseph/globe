@@ -8,4 +8,4 @@ export { leadershipContent } from "./leadership";
 export { governanceContent } from "./governance";
 export { companyProfileContent } from "./company-profile";
 export { brandContent } from "./brand";
-export { purposeContent } from "./purpose";
+export { purposeContent } from "./company";

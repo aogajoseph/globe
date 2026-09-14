@@ -3,13 +3,13 @@ export const contactInfo = {
   tagline: "Inventing the Future.",
 
   purpose:
-    "Researching, developing and delivering innovative solutions that contribute to a better future.",
+    "Researching, developing and commercializing ideas into products, services and intellectual properties.",
 
-  email: "info@globetechnologies.com",
+  email: "info@globe.com",
 
-  phone: "+254 725 406 004",
+  phone: "(+xxx) xxxx xxx xxx",
 
-  whatsapp: "+254 725 406 004",
+  whatsapp: "(+xxx) xxxx xxx xxx",
 
   social: {
     linkedin: "...",

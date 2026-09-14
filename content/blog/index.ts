@@ -1,8 +1,8 @@
 import type { PageContent } from "../../types/content";
 
-export const newsLandingContent: PageContent = {
-  eyebrow: "News",
-  title: "News and Updates",
+export const blogLandingContent: PageContent = {
+  eyebrow: "Blog",
+  title: "Company News and Updates",
   intro:
     "A static news architecture designed so a future CMS can replace the content layer with minimal restructuring.",
   sections: [
@@ -12,22 +12,22 @@ export const newsLandingContent: PageContent = {
         {
           title: "Company News",
           description: "Company-wide announcements and updates.",
-          href: "/news/company-news",
+          href: "/blog/company-news",
         },
         {
           title: "Product Updates",
           description: "Release and product-related updates.",
-          href: "/news/product-updates",
+          href: "/blog/product-updates",
         },
         {
           title: "Press Releases",
           description: "Formal external communications.",
-          href: "/news/press-releases",
+          href: "/blog/press-releases",
         },
         {
           title: "Events",
           description: "Events, appearances, and company gatherings.",
-          href: "/news/events",
+          href: "/blog/events",
         },
       ],
     },
