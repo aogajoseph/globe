@@ -2,16 +2,16 @@ import type { PageContent } from "../../types/content";
 
 export const companyLandingContent: PageContent = {
   eyebrow: "About Us",
-  title: "Company Overview",
+  title: "Overview",
   intro:
-    "Globe Technologies is a research-driven company building products, projects and initiatives designed to contribute to a better future.",
+  "Globe Technologies is a multidisciplinary innovation company that turns ideas, opportunities and areas of inquiry into products, services and intellectual properties.",
 
   sections: [
     {
-      title: "Built for the Future",
+      title: "A Company Built Around Ideas",
       paragraphs: [
-        "The challenges of tomorrow will require more than individual ideas. They will require research, imagination, disciplined execution and a willingness to build for the long term.",
-        "Globe Technologies brings these qualities together under one company, developing products, projects and initiatives across specialized areas while remaining united by a shared purpose: innovating towards a better future.",
+      "Globe Technologies exists to explore what an idea can become. An idea may begin as a question, a problem, a creative concept, a technological possibility or an opportunity to create something of lasting value.",
+      "Rather than limiting ideas to a single industry or form, Globe provides a structure through which they can be researched, developed, produced and commercialized. The result may be a software product, digital platform, film, documentary, podcast, book, research publication, branded asset, physical product or an intellectual property with the potential to grow into something larger.",
       ],
     },
 
@@ -24,119 +24,129 @@ export const companyLandingContent: PageContent = {
     },
 
     {
-      title: "How We Create",
+      title: "From Idea to Value",
       paragraphs: [
-        "Our work begins with curiosity. We seek to understand the problems worth solving, explore possibilities through research and develop solutions with purpose.",
-        "Some of our work becomes a product. Some becomes a project. Some becomes an initiative. Whatever form it takes, we aim to create work that is thoughtful, useful and capable of contributing lasting value.",
+        "Our work begins with exploration. Globe Research helps examine an idea, understand its potential and guide the company in deciding what it can become.",
+        "Once a direction is established, the appropriate division develops and delivers it. Software creates digital products and platforms. Media produces creative and storytelling work. Merchandise commercializes branded assets and physical products. Client Services brings external opportunities into the company and coordinates their delivery through the division best equipped to serve them.",
+        "This structure allows Globe to work across disciplines while maintaining clear responsibilities, specialized expertise and a common standard of excellence.",
       ],
       cards: [
         {
-          title: "Products",
+          title: "Research",
           description:
-            "Solutions designed to address practical needs and improve the way people live, work and connect.",
-          href: "/products",
+            "Exploring ideas, opportunities and questions to determine what they can become and how they can create value.",
+          href: "/divisions/research",
         },
         {
-          title: "Projects",
+          title: "Software",
           description:
-            "Long-term creative and strategic undertakings designed to explore ideas, inspire people and shape the future.",
-          href: "/projects",
-        },
-      ],
-    },
-
-    {
-      title: "Our Divisions",
-      paragraphs: [
-        "Globe Technologies operates through specialized divisions. Each division has its own area of focus, but all are connected by the same company identity, purpose and standards.",
-      ],
-      cards: [
-        {
-          title: "Globe Software",
-          description:
-            "Building software products and digital platforms that solve practical problems.",
+            "Creating software products and digital platforms that solve problems and enable new possibilities.",
           href: "/divisions/software",
         },
         {
-          title: "Globe Media",
+          title: "Media",
           description:
-            "Creating educational and creative media that informs, inspires and empowers generations.",
+            "Producing films, documentaries, podcasts, storytelling works and other creative media.",
           href: "/divisions/media",
+        },
+        {
+          title: "Merchandise",
+          description:
+            "Commercializing Globe's branded assets and intellectual properties through physical products and materials.",
+          href: "/divisions/merchandise",
+        },
+        {
+          title: "Client Services",
+          description:
+            "Serving external clients by sourcing opportunities and delivering them through the appropriate Globe division.",
+          href: "/divisions/client-services",
         },
       ],
     },
 
     {
-      title: "Built for Continuity",
+      title: "Supported by an Operational Engine",
       paragraphs: [
-        "Globe Technologies is designed to grow beyond any single product, project, division or generation of leadership.",
-        "Our Constitution, governance structures and shared principles exist to help preserve the company's identity, guide its decisions and support responsible growth over time.",
+        "The divisions are supported by the company's operational departments, which provide the capabilities required to run Globe as a sustainable company.",
+        "Finance, Information Technology, Marketing, Legal, Human Resources and other operational functions support the company's people, systems, resources and obligations, enabling the divisions to focus on creating and delivering value.",
       ],
       cards: [
         {
-          title: "Constitution",
+          title: "Leadership",
           description:
-            "The foundational framework that defines the principles and structures of the company.",
-          href: "/company/constitution",
-        },
+          "Explore the leadership structure and responsibilities established to guide Globe Technologies as it grows.",
+          href: "/about/leadership",
+        },            
         {
           title: "Governance",
           description:
-            "The systems of responsibility, accountability and oversight that support the company.",
-          href: "/company/governance",
+            "The structures of responsibility, accountability and oversight that guide the company.",
+          href: "/about/governance",
         },
+      ],
+    },
+
+    {
+      title: "Designed for Continuity and Growth",
+      paragraphs: [
+        "Globe Technologies is not defined by a fixed list of industries, products or divisions. Its structure is designed to evolve as new technologies emerge, new opportunities are discovered and new forms of value become possible.",
+        "Future divisions may operate in areas that do not yet exist within the company. What remains constant is the underlying model: research what is possible, build what is valuable, commercialize what can create sustainable value and preserve the principles that define the company.",
       ],
     },
 
     {
       title: "Explore Globe Technologies",
       paragraphs: [
-        "There is more to discover about who we are, what we are building and how we intend to grow.",
+        "Explore the company, the ideas that guide it, the people entrusted with its leadership and the divisions through which its work becomes reality.",
       ],
       cards: [
         {
-          title: "About Us",
+          title: "The Company",
           description:
-            "Learn more about Globe Technologies, our purpose and the ideas that guide us.",
-          href: "/company/about",
+            "Learn more about Globe Technologies, its purpose and the principles that guide the company.",
+          href: "/about/company",
         },
         {
           title: "Our Story",
           description:
-            "Explore the journey behind the company and the vision that continues to shape it.",
-          href: "/company/our-story",
+            "Explore the journey that led to Globe Technologies and the vision behind its continued development.",
+          href: "/about/our-story",
         },
         {
           title: "Our Divisions",
           description:
-            "Discover the specialized areas through which Globe Technologies creates and delivers value.",
+            "Discover the specialized divisions through which Globe researches, creates, produces and delivers value.",
           href: "/divisions",
         },
         {
           title: "Our Profile",
           description:
-            "Explore our company profile, structure, divisions and the work we are building for the future.",
-          href: "/company/company-profile",
+            "Explore Globe Technologies' structure, capabilities, divisions and areas of work.",
+          href: "/about/company-profile",
         },
       ],
     },
+
   ],
 
   related: [
     {
-      label: "Vision",
-      href: "/company/vision",
-      description: "Discover the future Globe Technologies is working to help create.",
+      label: "Mission & Vision",
+      href: "/about/mission-vision",
+      description:
+      "Discover the future Globe Technologies is working to help create.",
     },
     {
-      label: "Mission",
-      href: "/company/mission",
-      description: "Learn how Globe Technologies turns its purpose into action.",
+      label: "Our Brand",
+      href: "/about/brand",
+      description:
+      "Explore the identity, visual language and standards that represent Globe Technologies.",
     },
     {
-      label: "Leadership",
-      href: "/company/leadership",
-      description: "Meet the people entrusted with guiding the company.",
-    },
+      label: "Constitution",
+      href: "/about/constitution",
+      description:
+      "Explore the foundational principles and framework that govern Globe Technologies.",
+    },      
   ],
 };
