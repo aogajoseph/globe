@@ -4,26 +4,26 @@ export const governanceContent: PageContent = {
   eyebrow: "About Us",
   title: "Governance",
   intro:
-    "Good governance helps ensure Globe Technologies remains accountable, resilient and true to its purpose. It provides the framework for responsible decision-making, effective oversight and long-term continuity.",
+    "Governance provides the framework through which Globe Technologies is directed, accountable and responsible for its decisions.",
 
   sections: [
     {
       title: "Our Approach to Governance",
       paragraphs: [
-        "Globe Technologies believes that sustainable innovation requires responsible governance. Strong structures, clear accountability and principled leadership enable the company to pursue its purpose while maintaining the trust of the people and communities it serves.",
-        "Our governance framework is designed to support sound decision-making, responsible stewardship and continuity across generations of leadership.",
+        "Governance at Globe Technologies establishes how authority is exercised, how decisions are made and how responsibility is maintained across the company.",
+        "The aim is to ensure that the company can operate effectively while protecting its interests, resources, identity and long-term continuity.",
       ],
     },
 
     {
       title: "Governance Principles",
       items: [
-        "Purpose-driven leadership",
-        "Integrity and accountability",
+        "Clear authority and accountability",
+        "Responsible decision-making",
+        "Integrity and transparency",
         "Responsible stewardship",
-        "Transparency and trust",
+        "Protection of company interests",
         "Long-term continuity",
-        "Sound decision-making",
       ],
     },
 
@@ -31,50 +31,65 @@ export const governanceContent: PageContent = {
       title: "Governance Framework",
       cards: [
         {
+          title: "Chief Executive Officer",
+          description:
+            "Holds ultimate executive authority and makes final executive decisions for the company.",
+          href: "/about/leadership",
+        },
+        {
           title: "Leadership",
           description:
-            "Providing strategic direction while ensuring the company's purpose and values remain central to every decision.",
-          href: "/company/leadership",
+            "Carries defined responsibilities for directing the company, developing its capabilities and implementing approved priorities.",
+          href: "/about/leadership",
         },
         {
           title: "Constitution",
           description:
-            "The enduring framework that defines the company's principles, governance structures and responsibilities.",
-          href: "/company/constitution",
+            "Establishes the foundational principles and framework that govern Globe Technologies.",
+          href: "/about/constitution",
         },
         {
-          title: "Policies",
+          title: "Policies & Procedures",
           description:
-            "Internal policies and standards that guide ethical conduct, operations and responsible business practices.",
+            "Provide practical rules and standards for carrying out the company's work and responsibilities.",
         },
-        {
-          title: "Risk & Compliance",
-          description:
-            "Identifying, managing and mitigating risks while supporting responsible growth and regulatory compliance.",
-        },
+      ],
+    },
+
+    {
+      title: "Accountability",
+      paragraphs: [
+        "Authority at Globe Technologies carries corresponding responsibility. Those entrusted with leadership or operational responsibilities are expected to act within their authority, account for their decisions and protect the interests of the company.",
+        "The Chief Executive Officer remains the final executive authority, while the company's governance framework provides the principles and structures within which that authority is exercised.",
       ],
     },
 
     {
       title: "Built for Continuity",
       paragraphs: [
-        "Globe Technologies is designed to endure beyond individual leaders, products and generations. Governance exists to preserve the company's identity, protect its purpose and provide stability as it continues to grow and evolve.",
+        "Governance is designed to help Globe Technologies remain stable as the company grows and leadership changes. The objective is not to prevent change, but to provide a framework through which the company can develop without losing its fundamental identity and principles.",
       ],
     },
   ],
 
   related: [
     {
-      label: "Constitution",
-      href: "/company/constitution",
+      label: "Leadership",
+      href: "/about/leadership",
+      description:
+        "Explore the responsibilities and structure of leadership at Globe Technologies.",
     },
     {
-      label: "Leadership",
-      href: "/company/leadership",
+      label: "Constitution",
+      href: "/about/constitution",
+      description:
+        "Explore the foundational principles and framework that govern the company.",
     },
     {
       label: "Company Profile",
-      href: "/company/company-profile",
+      href: "/about/company-profile",
+      description:
+        "Explore the company's current structure, capabilities and areas of work.",
     },
   ],
 };

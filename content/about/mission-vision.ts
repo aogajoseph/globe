@@ -4,79 +4,60 @@ export const missionAndVisionContent: PageContent = {
   eyebrow: "About Us",
   title: "Mission & Vision",
   intro:
-    "Our mission defines how Globe Technologies fulfills its purpose. It guides our daily work, shapes our decisions and directs the way we create lasting value.",
+    "Our mission defines what Globe Technologies does. Our vision defines what the company aims to become.",
 
   sections: [
     {
-      title: "Mission Statement",
+      title: "Vision",
       paragraphs: [
-        "Innovating towards a better future.",
+        "To become one of the world's most trusted innovation companies.",
       ],
     },
 
     {
-      title: "How We Deliver Our Mission",
+      title: "Mission",
       paragraphs: [
-        "Every solution begins with understanding. We invest in research to uncover meaningful challenges, develop thoughtful solutions through innovation and deliver work that creates lasting value for individuals, organizations and communities.",
-        "Whether building software, creating media or pursuing strategic initiatives, we remain committed to our enduring purpose, excellence and responsible stewardship.",
+        "Researching, creating and commercializing ideas to produce lasting value.",
       ],
     },
 
     {
-      title: "Our Commitments",
-      items: [
-        "Research before innovation",
-        "Solve meaningful problems",
-        "Pursue excellence in everything we do",
-        "Act with integrity and responsible stewardship",
-        "Create lasting value for people and communities",
-        "Build for generations",
+      title: "What This Means",
+      paragraphs: [
+        "Our mission begins with research. We explore ideas, questions, opportunities and problems to understand what is worth pursuing and what an idea can become.",
+        "We then create. Depending on the opportunity, an idea may become a product, service, project or intellectual property. The form is determined by the nature and potential of the idea.",
+        "Finally, we commercialize. We develop work that can be delivered, owned, licensed, sold or otherwise create value. This connects creativity with a sustainable business.",
       ],
     },
 
     {
-      title: "Mission in Practice",
-      cards: [
-        {
-          title: "Research",
-          description:
-            "Understanding challenges through learning, investigation and experimentation.",
-          href: "/research",
-        },
-        {
-          title: "Products",
-          description:
-            "Developing practical solutions that improve the way people live and work.",
-          href: "/products",
-        },
-        {
-          title: "Projects",
-          description:
-            "Delivering long-term initiatives that educate, inspire and create positive impact.",
-          href: "/projects",
-        },
-        {
-          title: "Our Divisions",
-          description:
-            "Specialized teams working together under one shared purpose and identity.",
-          href: "/divisions",
-        },
+      title: "Our Direction",
+      paragraphs: [
+        "Our vision sets a long-term direction for Globe Technologies. Trust is built through the quality of our work, the way we conduct our business and the value we consistently deliver.",
+        "Becoming one of the world's most trusted innovation companies is therefore not defined by size alone. It means building a company whose ideas, products, services and intellectual properties can earn confidence over time.",
       ],
     },
+
   ],
 
   related: [
     {
-      label: "Purpose",
-      href: "/company/purpose",
+      label: "Company Overview",
+      href: "/about",
+      description:
+        "Learn what Globe Technologies is and how the company approaches its work.",
     },
     {
-      label: "Vision",
-      href: "/company/vision",
+      label: "Our Brand",
+      href: "/about/brand",
+      description:
+        "Explore the identity through which Globe Technologies represents itself.",
     },
     {
       label: "Constitution",
-      href: "/company/constitution",
+      href: "/about/constitution",
+      description:
+        "Explore the foundational principles and framework that govern the company.",
     },
   ],
 };

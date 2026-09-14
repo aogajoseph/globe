@@ -4,14 +4,14 @@ export const leadershipContent: PageContent = {
   eyebrow: "About Us",
   title: "Leadership",
   intro:
-    "Leadership at Globe Technologies is a responsibility of stewardship. Our leaders are entrusted with preserving the company's purpose, guiding its strategy and building an organization that serves generations to come.",
+    "Leadership at Globe Technologies is a responsibility of stewardship. It exists to guide the company, make decisions, develop its capabilities and protect its long-term interests.",
 
   sections: [
     {
-      title: "Our Leadership Philosophy",
+      title: "Our Approach to Leadership",
       paragraphs: [
-        "We believe leadership is measured not only by results, but by the lasting impact those results create. Every leader at Globe Technologies is expected to uphold the company's purpose, pursue excellence and act with integrity in every decision.",
-        "Leadership exists to enable people, encourage innovation and ensure the company continues to grow responsibly while remaining faithful to its founding principles.",
+        "Leadership at Globe Technologies is based on responsibility, judgment and accountability. Leaders are entrusted with making decisions that serve the company's interests while maintaining the standards and principles that guide its work.",
+        "As the company grows, leadership will develop with it. Roles and responsibilities may change as new divisions, capabilities and governance structures become necessary.",
       ],
     },
 
@@ -26,45 +26,45 @@ export const leadershipContent: PageContent = {
     {
       title: "Leadership Responsibilities",
       items: [
-        "Preserve the company's purpose and identity",
-        "Provide strategic direction",
-        "Promote a culture of excellence and innovation",
-        "Develop people and future leaders",
+        "Provide direction and make responsible decisions",
+        "Protect the company's interests and identity",
+        "Guide strategy and priorities",
+        "Develop people and organizational capability",
         "Steward company resources responsibly",
-        "Build trust with employees, partners and communities",
+        "Maintain accountability and high standards",
       ],
     },
 
     {
       title: "Leadership Structure",
+      paragraphs: [
+        "Globe Technologies is led through defined offices and responsibilities rather than a fixed leadership structure. The Chief Executive Officer holds ultimate executive authority, supported by the company's leadership offices and operational functions.",
+        "As Globe Technologies develops, additional leadership roles and governance structures may be established where they are needed to support the company's work and long-term development.",
+      ],
       cards: [
-        {
-          title: "Board of Directors",
-          description:
-            "Provides independent oversight, safeguards the company's long-term interests and ensures responsible governance.",
-        },
         {
           title: "Office of the Chief Executive Officer",
           description:
-            "Provides strategic leadership, corporate direction and stewardship of Globe Technologies.",
+            "Provides executive leadership, sets company direction and makes final executive decisions.",
         },
         {
           title: "Executive Leadership",
           description:
-            "Leads the company's divisions, operations and long-term strategic priorities.",
+            "Provides leadership across the company's divisions and operational functions, reporting to the Chief Executive Officer.",
         },
         {
           title: "Future Leadership",
           description:
-            "As Globe Technologies grows, additional leadership roles and governance structures will be established to support the company's long-term development.",
+            "Additional leadership roles may be established as the company grows and its needs develop.",
         },
       ],
     },
 
     {
-      title: "Leading with Stewardship",
+      title: "Leadership and Continuity",
       paragraphs: [
-        "Globe Technologies is built to endure beyond any one individual. Leadership is therefore entrusted with protecting the company's purpose, strengthening its culture and preparing future generations to continue the work with wisdom, responsibility and excellence.",
+        "Globe Technologies is intended to endure beyond any one individual. Leadership therefore carries a responsibility to strengthen the company, preserve what should endure and prepare it for continued development.",
+        "The Constitution provides the foundational principles that guide this responsibility and establish the framework for leadership and succession.",
       ],
     },
   ],
@@ -72,15 +72,21 @@ export const leadershipContent: PageContent = {
   related: [
     {
       label: "Governance",
-      href: "/company/governance",
+      href: "/about/governance",
+      description:
+        "Explore how authority, accountability and oversight are established at Globe Technologies.",
     },
     {
       label: "Constitution",
-      href: "/company/constitution",
+      href: "/about/constitution",
+      description:
+        "Explore the foundational principles and framework that govern the company.",
     },
     {
-      label: "Vision",
-      href: "/company/vision",
+      label: "Mission & Vision",
+      href: "/about/mission-vision",
+      description:
+        "Explore what Globe Technologies does and what the company aims to become.",
     },
   ],
 };

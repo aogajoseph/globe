@@ -4,14 +4,14 @@ export const companyProfileContent: PageContent = {
   eyebrow: "About Us",
   title: "Company Profile",
   intro:
-    "Globe Technologies is a research-driven technology company dedicated to innovating towards a better future through products and initiatives that create lasting value.",
+    "Globe Technologies is a multidisciplinary company that turns ideas into products, services and intellectual properties through research, development, production and commercialization.",
 
   sections: [
     {
       title: "Company Overview",
       paragraphs: [
-        "Globe Technologies researches, develops and delivers innovative solutions that address meaningful challenges and create opportunities for people and communities.",
-        "The company brings together research, engineering, creativity and responsible stewardship to build solutions designed for long-term impact across multiple industries.",
+        "Globe Technologies brings together the capabilities needed to explore ideas, develop opportunities and turn them into tangible work.",
+        "The company operates across different forms of creation and delivery, from software and media to research, physical products and client services. Its work may be developed for Globe itself, for external clients or as intellectual property with long-term potential.",
       ],
     },
 
@@ -27,90 +27,102 @@ export const companyProfileContent: PageContent = {
       title: "At a Glance",
       cards: [
         {
-          title: "Industry",
+          title: "Company Type",
           description:
-            "Technology, Research and Innovation",
+            "Multidisciplinary innovation company",
+        },
+        {
+          title: "Business Model",
+          description:
+            "Research, development, production, services and commercialization.",
+        },
+        {
+          title: "Operating Model",
+          description:
+            "Specialized divisions supported by shared operational functions.",
         },
         {
           title: "Headquarters",
           description:
             "Remote",
         },
-        {
-          title: "Business Model",
-          description:
-            "Research, product development and strategic initiatives.",
-        },
-        {
-          title: "Tagline",
-          description:
-            "Inventing the Future.",
-        },
       ],
     },
 
     {
-      title: "Our Purpose",
+      title: "Current Divisions",
       paragraphs: [
-        "Globe Technologies exists to innovate towards a better future by creating solutions that improve lives, strengthen communities and contribute lasting value.",
+        "Globe Technologies currently operates through specialized divisions, each responsible for a distinct area of work while remaining part of the same company.",
       ],
-    },
-
-    {
-      title: "Core Areas",
       cards: [
         {
-          title: "Research",
+          title: "Globe Research",
           description:
-            "Understanding meaningful challenges and discovering new opportunities.",
-          href: "/research",
+            "Explores ideas, conducts research and helps determine what opportunities are worth developing and what they can become.",
+          href: "/divisions/research",
         },
         {
-          title: "Products",
+          title: "Globe Software",
           description:
-            "Developing practical solutions that improve everyday life.",
-          href: "/products",
+            "Designs and develops software products, digital platforms and related technologies.",
+          href: "/divisions/software",
         },
         {
-          title: "Projects",
+          title: "Globe Media",
           description:
-            "Delivering long-term creative and strategic initiatives.",
-          href: "/projects",
+            "Develops and produces creative media and media-based intellectual properties.",
+          href: "/divisions/media",
         },
         {
-          title: "Divisions",
+          title: "Globe Merchandise",
           description:
-            "Operating through specialized divisions united by one company identity.",
-          href: "/divisions",
+            "Develops and commercializes physical products carrying Globe or Globe-owned intellectual property.",
+          href: "/divisions/merchandise",
+        },
+        {
+          title: "Globe Client Services",
+          description:
+            "Sources and coordinates external client work through the division best suited to deliver it.",
+          href: "/divisions/client-services",
         },
       ],
     },
 
     {
-      title: "Guiding Principles",
-      items: [
-        "Purpose",
-        "Research",
-        "Excellence",
-        "Stewardship",
-        "Innovation",
-        "Long-term thinking",
+      title: "Operational Support",
+      paragraphs: [
+        "The divisions are supported by the company's operational functions, which provide the financial, legal, administrative, technical and other capabilities required to run the business.",
+        "This allows the divisions to remain focused on their areas of work while operating within a shared company framework.",
+      ],
+    },
+
+    {
+      title: "What We Create",
+      paragraphs: [
+        "Because Globe Technologies is built around ideas rather than a single type of output, the company's work can take many forms.",
+        "Depending on the idea and its potential, Globe may create software products, digital platforms, films, documentaries, books, research publications, physical products, services or intellectual properties.",
       ],
     },
   ],
 
   related: [
     {
-      label: "About Us",
-      href: "/company/about",
+      label: "The Company",
+      href: "/about",
+      description:
+        "Learn what Globe Technologies is and how the company approaches its work.",
     },
     {
-      label: "Vision",
-      href: "/company/vision",
+      label: "Our Brand",
+      href: "/about/brand",
+      description:
+        "Explore the identity and standards through which Globe Technologies represents itself.",
     },
     {
-      label: "Constitution",
-      href: "/company/constitution",
+      label: "Mission & Vision",
+      href: "/about/mission-vision",
+      description:
+        "Explore the company's mission and the direction it is pursuing.",
     },
   ],
 };

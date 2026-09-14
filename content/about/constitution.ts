@@ -4,32 +4,69 @@ export const constitutionContent: PageContent = {
   eyebrow: "About Us",
   title: "Constitution",
   intro:
-    "Our Constitution defines our enduring framework. It establishes the principles, structures and responsibilities that guide the company and preserve its identity across generations.",
+    "The Globe Technologies Constitution establishes the foundational framework of the company. It defines the principles, responsibilities and structures that are intended to endure as the company develops.",
 
   sections: [
     {
       title: "Why a Constitution?",
       paragraphs: [
-        "Great organizations are built on enduring principles that guide decisions, protect purpose and provide continuity over time.",
-        "The Globe Technologies Constitution exists to ensure the company remains faithful to its purpose while adapting responsibly to new opportunities and challenges.",
+        "A company can change over time without losing the principles that define it. The Constitution provides Globe Technologies with a stable foundation for making decisions, exercising authority and managing that change.",
+        "It establishes what should endure while allowing the company to adapt its capabilities, structure and areas of work as new opportunities arise.",
       ],
     },
+
     {
-      title: "What It Defines",
+      title: "What It Establishes",
       items: [
-        "Purpose and guiding principles",
-        "Leadership responsibilities",
-        "Governance framework",
-        "Decision-making structures",
-        "Company continuity",
-        "Stewardship and accountability",
+        "The company's foundational principles",
+        "Leadership responsibilities and authority",
+        "Governance and accountability",
+        "Decision-making principles",
+        "Stewardship of company interests and resources",
+        "Continuity and succession",
+      ],
+    },
+
+    {
+      title: "Enduring Principles",
+      paragraphs: [
+        "The Constitution establishes the principles that should remain central to Globe Technologies regardless of changes in leadership, divisions, products or areas of work.",
+        "These principles provide a reference point for decisions and help distinguish what may change from what should remain constant.",
+      ],
+      items: [
+        "Excellence",
+        "Stewardship",
+        "Purpose",
+      ],
+    },
+
+    {
+      title: "A Framework for Continuity",
+      paragraphs: [
+        "The Constitution is intended to provide continuity beyond any individual leader or period of the company's development. It gives future leadership a clear foundation from which to govern, build and make necessary changes.",
+        "As Globe Technologies evolves, the Constitution provides the framework within which that evolution takes place.",
       ],
     },
   ],
 
   related: [
-    { label: "Leadership", href: "/company/leadership" },
-    { label: "Governance", href: "/company/governance" },
-    { label: "Vision", href: "/company/vision" },
+    {
+      label: "Leadership",
+      href: "/about/leadership",
+      description:
+        "Explore the responsibilities and structure of leadership at Globe Technologies.",
+    },
+    {
+      label: "Governance",
+      href: "/about/governance",
+      description:
+        "Explore how authority, accountability and oversight operate within the company.",
+    },
+    {
+      label: "Mission & Vision",
+      href: "/about/mission-vision",
+      description:
+        "Explore what Globe Technologies does and what the company aims to become.",
+    },
   ],
 };

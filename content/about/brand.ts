@@ -4,67 +4,76 @@ export const brandContent: PageContent = {
   eyebrow: "About Us",
   title: "Our Brand",
   intro:
-    "Our brand represents the experience people have with us and the trust we earn over time. It reflects our commitment to innovating towards a better future through research, purpose and responsible stewardship.",
+  "The Globe Technologies brand is the identity through which the company presents itself, its work and the intellectual properties it creates.",
 
   sections: [
     {
-      title: "What Our Brand Represents",
+    title: "The Globe Identity",
+    paragraphs: [
+    "Globe Technologies is more than a name or visual mark. The brand provides a consistent identity across the company, helping distinguish Globe, its divisions, its products and its intellectual properties while allowing each to develop its own character.",
+    "The Globe name represents the company as a whole. The divisions operate within that identity, while individual products, services and intellectual properties may establish distinct identities of their own.",
+    ],
+    },
+
+    {
+      title: "One Company, Many Expressions",
       paragraphs: [
-        "The Globe Technologies brand represents a promise to pursue meaningful innovation with integrity, excellence and a long-term perspective. It reflects who we are, what we value and the future we are working to help create.",
-        "Everything we create - from products and projects to research, partnerships and experiences - is an opportunity to strengthen that promise and earn the trust of the people we serve.",
+        "Globe Technologies works across different disciplines and creates different kinds of work. A software product does not need to look or communicate like a film, and an intellectual property does not need to share the same audience as a client service.",
+        "What connects them is their relationship to Globe. Each exists within a broader company identity while retaining the freedom to develop an appropriate identity for its own audience, purpose and market.",
       ],
     },
 
     {
-      title: "What You Can Expect",
+      title: "What the Brand Communicates",
       paragraphs: [
-        "Every interaction with Globe Technologies reflects the same commitment to quality, responsibility and purpose. Whether you are using one of our products, collaborating with us or simply learning about our work, these are the standards we strive to uphold:",
+        "The Globe brand should communicate clarity, confidence, curiosity and intentionality. It should feel considered rather than excessive, distinctive without being restrictive and capable of representing the company as it grows into new areas of work.",
       ],
       items: [
-        "Purpose before popularity",
-        "Research before decisions",
-        "Excellence in execution",
-        "Long-term thinking",
-        "Responsible stewardship",
-        "Integrity and transparency",
+        "Clarity in communication",
+        "Confidence without excess",
+        "Curiosity and openness",
+        "Intentionality in design",
+        "Consistency across the company",
+        "Freedom for individual IPs to develop",
       ],
     },
 
     {
-      title: "Unity of Purpose",
+      title: "A Brand That Can Grow",
       paragraphs: [
-        "Globe Technologies operates through multiple divisions, products and initiatives, each serving different audiences and pursuing different opportunities. Together, however, they represent one company with one identity and one shared purpose.",
+        "The Globe brand is designed to accommodate the company's development. New divisions, products, services and intellectual properties may emerge over time, but they can remain connected to the same master brand without requiring Globe to become visually or conceptually uniform.",
+        "This creates a brand architecture in which the company remains recognizable while its divisions and intellectual properties can establish identities that are appropriate to the work they represent.",
       ],
     },
 
     {
-      title: "Looking Ahead",
+      title: "Our Brand System",
       paragraphs: [
-        "Our brand will continue to grow alongside the company. New divisions, products and initiatives will expand what we do, but they will always remain connected by the same purpose, the same principles and the same commitment to creating lasting value.",
-        "As we continue inventing the future, our goal is to build a brand that people trust - not simply because of what we create, but because of how and why we create it.",
+        "The Globe brand is expressed through its name, logo, visual language, typography, color, imagery, tone and other standards that shape how the company is presented.",
+        "Together, these elements provide a consistent foundation for the company's public presence and establish the standards through which Globe and its associated brands are represented.",
       ],
     },
+
   ],
 
   related: [
     {
+      label: "Company Overview",
+      href: "/about",
+      description:
+      "Learn what Globe Technologies is and how the company approaches its work.",
+    },
+    {
       label: "Company Profile",
-      href: "/company/company-profile",
+      href: "/about/company-profile",
       description:
-        "Learn more about Globe Technologies and the work we are building.",
+      "Explore the company's structure, capabilities and current areas of work.",
     },
     {
-      label: "Purpose",
-      href: "/company/purpose",
+      label: "Our Story",
+      href: "/about/our-story",
       description:
-        "Discover why Globe Technologies exists and what drives everything we do.",
-    },
-    {
-      label: "Vision",
-      href: "/company/vision",
-      description:
-        "Explore the future Globe Technologies is committed to helping create.",
+      "Discover how Globe Technologies began and how the company has developed.",
     },
   ],
 };
-

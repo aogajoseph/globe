@@ -10,8 +10,8 @@ export const companyLandingContent: PageContent = {
     {
       title: "A Company Built Around Ideas",
       paragraphs: [
-      "Globe Technologies exists to explore what an idea can become. An idea may begin as a question, a problem, a creative concept, a technological possibility or an opportunity to create something of lasting value.",
-      "Rather than limiting ideas to a single industry or form, Globe provides a structure through which they can be researched, developed, produced and commercialized. The result may be a software product, digital platform, film, documentary, podcast, book, research publication, branded asset, physical product or an intellectual property with the potential to grow into something larger.",
+        "Globe Technologies exists to explore what an idea can become. An idea may begin as a question, a problem, a creative concept, a technological possibility or an opportunity to create something of lasting value.",
+        "Rather than limiting ideas to a single industry or form, Globe provides a structure through which they can be researched, developed, produced and commercialized. The result may be a software product, digital platform, film, documentary, podcast, book, research publication, branded asset, physical product or an intellectual property with the potential to grow into something larger.",
       ],
     },
 
