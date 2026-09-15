@@ -18,30 +18,30 @@ export const brandContent: PageContent = {
     {
       title: "One Company, Many Expressions",
       paragraphs: [
-        "Globe Technologies works across different disciplines and creates different kinds of work. A software product does not need to look or communicate like a film, and an intellectual property does not need to share the same audience as a client service.",
-        "What connects them is their relationship to Globe. Each exists within a broader company identity while retaining the freedom to develop an appropriate identity for its own audience, purpose and market.",
+        "Globe Technologies works across different disciplines and creates different kinds of work. A software product does not need to look or communicate like a film, and an intellectual property does not need to share the same audience with a client service.",
+        "What connects them is their relationship to Globe. Each exists within a broad company identity while retaining the freedom to develop an appropriate identity for its own audience, purpose and market.",
       ],
     },
 
     {
       title: "What the Brand Communicates",
       paragraphs: [
-        "The Globe brand should communicate clarity, confidence, curiosity and intentionality. It should feel considered rather than excessive, distinctive without being restrictive and capable of representing the company as it grows into new areas of work.",
+        "The Globe brand communicates clarity, confidence, curiosity and intentionality. It is capable of representing the company as it evolves over time and grows into new areas of work.",
       ],
       items: [
-        "Clarity in communication",
-        "Confidence without excess",
-        "Curiosity and openness",
-        "Intentionality in design",
+        "Clarity",
+        "Confidence",
+        "Curiosity",
+        "Intentionality by design",
+        "Freedom in IP development",
         "Consistency across the company",
-        "Freedom for individual IPs to develop",
       ],
     },
 
     {
-      title: "A Brand That Can Grow",
+      title: "A Brand of Possibilities",
       paragraphs: [
-        "The Globe brand is designed to accommodate the company's development. New divisions, products, services and intellectual properties may emerge over time, but they can remain connected to the same master brand without requiring Globe to become visually or conceptually uniform.",
+        "The Globe brand is designed to accommodate the company's development. New divisions, products, services and intellectual properties may emerge over time, and remain connected to one master brand without requiring Globe to become visually or conceptually uniform.",
         "This creates a brand architecture in which the company remains recognizable while its divisions and intellectual properties can establish identities that are appropriate to the work they represent.",
       ],
     },

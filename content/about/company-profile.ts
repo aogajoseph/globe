@@ -11,7 +11,7 @@ export const companyProfileContent: PageContent = {
       title: "Company Overview",
       paragraphs: [
         "Globe Technologies brings together the capabilities needed to explore ideas, develop opportunities and turn them into tangible work.",
-        "The company operates across different forms of creation and delivery, from software and media to research, physical products and client services. Its work may be developed for Globe itself, for external clients or as intellectual property with long-term potential.",
+        "The company operates across different forms of creation and delivery, from software and media to research, physical products and client services. Its work may be developed for Globe itself or external clients as products, services or intellectual properties with long-term potential.",
       ],
     },
 
@@ -29,12 +29,12 @@ export const companyProfileContent: PageContent = {
         {
           title: "Company Type",
           description:
-            "Multidisciplinary innovation company",
+            "Multidisciplinary innovation company.",
         },
         {
           title: "Business Model",
           description:
-            "Research, development, production, services and commercialization.",
+            "Ideas research, development and commercialization.",
         },
         {
           title: "Operating Model",
@@ -76,7 +76,7 @@ export const companyProfileContent: PageContent = {
         {
           title: "Globe Merchandise",
           description:
-            "Develops and commercializes physical products carrying Globe or Globe-owned intellectual property.",
+            "Develops and commercializes physical products carrying Globe's or Globe-owned intellectual property branding.",
           href: "/divisions/merchandise",
         },
         {
@@ -107,7 +107,7 @@ export const companyProfileContent: PageContent = {
 
   related: [
     {
-      label: "The Company",
+      label: "Company Overview",
       href: "/about",
       description:
         "Learn what Globe Technologies is and how the company approaches its work.",

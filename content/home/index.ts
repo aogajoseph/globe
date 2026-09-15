@@ -29,7 +29,7 @@ export const homePageContent: PageContent = {
         {
           title: "Mission",
           description:
-            "Researching, creating and commercializing ideas to produce lasting value.",
+            "Researching, developing and commercializing ideas to produce lasting value.",
         },
         {
           title: "Philosophy",

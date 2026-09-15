@@ -34,24 +34,21 @@ export const governanceContent: PageContent = {
           title: "Chief Executive Officer",
           description:
             "Holds ultimate executive authority and makes final executive decisions for the company.",
-          href: "/about/leadership",
         },
         {
           title: "Leadership",
           description:
             "Carries defined responsibilities for directing the company, developing its capabilities and implementing approved priorities.",
-          href: "/about/leadership",
         },
         {
           title: "Constitution",
           description:
             "Establishes the foundational principles and framework that govern Globe Technologies.",
-          href: "/about/constitution",
         },
         {
           title: "Policies & Procedures",
           description:
-            "Provide practical rules and standards for carrying out the company's work and responsibilities.",
+            "Provide practical rules and standards for carrying out the company's day-to-day work and responsibilities.",
         },
       ],
     },

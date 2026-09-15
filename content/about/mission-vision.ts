@@ -4,7 +4,7 @@ export const missionAndVisionContent: PageContent = {
   eyebrow: "About Us",
   title: "Mission & Vision",
   intro:
-    "Our mission defines what Globe Technologies does. Our vision defines what the company aims to become.",
+    "Our mission defines what Globe Technologies does while our vision defines what the company aims to become.",
 
   sections: [
     {
@@ -17,7 +17,7 @@ export const missionAndVisionContent: PageContent = {
     {
       title: "Mission",
       paragraphs: [
-        "Researching, creating and commercializing ideas to produce lasting value.",
+        "Researching, developing and commercializing ideas to produce lasting value.",
       ],
     },
 
@@ -25,7 +25,7 @@ export const missionAndVisionContent: PageContent = {
       title: "What This Means",
       paragraphs: [
         "Our mission begins with research. We explore ideas, questions, opportunities and problems to understand what is worth pursuing and what an idea can become.",
-        "We then create. Depending on the opportunity, an idea may become a product, service, project or intellectual property. The form is determined by the nature and potential of the idea.",
+        "We then develop. Depending on the opportunity, an idea may become a product, service or intellectual property. The form is determined by the nature and potential of the idea.",
         "Finally, we commercialize. We develop work that can be delivered, owned, licensed, sold or otherwise create value. This connects creativity with a sustainable business.",
       ],
     },
@@ -34,7 +34,7 @@ export const missionAndVisionContent: PageContent = {
       title: "Our Direction",
       paragraphs: [
         "Our vision sets a long-term direction for Globe Technologies. Trust is built through the quality of our work, the way we conduct our business and the value we consistently deliver.",
-        "Becoming one of the world's most trusted innovation companies is therefore not defined by size alone. It means building a company whose ideas, products, services and intellectual properties can earn confidence over time.",
+        "Becoming one of the world's most trusted innovation companies is therefore not defined by size alone. It means building a company whose ideas, products, services and intellectual properties can earn confidence and public truast over time.",
       ],
     },
 

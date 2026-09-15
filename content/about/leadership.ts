@@ -26,19 +26,19 @@ export const leadershipContent: PageContent = {
     {
       title: "Leadership Responsibilities",
       items: [
-        "Provide direction and make responsible decisions",
-        "Protect the company's interests and identity",
-        "Guide strategy and priorities",
-        "Develop people and organizational capability",
-        "Steward company resources responsibly",
-        "Maintain accountability and high standards",
+        "Providing direction and making responsible decisions",
+        "Protecting the company's interests and identity",
+        "Guiding strategy and priorities",
+        "Developing people and organizational capability",
+        "Stewarding company resources responsibly",
+        "Maintaining accountability and high standards",
       ],
     },
 
     {
       title: "Leadership Structure",
       paragraphs: [
-        "Globe Technologies is led through defined offices and responsibilities rather than a fixed leadership structure. The Chief Executive Officer holds ultimate executive authority, supported by the company's leadership offices and operational functions.",
+        "Globe Technologies is led through defined offices and responsibilities rather than a fixed leadership structure. The Chief Executive Officer holds the ultimate executive authority, supported by the company's leadership offices and operational functions.",
         "As Globe Technologies develops, additional leadership roles and governance structures may be established where they are needed to support the company's work and long-term development.",
       ],
       cards: [
@@ -63,7 +63,7 @@ export const leadershipContent: PageContent = {
     {
       title: "Leadership and Continuity",
       paragraphs: [
-        "Globe Technologies is intended to endure beyond any one individual. Leadership therefore carries a responsibility to strengthen the company, preserve what should endure and prepare it for continued development.",
+        "Globe Technologies is intended to endure beyond any one individual. Leadership therefore carries a responsibility to strengthen the company, preserve its principles and prepare it for continued development.",
         "The Constitution provides the foundational principles that guide this responsibility and establish the framework for leadership and succession.",
       ],
     },

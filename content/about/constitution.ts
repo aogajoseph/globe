@@ -34,9 +34,9 @@ export const constitutionContent: PageContent = {
         "These principles provide a reference point for decisions and help distinguish what may change from what should remain constant.",
       ],
       items: [
+        "Purpose",
         "Excellence",
         "Stewardship",
-        "Purpose",
       ],
     },
 

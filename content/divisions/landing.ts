@@ -4,14 +4,14 @@ export const divisionsLandingContent: PageContent = {
   eyebrow: "Divisions",
   title: "Our Divisions",
   intro:
-    "Globe Technologies brings together specialized divisions that pursue different areas of innovation while remaining united by one purpose, one identity and one standard of excellence.",
+    "Globe Technologies operates through specialized divisions that turn ideas and opportunities into products, services and intellectual properties and client needs into deliverables.",
 
   sections: [
     {
-      title: "Built Around Purpose",
+      title: "How Our Divisions Work",
       paragraphs: [
-        "Meaningful innovation rarely happens within a single discipline. By organizing our work into dedicated divisions, we enable teams to develop deep expertise while collaborating toward a shared vision of innovating towards a better future.",
-        "Each division focuses on a distinct area of opportunity, yet every product, project and initiative reflects the values and long-term purpose of Globe Technologies.",
+        "Each division has a distinct area of responsibility and the capabilities needed to develop its work. Together, they allow Globe Technologies to work across different disciplines and forms of output without limiting what an idea can become.",
+        "An idea may begin as a question, opportunity, area of research or client work and move into the division best suited to develop it. Divisions can also work together when a project requires capabilities from more than one area.",
       ],
     },
 
@@ -27,43 +27,65 @@ export const divisionsLandingContent: PageContent = {
       title: "Our Divisions",
       cards: [
         {
+          title: "Globe Research",
+          description:
+            "Researches ideas, opportunities and areas of inquiry, helping determine what is worth pursuing and what an idea can become.",
+          href: "/divisions/research",
+        },
+        {
           title: "Globe Software",
           description:
-            "Developing software products and digital platforms that solve meaningful problems and improve everyday life.",
+            "Designs and develops software products, digital platforms and related technologies.",
           href: "/divisions/software",
         },
         {
           title: "Globe Media",
           description:
-            "Creating educational and creative media that informs, inspires and empowers generations.",
+            "Develops and produces films, documentaries, podcasts and other creative media and intellectual properties.",
           href: "/divisions/media",
+        },
+        {
+          title: "Globe Merchandise",
+          description:
+            "Develops and commercializes physical products carrying Globe's or Globe-owned intellectual property branding.",
+          href: "/divisions/merchandise",
+        },
+        {
+          title: "Globe Client Services",
+          description:
+            "Sources external client work and coordinates its delivery through the division best suited to the client's needs.",
+          href: "/divisions/client-services",
         },
       ],
     },
 
     {
-      title: "Designed to Grow",
+      title: "One Company, Different Capabilities",
       paragraphs: [
-        "As Globe Technologies evolves, new divisions will be established to explore emerging opportunities, expand our capabilities and support our long-term mission. Whatever form they take, they will remain connected by one company, one purpose and one commitment to excellence.",
+        "The divisions are not separate companies. They are specialized parts of Globe Technologies, operating within the same company and supported by its shared operational functions.",
+        "Their areas of work may develop over time, and new divisions may be established when the company's ideas, capabilities or opportunities require them.",
       ],
     },
   ],
 
   related: [
     {
-      label: "Products",
-      href: "/products",
-      description: "Discover the solutions we're building.",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-      description: "Explore long-term initiatives shaping the future.",
-    },
-    {
       label: "Company Overview",
-      href: "/company",
-      description: "Learn how Globe Technologies is organized.",
+      href: "/about",
+      description:
+        "Learn what Globe Technologies is and how the company approaches its work.",
+    },
+    {
+      label: "Company Profile",
+      href: "/about/company-profile",
+      description:
+        "Explore the company's current structure, capabilities and areas of work.",
+    },
+    {
+      label: "Our Brand",
+      href: "/about/brand",
+      description:
+        "Explore the identity through which Globe Technologies represents itself.",
     },
   ],
 };
