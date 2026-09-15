@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { CompanyPage } from "../../components/layout/company-page";
-import { ipsContent } from "../../content/ips";
+import { ipsLandingContent } from "../../content/ips";
 import {
   createPageMetadata,
   createPageStructuredData,
@@ -12,7 +12,7 @@ export const metadata: Metadata = createPageMetadata("ips");
 export default function IntellectualPropertyPage() {
   return (
     <CompanyPage
-      content={ipsContent}
+      content={ipsLandingContent}
       structuredData={createPageStructuredData("ips")}
     />
   );
