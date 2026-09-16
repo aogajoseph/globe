@@ -1,4 +1,5 @@
 import type { Metadata, MetadataRoute } from "next";
+import type { BlogPostContent } from "../types/content";
 
 import { contactInfo } from "./contact-info";
 import { siteConfig } from "./site";
@@ -1074,6 +1075,150 @@ export function createPageStructuredData(
   const definition = pageDefinitions[key];
 
   return buildPageSchemas(definition);
+}
+
+export function createBlogPostMetadata(
+  content: BlogPostContent,
+  pathname: AbsolutePath,
+): Metadata {
+  const imagePath = content.heroImage ?? "/logos/logo.png";
+  const image = buildImage(
+    imagePath,
+    content.title,
+  );
+
+  const title = content.title;
+  const description = content.intro ?? siteConfig.description;
+
+  return {
+    metadataBase,
+    title,
+    description,
+    keywords: content.metadata.tags
+      ? [...content.metadata.tags]
+      : undefined,
+    applicationName: siteConfig.name,
+    authors: [{ name: content.metadata.author }],
+    category: content.metadata.category,
+    creator: content.metadata.author,
+    publisher: siteConfig.name,
+    robots: buildRobots(),
+
+    icons: {
+      icon: [{ url: "/icon", type: "image/png" }],
+      apple: [{ url: "/apple-icon", type: "image/png" }],
+    },
+
+    manifest: siteConfig.manifestPath,
+
+    alternates: {
+      canonical: resolveUrl(pathname),
+    },
+
+    openGraph: {
+      title: `${title} | ${siteConfig.name}`,
+      description,
+      url: resolveUrl(pathname),
+      siteName: siteConfig.name,
+      locale: siteConfig.locale,
+      type: "article",
+      publishedTime: content.metadata.publishedAt,
+      authors: [content.metadata.author],
+      section: content.metadata.category,
+      tags: content.metadata.tags,
+      images: [image],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | ${siteConfig.name}`,
+      description,
+      images: [image.url],
+    },
+  };
+}
+
+export function createBlogPostStructuredData(
+  content: BlogPostContent,
+  pathname: AbsolutePath,
+): JsonLdObject[] {
+  const url = resolveUrl(pathname);
+  const image = resolveUrl(
+    content.heroImage ?? "/logos/logo.png",
+  );
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: content.title,
+      description: content.intro ?? siteConfig.description,
+      url,
+      datePublished: content.metadata.publishedAt,
+      dateModified: content.metadata.publishedAt,
+      author: {
+        "@type": "Organization",
+        name: content.metadata.author,
+        url: siteConfig.url,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        logo: {
+          "@type": "ImageObject",
+          url: resolveUrl(siteConfig.logoPath),
+        },
+      },
+      image,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+      },
+      articleSection: content.metadata.category,
+      keywords: content.metadata.tags?.join(", "),
+      inLanguage: siteConfig.language,
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: siteConfig.name,
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: resolveUrl("/blog"),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: content.metadata.category,
+          item: resolveUrl(
+            content.metadata.category === "Company News"
+              ? "/blog/company-news"
+              : content.metadata.category === "Product Updates"
+                ? "/blog/product-updates"
+                : content.metadata.category === "Press Releases"
+                  ? "/blog/press-releases"
+                  : "/blog/events",
+          ),
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: content.title,
+          item: url,
+        },
+      ],
+    },
+  ];
 }
 
 export function createRootMetadata(): Metadata {

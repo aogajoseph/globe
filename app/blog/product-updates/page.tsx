@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../../components/layout/company-page";
-import { newsCategoryContent } from "../../../content/blog";
+import { productUpdatesCategoryContent } from "../../../content/blog";
 import { createPageMetadata, createPageStructuredData } from "../../../lib/seo";
 
 export const metadata: Metadata = createPageMetadata("newsProductUpdates");
@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata("newsProductUpdates");
 export default function ProductUpdatesPage() {
   return (
     <CompanyPage
-      content={newsCategoryContent.productUpdates}
+      content={productUpdatesCategoryContent}
       structuredData={createPageStructuredData("newsProductUpdates")}
     />
   );

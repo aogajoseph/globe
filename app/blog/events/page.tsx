@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyPage } from "../../../components/layout/company-page";
-import { newsCategoryContent } from "../../../content/blog";
+import { eventsCategoryContent } from "../../../content/blog/events";
 import { createPageMetadata, createPageStructuredData } from "../../../lib/seo";
 
 export const metadata: Metadata = createPageMetadata("newsEvents");
@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata("newsEvents");
 export default function EventsPage() {
   return (
     <CompanyPage
-      content={newsCategoryContent.events}
+      content={eventsCategoryContent}
       structuredData={createPageStructuredData("newsEvents")}
     />
   );
