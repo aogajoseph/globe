@@ -18,7 +18,7 @@ export const merchandiseDivisionContent: PageContent = {
     {
       type: "image",
       id: "merchandise-development",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/divisions/merchandise-division.png",
       alt: "Globe Merchandise product development workspace",
       variant: "editorial",
     },

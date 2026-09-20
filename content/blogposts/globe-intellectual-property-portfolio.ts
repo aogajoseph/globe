@@ -39,7 +39,7 @@ export const globeIPsBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/blogposts/ip-portfolio.png",
       alt: "Globe Technologies intellectual property portfolio",
       caption:
         "Globe's current intellectual property portfolio spans software, media and research.",

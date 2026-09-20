@@ -18,7 +18,7 @@ export const researchDivisionContent: PageContent = {
     {
       type: "image",
       id: "research-collaboration",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/divisions/research-division.png",
       alt: "Globe Research team collaborating",
       variant: "editorial",
     },

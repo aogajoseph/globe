@@ -10,7 +10,7 @@ export const addamContent: PageContent = {
     {
       type: "image",
       id: "addam-cinematic",
-      src: "/images/projects/addam.png",
+      src: "/images/ips/addam-cinematic.png",
       alt: "Cinematic still from the Addam dramatic series",
       variant: "panoramic",
     },

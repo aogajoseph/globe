@@ -55,11 +55,11 @@ function getCardActionLabel(card: PageCard): string {
     return "Contact us →";
   }
 
-  if (title.includes("akiba") || href.includes("/products/akiba")) {
+  if (title.includes("akiba") || href.includes("/ips/software/akiba")) {
     return "Learn More →";
   }
 
-  if (title.includes("addam") || href.includes("/projects/addam")) {
+  if (title.includes("addam") || href.includes("/ips/media/addam")) {
     return "Learn More →";
   }
 
@@ -67,19 +67,15 @@ function getCardActionLabel(card: PageCard): string {
     return "Explore →";
   }
 
-  if (href.includes("/research") || title.includes("research")) {
+  if (href.includes("/divisions/research") || title.includes("research")) {
     return "Learn More →";
   }
 
-  if (href.includes("/products/")) {
+  if (href.includes("/ips/")) {
     return "Explore →";
   }
 
-  if (href.includes("/projects/")) {
-    return "Explore →";
-  }
-
-  if (href.includes("/company/")) {
+  if (href.includes("/about/")) {
     return "Learn More →";
   }
 
@@ -93,7 +89,7 @@ function getCtaActionLabel(cta: RelatedLink): string {
     return "Contact us";
   }
 
-  if (href.includes("/research")) {
+  if (href.includes("/divisions/research")) {
     return "Explore research";
   }
 
@@ -101,7 +97,7 @@ function getCtaActionLabel(cta: RelatedLink): string {
     return "View Careers";
   }
 
-  if (href.includes("/products/akiba")) {
+  if (href.includes("/ips/software/akiba")) {
     return "Learn More";
   }
 
@@ -119,16 +115,12 @@ function getRelatedActionLabel(item: RelatedLink): string {
     return "Explore";
   }
 
-  if (href.includes("/products/")) {
+  if (href.includes("/ips/")) {
     return "Explore";
   }
 
   if (href.includes("/projects/")) {
     return "Explore";
-  }
-
-  if (href.includes("/research")) {
-    return "Learn More";
   }
 
   return "Learn More";
@@ -261,6 +253,7 @@ function renderSection(section: PageSection) {
         alt={section.alt}
         caption={section.caption}
         variant={section.variant ?? "panoramic"}
+        className={section.id === "hq-teams" ? "full-bleed-image" : undefined}
       />
     );
   }

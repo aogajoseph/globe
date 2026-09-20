@@ -26,7 +26,7 @@ export const siteConfig = {
   name: "Globe Technologies",
 
   description:
-    "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual property.",
+    "Globe Technologies is a diversified innovation company that researches, develops and commercializes ideas into products, services and intellectual property.",
 
   url: normalizeSiteUrl(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://globe.com",
@@ -224,9 +224,5 @@ export const footerNavigation = [
   {
     label: "Client Services",
     href: "/divisions/client-services",
-  },
-  {
-    label: "Research Publications",
-    href: "/ips/research/research-publications",
   },
 ] as const;

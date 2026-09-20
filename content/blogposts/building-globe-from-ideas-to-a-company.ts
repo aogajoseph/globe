@@ -4,7 +4,7 @@ export const buildingGlobeBlogpostContent: BlogPostContent = {
   eyebrow: "Company News",
   title: "Building Globe: From Ideas to a Company",
   intro:
-    "How Globe Technologies developed from an idea into a multidisciplinary company built around researching, developing and commercializing ideas.",
+    "How Globe Technologies developed from an idea into a diversified company built around researching, developing and commercializing ideas.",
 
   metadata: {
     publishedAt: "2026-09-16",
@@ -55,7 +55,7 @@ export const buildingGlobeBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/blogposts/building-globe.png",
       alt: "The development of Globe Technologies from ideas into a company",
       caption:
         "Research helps Globe understand ideas before deciding what they should become.",

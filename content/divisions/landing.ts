@@ -18,7 +18,7 @@ export const divisionsLandingContent: PageContent = {
     {
       type: "image",
       id: "divisions-collaboration",
-      src: "/images/divisions/divisions-collaboration.png",
+      src: "/images/divisions/divisions.png",
       alt: "Globe Technologies divisions collaborating across disciplines",
       variant: "panoramic",
     },

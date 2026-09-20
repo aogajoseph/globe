@@ -13,7 +13,7 @@ export const newsCategoryContent: PageContent = {
         {
           title: "Building Globe: From Ideas to a Company",
           description:
-            "How Globe Technologies developed from an idea into a multidisciplinary company built around researching, developing and commercializing ideas.",
+            "How Globe Technologies developed from an idea into a diversified company built around researching, developing and commercializing ideas.",
           href: "/blog/company/building-globe-from-ideas-to-a-company",
         },
       ],

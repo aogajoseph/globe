@@ -10,7 +10,7 @@ export const akibaContent: PageContent = {
     {
       type: "image",
       id: "akiba-mockup",
-      src: "/images/products/akiba-app-mockup.png",
+      src: "/images/ips/akiba-app-mockup.png",
       alt: "Akiba collaborative financial platform on mobile devices",
       variant: "feature",
     },

@@ -100,6 +100,13 @@ export function Footer() {
                 Addam
               </Link>
 
+              <Link
+                href="/ips/research/research-publications"
+                className="text-small transition-colors hover:text-[rgb(var(--color-muted))]"
+              >
+                Research Publications
+              </Link>
+
               <div className="my-2 border-t border-[rgb(var(--color-border))]" />
 
               {footerNavigation.slice(0, 4).map((item) => (

@@ -4,7 +4,7 @@ export const companyProfileContent: PageContent = {
   eyebrow: "About Us",
   title: "Company Profile",
   intro:
-    "Globe Technologies is a multidisciplinary company that turns ideas into products, services and intellectual properties through research, development, production and commercialization.",
+    "Globe Technologies is a diversified company that turns ideas into products, services and intellectual properties through research, development, production and commercialization.",
 
   sections: [
     {
@@ -18,7 +18,7 @@ export const companyProfileContent: PageContent = {
     {
       type: "image",
       id: "company-overview",
-      src: "/images/company/profile.png",
+      src: "/images/about/company-profile.png",
       alt: "Globe Technologies at a glance",
       variant: "panoramic",
     },
@@ -29,7 +29,7 @@ export const companyProfileContent: PageContent = {
         {
           title: "Company Type",
           description:
-            "Multidisciplinary innovation company.",
+            "Diversified innovation company.",
         },
         {
           title: "Business Model",

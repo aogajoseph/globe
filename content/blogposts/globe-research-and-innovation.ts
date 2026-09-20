@@ -39,7 +39,7 @@ export const globeResearchBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/blogposts/research-division2.png",
       alt: "Globe Research team investigating an idea",
       caption:
         "Research gives Globe a structured way to understand an idea before deciding what to build.",
@@ -153,8 +153,8 @@ export const globeResearchBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
-      alt: "Akiba collaborative financial platform",
+      src: "/images/blogposts/research-division3.png",
+      alt: "Globe Research team investigating an idea",
       caption:
         "Akiba is one example of an idea that moved from investigation into software development.",
     },
@@ -293,7 +293,7 @@ export const globeResearchBlogpostContent: BlogPostContent = {
       label: "Building Globe: From Ideas to a Company",
       href: "/blogposts/building-globe-from-ideas-to-a-company",
       description:
-        "Read how Globe developed its multidisciplinary model around turning ideas into products, services and intellectual properties.",
+        "Read how Globe developed its diversified model around turning ideas into products, services and intellectual properties.",
     },
     {
       label: "Intellectual Properties",

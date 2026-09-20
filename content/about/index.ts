@@ -1,5 +1,4 @@
 export { companyLandingContent } from "./landing";
-export { aboutContent } from "./about";
 export { ourStoryContent } from "./our-story";
 export { constitutionContent } from "./constitution";
 export { missionAndVisionContent } from "./mission-vision";

@@ -4,7 +4,7 @@ export const companyLandingContent: PageContent = {
   eyebrow: "About Us",
   title: "Company Overview",
   intro:
-  "Globe Technologies is a multidisciplinary innovation company that turns ideas, opportunities and areas of inquiry into products, services and intellectual properties.",
+  "Globe Technologies is a diversified innovation company that turns ideas, opportunities and areas of inquiry into products, services and intellectual properties.",
 
   sections: [
     {
@@ -18,9 +18,9 @@ export const companyLandingContent: PageContent = {
     {
       type: "image",
       id: "hq-architecture",
-      src: "/images/company/reception.png",
+      src: "/images/about/reception-and-lobby.png",
       alt: "Globe Technologies headquarters interior",
-      variant: "panoramic",
+      fullBleed: true,
     },
 
     {

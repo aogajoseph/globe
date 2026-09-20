@@ -6,7 +6,7 @@ export const homePageContent: PageContent = {
   heroImage: "/images/hero/homepage-banner.png",
 
   intro:
-    "Globe Technologies is a multidisciplinary innovation company that researches, develops and commercializes ideas into products, services and intellectual properties.",
+    "Globe Technologies is a diversified innovation company that researches, develops and commercializes ideas into products, services and intellectual properties.",
 
   sections: [
     {
@@ -43,7 +43,7 @@ export const homePageContent: PageContent = {
       title: "How We Work",
       paragraphs: [
         "Our work follows a simple principle, Understanding before Building.",
-        "At Globe Technologies, ideas move through three connected stages: research, creation and commercialization. Each stage answers a different question: What should we build? How should we build it? And how should it reach the world?",
+        "At Globe Technologies, ideas move through three connected stages: research, development and commercialization. Each stage answers a different question: What should we build? How should we build it? And how should it reach the world?",
       ],
       cards: [
         {
@@ -52,7 +52,7 @@ export const homePageContent: PageContent = {
             "We investigate ideas, problems and opportunities to understand their potential and determine what they should become.",
         },
         {
-          title: "Create",
+          title: "Develop",
           description:
             "Our specialized divisions turn validated ideas into software, media, research publications, intellectual properties, physical products and other forms of value.",
         },
@@ -67,7 +67,7 @@ export const homePageContent: PageContent = {
     {
       title: "Our Divisions",
       paragraphs: [
-        "Globe operates through specialized divisions, each with a distinct role in researching, creating and commercializing ideas, products and intellectual properties.",
+        "Globe operates through specialized divisions, each with a distinct role in researching, developing and commercializing ideas, products and intellectual properties.",
       ],
       cards: [
         {
@@ -91,7 +91,7 @@ export const homePageContent: PageContent = {
         {
           title: "Globe Merchandise",
           description:
-            "Commercializing Globe's brands and intellectual properties through physical products, printed materials and other merchandise.",
+            "Commercializing Globe's brands and intellectual properties through physical products and printed materials.",
           href: "/divisions/merchandise",
         },
         {
@@ -139,8 +139,9 @@ export const homePageContent: PageContent = {
     {
       type: "image",
       id: "hq-teams",
-      src: "/images/home/hq-teams.png",
+      src: "/images/home/hq-team.png",
       alt: "Globe Technologies team",
+      fullBleed: true,
     },
 
     {

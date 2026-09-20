@@ -4,15 +4,23 @@ export const companyContent: PageContent = {
   eyebrow: "About Us",
   title: "The Company",
   intro:
-  "Globe Technologies is a multidisciplinary company built around ideas — exploring what they can become, developing what is worth pursuing and creating products, services and intellectual properties from them.",
+  "Globe Technologies is a diversified company built around ideas — exploring what they can become, developing what is worth pursuing and creating products, services and intellectual properties from them.",
 
   sections: [
     {
-      title: "What We Are",
+      title: "Who We Are",
       paragraphs: [
         "Globe Technologies is a company that brings together research, creation, production and commercialization under one business.",
         "Our work is not limited to a particular industry, medium or type of output. An idea may become a software product, digital platform, film, documentary, podcast, book, research publication, physical product, service or intellectual property. What it becomes depends on what the idea is, what it can achieve and how it can be developed.",
       ],
+    },
+
+    {
+      type: "image",
+      id: "team-collaboration",
+      src: "/images/about/executives.png",
+      alt: "Globe Technologies team collaborating",
+      variant: "editorial",
     },
 
     {
@@ -40,7 +48,7 @@ export const companyContent: PageContent = {
     },
 
     {
-      title: "Built Around Possibility",
+      title: "Built Around Possibilities",
       paragraphs: [
         "Globe Technologies is intentionally broad in scope. The company is not built around a fixed definition of what it must create or a permanent list of industries it must operate in.",
         "As new ideas, technologies, markets and opportunities emerge, the company can develop new capabilities and establish new areas of work. Its identity comes from the way it approaches ideas and creates value, rather than from a limitation on what those ideas may become.",

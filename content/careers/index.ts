@@ -27,9 +27,9 @@ export const careersContent: PageContent = {
     {
       type: "image",
       id: "workplace-culture",
-      src: "/images/careers/workplace-culture.png",
-      alt: "Globe Technologies workplace culture and collaboration",
-      variant: "editorial",
+      src: "/images/careers/company-culture.png",
+      alt: "Globe Technologies company culture",
+      variant: "panoramic",
     },
 
     {
@@ -40,24 +40,10 @@ export const careersContent: PageContent = {
     },
 
     {
-      title: "How We Work",
-      paragraphs: [
-        "Globe Technologies operates as a remote-first company, enabling collaboration across locations through modern digital tools. Regardless of where we work, we remain connected by shared values, clear communication and a commitment to delivering excellent work.",
-      ],
-    },
-
-    {
-      title: "Recruitment",
-      paragraphs: [
-        "Our recruitment process is designed to identify people who not only possess the right skills, but who also align with our purpose, values and long-term vision. As the company grows, details about our recruitment process and available opportunities will be published here.",
-      ],
-    },
-
-    {
       title: "Current Opportunities",
       paragraphs: [
         "Globe Technologies does not currently have any open vacancies.",
-        "We encourage you to check back in the future or follow our official channels for updates on career opportunities as the company continues to grow.",
+        "We encourage you to check back in the future or follow our official channels for updates on career opportunities.",
       ],
     },
   ],
@@ -65,7 +51,7 @@ export const careersContent: PageContent = {
   related: [
     {
       label: "Company Overview",
-      href: "/company",
+      href: "/about",
       description:
         "Learn more about Globe Technologies and our purpose.",
     },

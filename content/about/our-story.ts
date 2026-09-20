@@ -18,7 +18,7 @@ export const ourStoryContent: PageContent = {
     {
       type: "image",
       id: "founding-journey",
-      src: "/images/company/founding-journey.png",
+      src: "/images/about/our-story.png",
       alt: "The early vision behind Globe Technologies",
       variant: "editorial",
     },

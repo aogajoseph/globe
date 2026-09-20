@@ -17,9 +17,9 @@ export const contactContent: PageContent = {
     {
       type: "image",
       id: "remote-collaboration",
-      src: "/images/contact/remote-collaboration.png",
+      src: "/images/contact/contact-us.png",
       alt: "Remote collaboration at Globe Technologies",
-      variant: "editorial",
+      variant: "panoramic",
     },
 
     {
@@ -59,13 +59,13 @@ export const contactContent: PageContent = {
   related: [
     {
       label: "Company Overview",
-      href: "/company",
+      href: "/about",
       description:
         "Learn more about Globe Technologies and our purpose.",
     },
     {
       label: "Research",
-      href: "/research",
+      href: "/divisions/research",
       description:
         "Discover the research that informs everything we build.",
     },

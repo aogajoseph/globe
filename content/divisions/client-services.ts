@@ -11,14 +11,14 @@ export const clientServicesDivisionContent: PageContent = {
       title: "Bringing Globe's Capabilities to Clients",
       paragraphs: [
         "Globe Client Services is the division responsible for external client engagements. It identifies opportunities, understands client needs, develops appropriate engagements and coordinates delivery through the relevant Globe capabilities.",
-        "The division provides clients with access to Globe's multidisciplinary expertise without requiring every engagement to fit within a single specialist division.",
+        "The division provides clients with access to Globe's diversified expertise without requiring every engagement to fit within a single specialist division.",
       ],
     },
 
     {
       type: "image",
       id: "client-services",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/divisions/client_services-division.png",
       alt: "Globe Client Services team working with a client",
       variant: "editorial",
     },

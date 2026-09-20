@@ -44,7 +44,7 @@ export const akibaBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/blogposts/akiba-app-mockup2.png",
       alt: "Akiba collaborative financial platform for group money management",
       caption:
         "Akiba brings group communication and shared financial activity into one platform.",
@@ -168,7 +168,7 @@ export const akibaBlogpostContent: BlogPostContent = {
 
     {
       type: "image",
-      src: "/images/research/research-collaboration.png",
+      src: "/images/blogposts/akiba-app-mockup3.png",
       alt: "Akiba group financial activity interface",
       caption:
         "The Akiba experience is designed around the group, its people and its shared financial activity.",

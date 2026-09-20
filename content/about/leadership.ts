@@ -18,7 +18,7 @@ export const leadershipContent: PageContent = {
     {
       type: "image",
       id: "leadership-discussion",
-      src: "/images/company/leadership-discussion.png",
+      src: "/images/about/leadership.png",
       alt: "Globe Technologies leadership in discussion",
       variant: "editorial",
     },

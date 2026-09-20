@@ -18,7 +18,7 @@ export const mediaDivisionContent: PageContent = {
     {
       type: "image",
       id: "creative-studio",
-      src: "/images/divisions/creative-studio.png",
+      src: "/images/divisions/media-division.png",
       alt: "Globe Media creative production studio",
       variant: "editorial",
     },
