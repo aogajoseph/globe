@@ -27,7 +27,7 @@ export const careersContent: PageContent = {
     {
       type: "image",
       id: "workplace-culture",
-      src: "/images/careers/company-culture.png",
+      src: "/images/careers/our-culture.png",
       alt: "Globe Technologies company culture",
       variant: "panoramic",
     },
