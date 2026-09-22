@@ -179,40 +179,81 @@ function MobileNavigationItems({
   items,
   pathname,
   depth = 0,
+  openItems,
+  onToggle,
 }: {
   items: readonly NavigationChild[];
   pathname: string;
   depth?: number;
+  openItems: Record<string, boolean>;
+  onToggle: (href: string) => void;
 }) {
   return (
     <>
       {items.map((item) => {
         const isActive = isNavigationItemActive(pathname, item.href);
+        const hasChildren =
+          Boolean(item.children && item.children.length > 0);
+        const isOpen = Boolean(openItems[item.href]);
+
+        if (hasChildren) {
+          return (
+            <div key={item.href}>
+              <button
+                type="button"
+                onClick={() => onToggle(item.href)}
+                aria-expanded={isOpen}
+                aria-controls={`${item.href}-submenu`}
+                className={cn(
+                  "flex w-full touch-manipulation items-center justify-between px-5 py-3 text-left text-[0.8125rem] leading-5 transition-colors",
+                  depth > 0 && "pl-9",
+                  isActive || isOpen
+                    ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                    : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
+                )}
+              >
+                <span>{item.label}</span>
+
+                <ChevronRight
+                  aria-hidden="true"
+                  className={cn(
+                    "h-4 w-4 shrink-0 transition-transform duration-200",
+                    isOpen && "rotate-90",
+                  )}
+                  strokeWidth={1.75}
+                />
+              </button>
+
+              {isOpen && (
+                <div id={`${item.href}-submenu`}>
+                  <MobileNavigationItems
+                    items={item.children!}
+                    pathname={pathname}
+                    depth={depth + 1}
+                    openItems={openItems}
+                    onToggle={onToggle}
+                  />
+                </div>
+              )}
+            </div>
+          );
+        }
 
         return (
-          <div key={item.href}>
-            <Link
-              href={item.href}
-              aria-current={isActive ? "page" : undefined}
-              className={cn(
-                "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
-                depth > 0 && "pl-9",
-                isActive
-                  ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
-                  : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
-              )}
-            >
-              {item.label}
-            </Link>
-
-            {item.children && item.children.length > 0 && (
-              <MobileNavigationItems
-                items={item.children}
-                pathname={pathname}
-                depth={depth + 1}
-              />
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={isActive ? "page" : undefined}
+            className={cn(
+              "block touch-manipulation px-5 py-3 text-[0.8125rem] leading-5 transition-colors",
+              depth > 0 && "pl-9",
+              isActive
+                ? "bg-[rgb(var(--color-primary-soft))] font-medium text-[rgb(var(--color-primary))]"
+                : "text-[rgb(var(--color-secondary))] hover:bg-[rgb(var(--color-primary-soft))] hover:text-[rgb(var(--color-primary))]",
             )}
-          </div>
+          >
+            {item.label}
+          </Link>
         );
       })}
     </>
@@ -410,11 +451,15 @@ function MobileAccordion({
   isOpen,
   onToggle,
   pathname,
+  openItems,
+  onItemToggle,
 }: {
   group: NavigationGroup;
   isOpen: boolean;
   onToggle: () => void;
   pathname: string;
+  openItems: Record<string, boolean>;
+  onItemToggle: (href: string) => void;
 }) {
   const sectionId = useId();
 
@@ -457,6 +502,8 @@ function MobileAccordion({
           <MobileNavigationItems
             items={group.children}
             pathname={pathname}
+            openItems={openItems}
+            onToggle={onItemToggle}
           />
         </div>
       </div>
@@ -480,6 +527,17 @@ export function Header() {
   const [mobileSectionsOpen, setMobileSectionsOpen] = useState<
     Record<string, boolean>
   >({});
+
+  const [mobileItemsOpen, setMobileItemsOpen] = useState<
+    Record<string, boolean>
+  >({});
+
+  const toggleMobileItem = (href: string) => {
+    setMobileItemsOpen((current) => ({
+      ...current,
+      [href]: !current[href],
+    }));
+  };
 
   const clearOpenTimer = () => {
     if (openMenuTimerRef.current !== null) {
@@ -517,6 +575,7 @@ export function Header() {
     setOpenGroup(null);
     setMobileOpen(false);
     setMobileSectionsOpen({});
+    setMobileItemsOpen({});
   }, [pathname]);
 
   useEffect(() => {
@@ -774,13 +833,11 @@ export function Header() {
             <MobileAccordion
               key={group.label}
               group={group}
-              isOpen={Boolean(
-                mobileSectionsOpen[group.label],
-              )}
+              isOpen={Boolean(mobileSectionsOpen[group.label])}
               pathname={pathname}
-              onToggle={() =>
-                toggleMobileSection(group.label)
-              }
+              openItems={mobileItemsOpen}
+              onItemToggle={toggleMobileItem}
+              onToggle={() => toggleMobileSection(group.label)}
             />
           ))}
 

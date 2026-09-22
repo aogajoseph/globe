@@ -12,7 +12,7 @@ export const storeContent: PageContent = {
       id: "globe-store",
       src: "/images/ips/store.png",
       alt: "Globe Store merchandise collection",
-      variant: "panoramic",
+      variant: "editorial",
     },
 
     {

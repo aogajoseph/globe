@@ -21,7 +21,7 @@ const variantStyles: Record<
   panoramic: {
     figure: "py-14 md:py-20",
     container:
-      "relative aspect-[16/9] max-h-72 w-full overflow-hidden rounded-sm sm:max-h-80 md:max-h-[32rem] lg:max-h-none",
+      "relative aspect-[18/9] max-h-72 w-full overflow-hidden rounded-sm sm:max-h-80 md:max-h-[32rem] lg:max-h-none",
   },
 
   editorial: {
